@@ -34,6 +34,29 @@ function sample(arr, size) {
 	return sampl;
 }
 
+function csvString(intents, examples) {
+	var text = 'sep=\t';
+	for (var index = 0; index < intents.length; index++) {
+		for (var example of examples[index]) {
+			text += '\n' + intents[index] + '\t' + example;
+		}
+	}
+	return text;
+}
+
+function download(filename, text) {
+  var element = document.createElement('a');
+  element.setAttribute('href', 'data:text/csv;charset=utf-8,' + encodeURIComponent(text));
+  element.setAttribute('download', filename);
+
+  element.style.display = 'none';
+  document.body.appendChild(element);
+
+  element.click();
+
+  document.body.removeChild(element);
+}
+
 function generate() {
 	var numIntents = getValue('#num-intents');
 	var minExamples = getValue('#min-examples');
@@ -41,5 +64,22 @@ function generate() {
 
 	if (dataReady) {
 		var intents = sample(data.species, numIntents);
+		var examples = [];
+		for (var intent of intents) {
+			var numExem = randomInteger(minExamples, maxExamples);
+			var intentExamples = [];
+			while (numExem--) {
+				var numWords = randomInteger(5, 15);
+				var phrase = sample(data.words, numWords).join(' ');
+				intentExamples.push(phrase);
+			}
+			examples.push(intentExamples);
+		}
+
+		var csvStr = csvString(intents, examples);
+		download('blip-mock.csv', csvStr);
+	}
+	else {
+		throw 'Data not ready';
 	}
 }
