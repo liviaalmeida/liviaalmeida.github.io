@@ -4,20 +4,59 @@
 	<head>
 		<!-- Required styles for MDC Web -->
 		<link rel="stylesheet" href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css">
+  	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+		<link rel="stylesheet" href="main.css">
 	</head>
 
 	<body>
-		<!-- Render textfield component -->
-		<div class="mdc-text-field">
-			<input type="text" id="my-text-field" class="mdc-text-field__input">
-		  <label class="mdc-floating-label" for="my-text-field">Label</label>
-		  <div class="mdc-line-ripple"></div>
+
+		<div id="content">
+			<h1 class="mdc-typography--headline3">BLiP Intent CSV Generator</h1>
+			<p class="mdc-typography">Download a CSV ready to test</p>
+
+			<div class="form">
+				<div class="mdc-text-field">
+					<input type="number" max="495" id="num-intents" class="mdc-text-field__input">
+				  <label class="mdc-floating-label" for="my-text-field">Number of intents</label>
+				  <div class="mdc-line-ripple"></div>
+				</div>
+			</div>
+
+
+			<div class="form">
+				<div class="mdc-text-field">
+					<input type="number" id="min-examples" class="mdc-text-field__input">
+				  <label class="mdc-floating-label" for="my-text-field">Minimum of examples</label>
+				  <div class="mdc-line-ripple"></div>
+				</div>
+			</div>
+
+			<div class="form">
+				<div class="mdc-text-field">
+					<input type="number" id="max-examples" class="mdc-text-field__input">
+				  <label class="mdc-floating-label" for="my-text-field">Maximum of examples</label>
+				  <div class="mdc-line-ripple"></div>
+				</div>
+			</div>
+
+			<button class="mdc-button mdc-button--raised" onclick="generate()">
+			  <span class="mdc-button__label">Generate!</span>
+			</button>
+			
 		</div>
 
+		<script src="main.js"></script>
+		<!-- Render textfield component -->
 		<script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
 		<!-- Instantiate single textfield component rendered in the document -->
 		<script>
-		  mdc.textField.MDCTextField.attachTo(document.querySelector('.mdc-text-field'));
+			const button = document.querySelector('.mdc-button');
+		  mdc.ripple.MDCRipple.attachTo(button);
+
+			const textFields = document.querySelectorAll('.mdc-text-field');
+			for (const textField of textFields) {
+		  	mdc.textField.MDCTextField.attachTo(textField);
+		  }
 		</script>
 	</body>
 
