@@ -1,20 +1,12 @@
 <template>
-	<div class="animated-title"
-	v-visibility="{
-		callback: visibilityChange,
-		intersection: {
-			threshold: 1,
-		},
-		throttle: 500,
-	}">
-		<div>
-			<AnimatedIcon :image="image"
-			:size="4" :active="inview" />
-		</div>
-		<div class="animated-title-text">
-			<h3>{{ text }}</h3>
-			<hr>
-		</div>
+	<div
+		class="animated-title"
+	>
+			<Icon
+				:name="icon"
+				class="animated-title-icon"
+			/>
+			<h2>{{ text }}</h2>
 	</div>
 </template>
 
@@ -23,59 +15,36 @@ import Vue from 'vue'
 
 export default Vue.extend({
 	props: {
-		active: {
-			type: Boolean,
-			required: false,
-		},
-		image: {
+		icon: {
+			required: true,
 			type: String,
-			required: true
 		},
 		text: {
+			required: true,
 			type: String,
-			required: true
-		},
-	},
-	data() {
-		return {
-			inview: false,
-		}
-	},
-	methods: {
-		visibilityChange(visible: boolean) {
-			this.inview = visible
 		},
 	},
 })
 </script>
 
 <style lang="scss" scoped>
+$icon: 30px;
+
 .animated-title {
-	width: 100%;
-	@include flex-row;
+	color: $lv-purple;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 
-	h3 {
-		margin-bottom: $m;
-	}
-
-	hr {
-		width: 100%;
-		height: 0.4*$m;
-		margin: 0;
-		text-align: left;
-		background-color: $purple-main;
-		@include animation-on-load(no-width-on-load);
-		transform-origin: 0;
-	}
-
-	&-text {
-		width: 100%;
-		margin-left: $m;
+	h2 {
 		font-family: 'Bebas Neue';
-		font-weight: 600;
-		font-size: 2.4*$m;
-		@include flex-column;
-		justify-content: center;
+		font-size: 4*$m;
+		margin-left: $m;
+	}
+
+	&-icon {
+		width: $icon;
+		fill: $lv-purple;
 	}
 }
 </style>

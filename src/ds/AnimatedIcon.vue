@@ -33,7 +33,7 @@ export default Vue.extend({
 	computed: {
 		elStyle(): CSSStyleDeclaration {
 			return helper.elementStyle(this.$el)
-		}
+		},
 	},
 	methods: {
 		setIconSize(): void {
@@ -56,8 +56,8 @@ export default Vue.extend({
 }
 
 .icon {
-	@include inline-flex;
-	background-color: $purple-main;
+	display: inline-flex;
+	background-color: $lv-purple;
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: 40%;

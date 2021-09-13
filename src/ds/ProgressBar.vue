@@ -1,6 +1,6 @@
 <template>
 	<div class="progress-bar">
-		<div class="progress"></div>
+		<div class="progress" />
 	</div>
 </template>
 
@@ -46,7 +46,7 @@ $border-radius: .5*$m;
 
 .progress-bar {
 	display: inline-flex;
-	background-color: $purple-secondary;
+	background-color: rgba($lv-purple, .5);
 	height: $height;
 	border-radius: $border-radius;
 
@@ -56,7 +56,7 @@ $border-radius: .5*$m;
 	}
 
 	.progress {
-		background-color: $purple-main;
+		background-color: $lv-purple;
 		height: $height;
 		border-radius: $border-radius;
 		@include animation-on-load(no-width-on-load);

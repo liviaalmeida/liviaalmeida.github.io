@@ -1,12 +1,21 @@
 <template>
 	<div class="animated-link">
-		<a class="icon" :href="href">
-			<AnimatedIcon :image="image"
-			:size="3" :active="active" />
+		<a
+			:href="href"
+			class="icon"
+		>
+			<AnimatedIcon
+				:image="image"
+				:size="3"
+				:active="active"
+			/>
 		</a>
-		<a class="text" :href="href"
-		@mouseover="active = true"
-		@mouseout="active = false">
+		<a
+			:href="href"
+			@mouseover="active = true"
+			@mouseout="active = false"
+			class="text"
+		>
 			{{text}}
 		</a>
 	</div>
@@ -45,7 +54,7 @@ export default Vue.extend({
 
 	a, a:visited {
 		text-decoration: none;
-		color: $purple-main;
+		color: $lv-purple;
 		font-family: 'Neuton';
 		font-weight: 600;
 		font-size: 2*$m;

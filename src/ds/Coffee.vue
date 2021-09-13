@@ -1,13 +1,11 @@
 <template>
 	<div class="coffee">
-		<div></div>
-		<div></div>
-		<div class="coffee-coffee"></div>
+		<div class="coffee-coffee" />
 		<div class="coffee-mug">
-			<div class="coffee-cup"></div>
-			<div class="coffee-wing"></div>
+			<div class="coffee-cup" />
+			<div class="coffee-wing" />
 		</div>
-		<div class="coffee-plate"></div>
+		<div class="coffee-plate" />
 	</div>
 </template>
 
@@ -24,6 +22,7 @@
 
 .coffee {
 	position: relative;
+	padding-top: 50px;
 
 	&-coffee {
 		width: 40px;

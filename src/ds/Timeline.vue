@@ -1,27 +1,35 @@
 <template>
 	<div class="timeline">
-		<div v-if="title && icon">
-			<AnimatedTitle :image="icon"
-			:text="title" :active="active" />
-		</div>
 		<ol class="timeline-list">
-			<li v-for="(timeEvent, index) in timeEvents"
-			:key="index" @mouseover="active = true"
-			@mouseout="active = false">
-				<a :href="timeEvent.link"
-				v-if="timeEvent.link"
-				target="_blank">
+			<li
+				v-for="(timeEvent, index) in timeEvents"
+				:key="index"
+				@mouseover="active = true"
+				@mouseout="active = false"
+			>
+				<a
+					v-if="timeEvent.link"
+					:href="timeEvent.link"
+					target="_blank"
+				>
 					{{ timeEvent.title }}
 				</a>
-				<h5 v-else>{{ timeEvent.title }}</h5>
+				<h5 v-else>
+					{{ timeEvent.title }}
+				</h5>
 				<h6 v-if="timeEvent.duration">
 					{{ timeEvent.duration }}
 				</h6>
 				<p>
-					<span v-if="timeEvent.intro" class="intro">
+					<span
+						v-if="timeEvent.intro"
+						class="intro"
+					>
 						{{ timeEvent.intro }}
 					</span> 
-					<span v-html="timeEvent.description"></span>
+					<span
+						v-html="timeEvent.description"
+					/>
 				</p>
 			</li>
 		</ol>
@@ -39,28 +47,16 @@ export default Vue.extend({
 		}
 	},
 	props: {
-		icon: {
-			type: String,
-			required: false,
-		},
-		link: {
-			type: String,
-			required: false,
-		},
 		timeEvents: {
 			type: Array as () => TimeEvent[],
 			required: true,
-		},
-		title: {
-			type: String,
-			required: false,
 		},
 	},
 })
 </script>
 
 <style lang="scss" scoped>
-$border: 0.3*$m solid $purple-main;
+$border: 0.3*$m solid $lv-purple;
 $bullet-size: 1.3*$m;
 
 .timeline-list {
@@ -83,7 +79,7 @@ $bullet-size: 1.3*$m;
 			width: $bullet-size;
 			display: block;
 			position: absolute;
-			background: $white;
+			background: $lv-white;
 			border-radius: 50%;
 			border: $border;
 			content: '';
@@ -95,7 +91,7 @@ $bullet-size: 1.3*$m;
 		}
 
 		&:hover:after {
-			background: lighten($purple-main, 10%);
+			background: lighten($lv-purple, 10%);
 		}
 
 		a, h5, h6 {
@@ -103,11 +99,10 @@ $bullet-size: 1.3*$m;
 		}
 
 		a, a:visited {
-			/* text-decoration: none; */
-			color: $purple-main;
+			color: $lv-purple;
 
 			&:focus {
-				color: $purple-main;
+				color: $lv-purple;
 			}
 		}
 
@@ -118,7 +113,6 @@ $bullet-size: 1.3*$m;
 		}
 
 		h6 {
-			font-family: 'Open Sans';
 			font-size: 1*$m;
 			margin-left: 0.5*$m;
 		}
@@ -129,7 +123,6 @@ $bullet-size: 1.3*$m;
 				margin-right: 0.5*$m;
 			}
 
-			font-family: 'Open Sans';
 			font-size: 1.5*$m;
 			text-align: justify;
 			line-height: 1.3;
