@@ -1,98 +1,98 @@
 {
   "title": {
-		"position": "Front-end Developer",
-		"education": "Education",
+    "position": "Front-end Developer",
+    "education": "Education",
     "experience": "Professional Experience",
-		"languages": "Languages",
-		"presentations": "Talks",
-		"profile": "About me",
-		"programming": "Programming Skills",
-		"projects": "Projects"
+    "languages": "Languages",
+    "presentations": "Talks",
+    "profile": "About me",
+    "programming": "Programming Skills",
+    "projects": "Projects"
   },
-	"education": [
-		{
-			"title": "Universidade Federal de Minas Gerais (UFMG)",
-			"duration": "due to 09/2021",
-			"intro": "Bachelor's Degree",
-			"description": "Computer Science"
-		}
-	],
-  "experience": [
-		{
-			"title": "Ecosia",
-			"link": "https://ecosia.org",
-			"duration": "apr 2021 - present",
-			"intro": "Software Engineer:",
-			"description": "working as a freelance software engineer for the search engine that plants trees. Using Vue.JS and Nuxt with HTML and SCSS in the front-end."
-		},
-		{
-			"title": "Symbaros",
-			"link": "https://symbaros.com.br",
-			"duration": "aug 2021 - present",
-			"intro": "Partner / Consultant:",
-			"description": "working as a front-end architect consultant for a platform specialized in renting commercial spaces. Setting up architecture and building a website in Vue.JS."
-		},
-		{
-			"title": "Questrade",
-			"link": "https://www.questrade.com/home",
-			"duration": "june 2020 - dec 2020",
-			"intro": "Front-end Engineer:",
-			"description": "worked as a front-end engineer for a financial platform specialized in trading using Angular8+, TypeScript, and SCSS."
-		},
-		{
-			"title": "Take.Blip",
-			"link": "https://take.net",
-			"duration": "june 2019 - may 2020",
-			"intro": "Full Stack Developer:",
-			"description": "worked with AngularJS and VueJS in the front-end, .NET core in the back-end, and occasionally Python for NLP models analysis."
-		},
-		{
-			"title": "Take.Blip",
-			"link": "https://take.net",
-			"duration": "jan 2018 - may 2019",
-			"intro": "Development Internship:",
-			"description": "worked as a front-end intern in the chatbot building platform BLiP.ai using frameworks AngularJS and VueJS, provided solutions on Artificial Intelligence using Python, and analyzed NLP models based on intents and entities."
-		}
+  "education": [
+    {
+      "title": "Universidade Federal de Minas Gerais (UFMG)",
+      "duration": "due to 09/2021",
+      "intro": "Bachelor's Degree",
+      "description": "Computer Science"
+    }
   ],
-	"languages": [
-		{
-			"title": "English",
-			"intro": "Proficiency:",
-			"description": "fluent reading, fluent writing, fluent speech<br>IELTS 8.0 - 25/10/2014"
-		},
-		{
-			"title": "French",
-			"intro": "Proficiency:",
-			"description": "intermediate reading, basic writing, basic speech<br>Level A1.3"
-		}
-	],
+  "experience": [
+    {
+      "title": "Ecosia",
+      "link": "https://ecosia.org",
+      "duration": "apr 2021 - present",
+      "intro": "Software Engineer:",
+      "description": "working as a freelance software engineer for the search engine that plants trees. Using Vue.JS and Nuxt with HTML and SCSS in the front-end."
+    },
+    {
+      "title": "Symbaros",
+      "link": "https://symbaros.com.br",
+      "duration": "aug 2021 - present",
+      "intro": "Partner / Consultant:",
+      "description": "working as a front-end architect consultant for a platform specialized in renting commercial spaces. Setting up architecture and building a website in Vue.JS."
+    },
+    {
+      "title": "Questrade",
+      "link": "https://www.questrade.com/home",
+      "duration": "june 2020 - dec 2020",
+      "intro": "Front-end Engineer:",
+      "description": "worked as a front-end engineer for a financial platform specialized in trading using Angular8+, TypeScript, and SCSS."
+    },
+    {
+      "title": "Take.Blip",
+      "link": "https://take.net",
+      "duration": "june 2019 - may 2020",
+      "intro": "Full Stack Developer:",
+      "description": "worked with AngularJS and VueJS in the front-end, .NET core in the back-end, and occasionally Python for NLP models analysis."
+    },
+    {
+      "title": "Take.Blip",
+      "link": "https://take.net",
+      "duration": "jan 2018 - may 2019",
+      "intro": "Development Internship:",
+      "description": "worked as a front-end intern in the chatbot building platform BLiP.ai using frameworks AngularJS and VueJS, provided solutions on Artificial Intelligence using Python, and analyzed NLP models based on intents and entities."
+    }
+  ],
+  "languages": [
+    {
+      "title": "English",
+      "intro": "Proficiency:",
+      "description": "fluent reading, fluent writing, fluent speech<br>IELTS 8.0 - 25/10/2014"
+    },
+    {
+      "title": "French",
+      "intro": "Proficiency:",
+      "description": "intermediate reading, basic writing, basic speech<br>Level A1.3"
+    }
+  ],
   "presentations": [
-		{
-			"title": "The Developer's Conference",
-			"link": "https://thedevconf.com/tdc/2019/belohorizonte/trilha-inteligencia-artificial",
-			"duration": "June 14th 2019",
-			"intro": "Word Embedding and Application",
-			"description": "How to develop an application to solve a recurring NLP problem using the Word Embedding algorithm? We are going to explore the spell check task."
-		},
-		{
-			"title": "Developer Circle",
-			"link": "https://thedevconf.com/tdc/2019/belohorizonte/trilha-inteligencia-artificial",
-			"duration": "Feb 19th 2019",
-			"intro": "How To Learn Using Text?",
-			"description": "To use words in mathematical models, we rely on transforming them into some form of numerical representation. One of many algorithms that perform such task is the Word Embedding."
-		}
-	],
-	"profile": [
-		"My goal is to build products that solve its users' problems while providing a great usability. I like to work closely with the design team, in highly collaborative environments.",
-		"My main interests are code architecture and code quality, design systems, and CSS animations. I am proficient in both JavaScript and TypeScript, having worked mainly with the frameworks Angular and Vue."
-	],
-	"projects": [
-		{
-			"title": "sq-learn",
-			"link": "https://sqlearn.net",
-			"duration": "www.sqlearn.net",
-			"intro": "Database Query Learning",
-			"description": "The goal of sq-learn is to help everyone who wants to learn queries in SQL by having an intuitive interface to visualize the database."
-		}
-	]
+    {
+      "title": "The Developer's Conference",
+      "link": "https://thedevconf.com/tdc/2019/belohorizonte/trilha-inteligencia-artificial",
+      "duration": "June 14th 2019",
+      "intro": "Word Embedding and Application",
+      "description": "How to develop an application to solve a recurring NLP problem using the Word Embedding algorithm? We are going to explore the spell check task."
+    },
+    {
+      "title": "Developer Circle",
+      "link": "https://thedevconf.com/tdc/2019/belohorizonte/trilha-inteligencia-artificial",
+      "duration": "Feb 19th 2019",
+      "intro": "How To Learn Using Text?",
+      "description": "To use words in mathematical models, we rely on transforming them into some form of numerical representation. One of many algorithms that perform such task is the Word Embedding."
+    }
+  ],
+  "profile": [
+    "My goal is to build products that solve its users' problems while providing a great usability. I like to work closely with the design team, in highly collaborative environments.",
+    "My main interests are code architecture and code quality, design systems, and CSS animations. I am proficient in both JavaScript and TypeScript, having worked mainly with the frameworks Angular and Vue."
+  ],
+  "projects": [
+    {
+      "title": "sq-learn",
+      "link": "https://sqlearn.net",
+      "duration": "www.sqlearn.net",
+      "intro": "Database Query Learning",
+      "description": "The goal of sq-learn is to help everyone who wants to learn queries in SQL by having an intuitive interface to visualize the database."
+    }
+  ]
 }

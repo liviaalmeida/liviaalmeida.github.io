@@ -25,14 +25,14 @@ import Contact from '@/components/Contact.vue'
 
 export default Vue.extend({
   components: {
-		Profile,
-		Work,
-		Programming,
-		Presentations,
-		Education,
-		Projects,
-		Languages,
-		Contact,
+    Profile,
+    Work,
+    Programming,
+    Presentations,
+    Education,
+    Projects,
+    Languages,
+    Contact,
   },
 })
 </script>

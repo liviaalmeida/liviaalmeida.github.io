@@ -12,10 +12,10 @@ import helper from '@/assets/helpers'
 
 export default Vue.extend({
   props: {
-		active: {
-			type: Boolean,
-			required: false,
-		},
+    active: {
+      type: Boolean,
+      required: false,
+    },
     image: {
       type: String,
       required: true,
@@ -24,28 +24,28 @@ export default Vue.extend({
       type: Number,
       required: false,
       default: 4,
-    }
-	},
-	mounted() {
-		this.setIconSize()
-		this.setBackgroundImage()
-	},
-	computed: {
-		elStyle(): CSSStyleDeclaration {
-			return helper.elementStyle(this.$el)
-		},
-	},
-	methods: {
-		setIconSize(): void {
-			const remSize = helper.numberToRem(this.size)
+    },
+  },
+  mounted() {
+    this.setIconSize()
+    this.setBackgroundImage()
+  },
+  computed: {
+    elStyle(): CSSStyleDeclaration {
+      return helper.elementStyle(this.$el)
+    },
+  },
+  methods: {
+    setIconSize(): void {
+      const remSize = helper.numberToRem(this.size)
 
-			this.elStyle.width = remSize
-			this.elStyle.height = remSize
-		},
-		setBackgroundImage(): void {
-			this.elStyle.backgroundImage = `url('${this.image}')`
-		},
-	},
+      this.elStyle.width = remSize
+      this.elStyle.height = remSize
+    },
+    setBackgroundImage(): void {
+      this.elStyle.backgroundImage = `url('${this.image}')`
+    },
+  },
 })
 </script>
 

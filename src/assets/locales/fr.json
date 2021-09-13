@@ -1,98 +1,98 @@
 {
   "title": {
-		"position": "Développeuse Front-end",
-		"education": "Education",
+    "position": "Développeuse Front-end",
+    "education": "Education",
     "experience": "Expérience Professionnelle",
-		"languages": "Langues",
-		"presentations": "Conférence",
-		"profile": "À propos de moi",
-		"programming": "Compétences de Programmation",
-		"projects": "Projets"
+    "languages": "Langues",
+    "presentations": "Conférence",
+    "profile": "À propos de moi",
+    "programming": "Compétences de Programmation",
+    "projects": "Projets"
   },
-	"education": [
-		{
-			"title": "Université Fédérale de Minas Gerais (UFMG)",
-			"duration": "terminée en 09/2021",
-			"intro": "Baccalauréat",
-			"description": "Informatique"
-		}
-	],
-  "experience": [
-		{
-			"title": "Ecosia",
-			"link": "https://ecosia.org",
-			"duration": "avr 2021 - aujourd'hui",
-			"intro": "Ingénieure Logiciel:",
-			"description": "travaillant comme ingénieure logiciel free-lance pour le moteur de recherche qui plantent des arbres. Utilisant Vue.JS et Nuxt avec HTML et SCSS dans le front-end."
-		},
-		{
-			"title": "Symbaros",
-			"link": "https://symbaros.com.br",
-			"duration": "août 2021 - aujourd'hui",
-			"intro": "Associée / Consultante:",
-			"description": "traivallant comme consultante architecte front-end pour une plateforme spécialisée dans la location d'espaces commerciaux. Configurant l'architecture et créant un site web utilisant Vue.JS."
-		},
-		{
-			"title": "Questrade",
-			"link": "https://www.questrade.com/home",
-			"duration": "juin 2020 - dec 2020",
-			"intro": "Ingénieure Front-end:",
-			"description": "j'ai travaillé comme ingénieure front-end pour une plateforme financière spécialisée dans le trading utilisant Angular8+, TypeScript, et SCSS."
-		},
-		{
-			"title": "Take.Blip",
-			"link": "https://take.net",
-			"duration": "juin 2019 - avr 2020",
-			"intro": "Développeuse Full Stack:",
-			"description": "j'ai travaillé comme développeuse full stack utilisant AngularJS et VueJS pour front-end, .NET core pour back-end, et occasionnellement Python pour analyses de modèles NLP."
-		},
-		{
-			"title": "Take.Blip",
-			"link": "https://take.net",
-			"duration": "jan 2018 - mai 2019",
-			"intro": "Stage de Développement:",
-			"description": "j'ai travaillé comme interne front-end dans la plateforme de construction de chatbot BLiP.ai utilisant des frameworks AngularJS et VueJS, j'ai fourni des solutions sur l'intelligence artificielle en utilisant Python, et j'ai analysé des modelès NLP basés sur des intentions et entités."
-		}
+  "education": [
+    {
+      "title": "Université Fédérale de Minas Gerais (UFMG)",
+      "duration": "terminée en 09/2021",
+      "intro": "Baccalauréat",
+      "description": "Informatique"
+    }
   ],
-	"languages": [
-		{
-			"title": "Anglais",
-			"intro": "Compétence:",
-			"description": "compétente en lecture, compétente en écriture, compétente à l'oral<br>IELTS 8.0 - 25/10/2014"
-		},
-		{
-			"title": "Français",
-			"intro": "Compétence:",
-			"description": "intermediáire en lecture, débutant en écriture, débutant à l'oral<br>Niveau A1.3"
-		}
-	],
+  "experience": [
+    {
+      "title": "Ecosia",
+      "link": "https://ecosia.org",
+      "duration": "avr 2021 - aujourd'hui",
+      "intro": "Ingénieure Logiciel:",
+      "description": "travaillant comme ingénieure logiciel free-lance pour le moteur de recherche qui plantent des arbres. Utilisant Vue.JS et Nuxt avec HTML et SCSS dans le front-end."
+    },
+    {
+      "title": "Symbaros",
+      "link": "https://symbaros.com.br",
+      "duration": "août 2021 - aujourd'hui",
+      "intro": "Associée / Consultante:",
+      "description": "traivallant comme consultante architecte front-end pour une plateforme spécialisée dans la location d'espaces commerciaux. Configurant l'architecture et créant un site web utilisant Vue.JS."
+    },
+    {
+      "title": "Questrade",
+      "link": "https://www.questrade.com/home",
+      "duration": "juin 2020 - dec 2020",
+      "intro": "Ingénieure Front-end:",
+      "description": "j'ai travaillé comme ingénieure front-end pour une plateforme financière spécialisée dans le trading utilisant Angular8+, TypeScript, et SCSS."
+    },
+    {
+      "title": "Take.Blip",
+      "link": "https://take.net",
+      "duration": "juin 2019 - avr 2020",
+      "intro": "Développeuse Full Stack:",
+      "description": "j'ai travaillé comme développeuse full stack utilisant AngularJS et VueJS pour front-end, .NET core pour back-end, et occasionnellement Python pour analyses de modèles NLP."
+    },
+    {
+      "title": "Take.Blip",
+      "link": "https://take.net",
+      "duration": "jan 2018 - mai 2019",
+      "intro": "Stage de Développement:",
+      "description": "j'ai travaillé comme interne front-end dans la plateforme de construction de chatbot BLiP.ai utilisant des frameworks AngularJS et VueJS, j'ai fourni des solutions sur l'intelligence artificielle en utilisant Python, et j'ai analysé des modelès NLP basés sur des intentions et entités."
+    }
+  ],
+  "languages": [
+    {
+      "title": "Anglais",
+      "intro": "Compétence:",
+      "description": "compétente en lecture, compétente en écriture, compétente à l'oral<br>IELTS 8.0 - 25/10/2014"
+    },
+    {
+      "title": "Français",
+      "intro": "Compétence:",
+      "description": "intermediáire en lecture, débutant en écriture, débutant à l'oral<br>Niveau A1.3"
+    }
+  ],
   "presentations": [
-		{
-			"title": "The Developer's Conference",
-			"link": "https://thedevconf.com/tdc/2019/belohorizonte/trilha-inteligencia-artificial",
-			"duration": "14 Juin 2019",
-			"intro": "Word Embedding et Application",
-			"description": "Comment développer une application pour résoudre un problème récurrent NLP utilisant l'algorythme Word Embedding? Nous explorons la correction orthographique."
-		},
-		{
-			"title": "Developer Circle",
-			"link": "https://devcbhmeetupfev2019.splashthat.com/",
-			"duration": "19 Fev 2019",
-			"intro": "Comment Apprendre en Utilisant un Texte?",
-			"description": "Pour utiliser les mots en modèle mathématique, nous comptons sur leur transformation en une forme de représentation numérique. Un des nombreux algorythmes qui réalise cette tâche est le Word Embedding."
-		}
-	],
-	"profile": [
-		"Mon objectif est de construire des produits qui résolvent des problèmes d'utilisateurs afin qu'ils fournissent une bonne utilisabilité. J'apprécie travailler en étroite collaboration avec les équipes de design, et particulièrement dans des environnements de travail coopératifs.",
-		"Je m'intéresse principalement à l'architecture du code et sa qualité, design systems, et les animations CSS. J'ai acquis une très bonne maîtrise de JavaScript et TypeScript, ayant notamment travaillé avec les frameworks Angular et Vue."
-	],
-	"projects": [
-		{
-			"title": "sq-learn",
-			"link": "https://sqlearn.net",
-			"duration": "www.sqlearn.net",
-			"intro": "Apprentissage des requêtes de base de données",
-			"description": "Le but de sq-learn est de aider à l'apprentissage des requêtes SQL via une interface intuitive pour visualiser la base de données."
-		}
-	]
+    {
+      "title": "The Developer's Conference",
+      "link": "https://thedevconf.com/tdc/2019/belohorizonte/trilha-inteligencia-artificial",
+      "duration": "14 Juin 2019",
+      "intro": "Word Embedding et Application",
+      "description": "Comment développer une application pour résoudre un problème récurrent NLP utilisant l'algorythme Word Embedding? Nous explorons la correction orthographique."
+    },
+    {
+      "title": "Developer Circle",
+      "link": "https://devcbhmeetupfev2019.splashthat.com/",
+      "duration": "19 Fev 2019",
+      "intro": "Comment Apprendre en Utilisant un Texte?",
+      "description": "Pour utiliser les mots en modèle mathématique, nous comptons sur leur transformation en une forme de représentation numérique. Un des nombreux algorythmes qui réalise cette tâche est le Word Embedding."
+    }
+  ],
+  "profile": [
+    "Mon objectif est de construire des produits qui résolvent des problèmes d'utilisateurs afin qu'ils fournissent une bonne utilisabilité. J'apprécie travailler en étroite collaboration avec les équipes de design, et particulièrement dans des environnements de travail coopératifs.",
+    "Je m'intéresse principalement à l'architecture du code et sa qualité, design systems, et les animations CSS. J'ai acquis une très bonne maîtrise de JavaScript et TypeScript, ayant notamment travaillé avec les frameworks Angular et Vue."
+  ],
+  "projects": [
+    {
+      "title": "sq-learn",
+      "link": "https://sqlearn.net",
+      "duration": "www.sqlearn.net",
+      "intro": "Apprentissage des requêtes de base de données",
+      "description": "Le but de sq-learn est de aider à l'apprentissage des requêtes SQL via une interface intuitive pour visualiser la base de données."
+    }
+  ]
 }

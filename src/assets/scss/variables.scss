@@ -15,35 +15,35 @@ $animation-time: 0.4s;
 /*-------------  MIXINS  -------------*/
 
 @mixin animation-on-load($animation-name) {
-	animation: 2*$animation-time ease-out 0s 1 $animation-name;
+  animation: 2*$animation-time ease-out 0s 1 $animation-name;
 }
 
 @mixin flex-column {
-	display: flex;
-	flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 @mixin inline-flex-column {
-	display: inline-flex;
-	flex-direction: column;
+  display: inline-flex;
+  flex-direction: column;
 }
 
 @mixin phone {
-	@media (max-width: 480px) {
-		@content;
-	}
+  @media (max-width: 480px) {
+    @content;
+  }
 }
 
 @mixin tablet {
-	@media (max-width: 768px) {
-		@content;
-	}
+  @media (max-width: 768px) {
+    @content;
+  }
 }
 
 /*-------------  KEYFRAMES  -------------*/
 
 @keyframes no-width-on-load {
-	0% {
-		width: 0;
-	}
+  0% {
+    width: 0;
+  }
 }

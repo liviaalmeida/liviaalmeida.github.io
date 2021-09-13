@@ -1,11 +1,11 @@
 export default {
 
-	numberToRem(num: number): string {
-		return `${num}rem`
-	},
+  numberToRem(num: number): string {
+    return `${num}rem`
+  },
 
-	elementStyle(el: Element | null): CSSStyleDeclaration {
-		return (el as HTMLElement).style
-	},
+  elementStyle(el: Element | null): CSSStyleDeclaration {
+    return (el as HTMLElement).style
+  },
 
 }

@@ -22,22 +22,22 @@ export default Vue.extend({
         {
           image: require('@/assets/icons/linkedin.png'),
           text: 'Lívia Almeida',
-          href: 'https://linkedin.com/in/livia001'
+          href: 'https://linkedin.com/in/livia001',
         },
         {
           image: require('@/assets/icons/github.png'),
           text: '@liviaalmeida',
-          href: 'https://github.com/liviaalmeida'
+          href: 'https://github.com/liviaalmeida',
         },
         {
           image: require('@/assets/icons/mail.png'),
           text: 'leave.ah@gmail.com',
-          href: 'mailto:leave.ah@gmail.com'
+          href: 'mailto:leave.ah@gmail.com',
         },
         {
           image: require('@/assets/icons/phone.png'),
           text: '+55 31 99435 8223',
-          href: 'tel:+5531994358223'
+          href: 'tel:+5531994358223',
         },
       ] as Contact[],
     }

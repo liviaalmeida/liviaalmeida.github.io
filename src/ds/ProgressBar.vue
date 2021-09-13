@@ -9,34 +9,34 @@ import Vue from 'vue'
 import helper from '@/assets/helpers'
 
 export default Vue.extend({
-	props: {
-		progress: {
-			type: Number,
-			required: true,
-		},
-		width: {
-			type: Number,
-			required: false,
-			default: 8,
-		}
-	},
-	computed: {
-		elStyle(): CSSStyleDeclaration {
-			return helper.elementStyle(this.$el)
-		},
-		progressStyle(): CSSStyleDeclaration {
-			return helper.elementStyle(this.$el.firstElementChild)
-		}
-	},
-	mounted() {
-		this.defineWidth()
-	},
-	methods: {
-		defineWidth() {
-			this.elStyle.width = helper.numberToRem(this.width)
-			this.progressStyle.width = helper.numberToRem(this.progress * this.width)
-		}
-	}
+  props: {
+    progress: {
+      type: Number,
+      required: true,
+    },
+    width: {
+      type: Number,
+      required: false,
+      default: 8,
+    },
+  },
+  computed: {
+    elStyle(): CSSStyleDeclaration {
+      return helper.elementStyle(this.$el)
+    },
+    progressStyle(): CSSStyleDeclaration {
+      return helper.elementStyle(this.$el.firstElementChild)
+    },
+  },
+  mounted() {
+    this.defineWidth()
+  },
+  methods: {
+    defineWidth() {
+      this.elStyle.width = helper.numberToRem(this.width)
+      this.progressStyle.width = helper.numberToRem(this.progress * this.width)
+    },
+  },
 })
 </script>
 

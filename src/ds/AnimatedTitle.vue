@@ -1,29 +1,29 @@
 <template>
-	<div
-		class="animated-title"
-	>
-			<Icon
-				:name="icon"
-				class="animated-title-icon"
-			/>
-			<h2>{{ text }}</h2>
-	</div>
+  <div
+    class="animated-title"
+  >
+      <Icon
+        :name="icon"
+        class="animated-title-icon"
+      />
+      <h2>{{ text }}</h2>
+  </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
 
 export default Vue.extend({
-	props: {
-		icon: {
-			required: true,
-			type: String,
-		},
-		text: {
-			required: true,
-			type: String,
-		},
-	},
+  props: {
+    icon: {
+      required: true,
+      type: String,
+    },
+    text: {
+      required: true,
+      type: String,
+    },
+  },
 })
 </script>
 
@@ -31,20 +31,20 @@ export default Vue.extend({
 $icon: 30px;
 
 .animated-title {
-	color: $lv-purple;
-	display: flex;
-	align-items: center;
-	justify-content: center;
+  color: $lv-purple;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-	h2 {
-		font-family: 'Bebas Neue';
-		font-size: 4*$m;
-		margin-left: $m;
-	}
+  h2 {
+    font-family: 'Bebas Neue';
+    font-size: 4*$m;
+    margin-left: $m;
+  }
 
-	&-icon {
-		width: $icon;
-		fill: $lv-purple;
-	}
+  &-icon {
+    width: $icon;
+    fill: $lv-purple;
+  }
 }
 </style>

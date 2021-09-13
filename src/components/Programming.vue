@@ -19,45 +19,45 @@
 import Vue from 'vue'
 
 export default Vue.extend({
-	data() {
-		return {
-			active: false,
-			skills: [
-				{
-					"name": "C/C++",
-					"progress": 0.8
-				},
-				{
-					"name": "C#",
-					"progress": 0.3
-				},
-				{
-					"name": "CSS",
-					"progress": 0.9
-				},
-				{
-					"name": "HTML",
-					"progress": 0.8
-				},
-				{
-					"name": "JavaScript",
-					"progress": 0.9
-				},
-				{
-					"name": "Python",
-					"progress": 0.85
-				},
-				{
-					"name": "SQL",
-					"progress": 0.7
-				},
-				{
-					"name": "TypeScript",
-					"progress": 0.9
-				},
-			],
-		}
-	}
+  data() {
+    return {
+      active: false,
+      skills: [
+        {
+          'name': 'C/C++',
+          'progress': 0.8,
+        },
+        {
+          'name': 'C#',
+          'progress': 0.3,
+        },
+        {
+          'name': 'CSS',
+          'progress': 0.9,
+        },
+        {
+          'name': 'HTML',
+          'progress': 0.8,
+        },
+        {
+          'name': 'JavaScript',
+          'progress': 0.9,
+        },
+        {
+          'name': 'Python',
+          'progress': 0.85,
+        },
+        {
+          'name': 'SQL',
+          'progress': 0.7,
+        },
+        {
+          'name': 'TypeScript',
+          'progress': 0.9,
+        },
+      ],
+    }
+  },
 })
 </script>
 
