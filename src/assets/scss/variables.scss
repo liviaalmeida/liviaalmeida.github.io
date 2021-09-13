@@ -4,9 +4,9 @@ $m: 0.625rem; //10px
 
 /*-------------  COLORS  -------------*/
 
-$purple-main: rgb(60,0,70);
-$purple-secondary: rgba(60,0,70,0.6);
-$white: rgb(255,255,255);
+$lv-purple: rgb(60, 0, 70);
+$lv-lilac: rgb(220, 180, 220);
+$lv-white: rgb(255, 255, 255);
 
 /*-------------  TIMES  -------------*/
 
@@ -14,41 +14,30 @@ $animation-time: 0.4s;
 
 /*-------------  MIXINS  -------------*/
 
-@mixin flex {
-	display: flex;
-}
-
-@mixin inline-flex {
-	display: flex;
-}
-
-@mixin flex-row {
-	@include flex;
-	flex-direction: row;
-}
-
-@mixin inline-flex-row {
-	@include inline-flex;
-	flex-direction: row;
+@mixin animation-on-load($animation-name) {
+	animation: 2*$animation-time ease-out 0s 1 $animation-name;
 }
 
 @mixin flex-column {
-	@include flex;
+	display: flex;
 	flex-direction: column;
 }
 
 @mixin inline-flex-column {
-	@include inline-flex;
+	display: inline-flex;
 	flex-direction: column;
 }
 
-@mixin flex-column-around {
-	@include flex-column;
-	justify-content: space-around;
+@mixin phone {
+	@media (max-width: 480px) {
+		@content;
+	}
 }
 
-@mixin animation-on-load($animation-name) {
-	animation: 2*$animation-time ease-out 0s 1 $animation-name;
+@mixin tablet {
+	@media (max-width: 768px) {
+		@content;
+	}
 }
 
 /*-------------  KEYFRAMES  -------------*/
