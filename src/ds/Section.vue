@@ -33,9 +33,6 @@ export default Vue.extend({
       type: String,
     },
   },
-  mounted() {
-    console.log(this.$el)
-  },
 })
 </script>
 
