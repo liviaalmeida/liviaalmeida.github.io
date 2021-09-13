@@ -1,9 +1,18 @@
 <template>
 	<div class="locale">
-		<label v-for="lang in langs" :key="lang">
-			<input type="radio" name="lang"
-			:value="lang" @click="updateLocale">
-			<span>{{lang}}</span>
+		<label
+			v-for="lang in langs"
+			:key="lang"
+		>
+			<input
+				type="radio"
+				name="lang"
+				:value="lang"
+				@click="updateLocale"
+			>
+			<span>
+				{{lang}}
+			</span>
 		</label>
 	</div>
 </template>
@@ -36,7 +45,7 @@ export default Vue.extend({
 .locale {
 	label {
 		font-weight: 400;
-		font-size: 20px;
+		font-size: 18px;
 
 		&:not(:last-child):after {
 			content: '|';

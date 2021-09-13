@@ -1,51 +1,51 @@
 <template>
 	<header class="header">
-		<Locale class="locale" />
+		<Menu class="header-menu" />
 		<h1>Lívia Almeida</h1>
 		<h2>{{$t('title.position')}}</h2>
+    <Coffee />
 	</header>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
-import Locale from '@/components/Locale.vue'
+import Menu from '@/components/Menu.vue'
 
 export default Vue.extend({
   components: {
-    Locale,
+    Menu,
   },
 })
 </script>
 
 <style lang="scss">
-header.header {
+.header {
+  @include flex-column;
   width: 100%;
-  height: 12*$m;
-  position: fixed;
-  z-index: 5;
-  display: flex;
+  height: 100vh;
   justify-content: center;
-  align-items: flex-end;
-	gap: 0 50px;
+  align-items: center;
 	flex-wrap: wrap;
-  padding: 2*$m 0;
-  background-color: $purple-main;
-  color: $white;
+  padding: 60px 0 2*$m;
+  background-color: $lv-purple;
+  color: $lv-white;
   font-family: 'Bebas Neue';
   font-weight: 600;
 
-  .locale {
-    position: absolute;
-    right: 10px;
-    top: 10px;
+  &-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
   }
 
   h1 {
-    font-size: 3.5*$m;
+    font-size: 5*$m;
+    margin-bottom: 0.5*$m;
   }
 
   h2 {
     font-size: 2.5*$m;
+    margin-bottom: 2*$m;
   }
 }
 </style>
