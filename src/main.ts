@@ -8,14 +8,18 @@ import AnimatedIcon from '@/ds/AnimatedIcon.vue'
 import AnimatedLink from '@/ds/AnimatedLink.vue'
 import AnimatedTitle from '@/ds/AnimatedTitle.vue'
 import Coffee from '@/ds/Coffee.vue'
+import Icon from '@/ds/Icon.vue'
 import ProgressBar from '@/ds/ProgressBar.vue'
+import Section from '@/ds/Section.vue'
 import Timeline from '@/ds/Timeline.vue'
 
 Vue.component('AnimatedIcon', AnimatedIcon)
 Vue.component('AnimatedLink', AnimatedLink)
 Vue.component('AnimatedTitle', AnimatedTitle)
 Vue.component('Coffee', Coffee)
+Vue.component('Icon', Icon)
 Vue.component('ProgressBar', ProgressBar)
+Vue.component('Section', Section)
 Vue.component('Timeline', Timeline)
 
 Vue.directive('visibility', ObserveVisibility)
