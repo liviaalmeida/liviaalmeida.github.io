@@ -1,8 +1,8 @@
 <template>
   <div class="home">
 		<Profile />
-		<Work />
 		<Programming />
+		<Work />
 		<Presentations />
 		<Education />
 		<Projects />

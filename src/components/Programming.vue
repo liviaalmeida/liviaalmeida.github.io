@@ -1,10 +1,9 @@
 <template>
-	<div class="programming">
-		<AnimatedTitle
-			:image="require('@/assets/icons/programming.png')"
-			:text="$t('title.programming')"
-			:active="active"
-		/>
+	<Section
+		title-icon="programming"
+		:title="$t('title.programming')"
+		class="programming"
+	>
 		<div class="skills">
 			<div class="skill"
 			v-for="(skill,index) in skills" :key="index"
@@ -13,7 +12,7 @@
 				<ProgressBar :progress="skill.progress" />
 			</div>
 		</div>
-	</div>
+	</Section>
 </template>
 
 <script lang="ts">
@@ -64,20 +63,18 @@ export default Vue.extend({
 
 <style lang="scss" scoped>
 .programming {
-	@include flex-column;
-	justify-content: space-between;
-	flex-grow: 1;
+	background-color: $lv-lilac;
 }
 
 .skills {
-	@include flex-column-around;
+	@include flex-column;
+	justify-content: space-around;
 	align-self: center;
 	flex-grow: 1;
 }
 
 .skill {
 	align-self: flex-end;
-	font-family: 'Open Sans';
 	font-size: 1.7*$m;
 	margin-top: 3*$m;
 

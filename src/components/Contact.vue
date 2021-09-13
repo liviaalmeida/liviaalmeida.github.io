@@ -1,12 +1,15 @@
 <template>
-  <div class="contact">
-		<AnimatedLink
-      v-for="(contact, index) in contacts" :key="index"
-      :image="contact.image"
-      :text="contact.text"
-      :href="contact.href"
-    />
-  </div>
+  <Section small>
+    <div class="contact">
+      <AnimatedLink
+        v-for="(contact, index) in contacts"
+        :key="index"
+        :image="contact.image"
+        :text="contact.text"
+        :href="contact.href"
+      />
+    </div>
+  </Section>
 </template>
 
 <script lang="ts">
@@ -44,19 +47,22 @@ export default Vue.extend({
 
 <style lang="scss" scoped>
 .contact {
-	@include flex;
+	display: flex;
 	align-content: flex-end;
 	justify-content: space-between;
-	flex-wrap: wrap;
-	margin-top: 20px;
-
-	@media only screen and (max-width: 650px) {
-		flex-direction: column;
-		align-content: center;
-	}
 
   > *:not(:last-of-type) {
-    margin-bottom: 5*$m;
+    margin-right: 5*$m;
+  }
+
+  @include tablet {
+		flex-direction: column;
+		align-content: center;
+
+    > *:not(:last-of-type) {
+      margin-bottom: 5*$m;
+      margin-right: 0;
+    }
   }
 }
 </style>

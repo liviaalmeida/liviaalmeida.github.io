@@ -1,60 +1,71 @@
 <template>
-	<div class="profile">
-		<img :src="require('@/assets/images/self.png')">
-		<div>
-			<AnimatedTitle
-			:image="require('@/assets/icons/profile.png')"
-			:text="$t('title.profile')"
-			:active="active" />
-			<div class="profile-text"
-			@mouseover="active = true"
-			@mouseout="active = false">
-				<p v-for="(paragraph, p) in $t('profile')"
-				:key="p">
+	<Section
+		:title="$t('title.profile')"
+		title-icon="profile"
+		class="profile"
+	>
+		<div class="profile-content">
+			<img :src="require('@/assets/images/livia.jpeg')">
+			<div class="profile-text">
+				<p
+					v-for="(paragraph, p) in $t('profile')"
+					:key="p"
+				>
 					{{paragraph}}
 				</p>
 			</div>
 		</div>
-	</div>
+	</Section>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
 
 export default Vue.extend({
-	data() {
-		return {
-			active: false,
-		}
-	},
+
 })
 </script>
 
 <style lang="scss">
-$photo-size: 16*$m;
 
 .profile {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	gap: 30px;
-
 	img {
-		width: $photo-size;
-		size: $photo-size;
-		border-radius: 50%;
-		margin-bottom: 2*$m;
+		border: 10px solid white;
+		border-radius: 5px;
+		height: 30*$m;
+
+		@include tablet {
+			border-radius: 50%;
+			height: 20*$m;
+			width: 20*$m;
+			object-fit: cover;
+			object-position: 50% 0;
+		}
+	}
+
+	&-content {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		@include tablet {
+			flex-direction: column;
+		}
 	}
 
 	&-text {
-		max-width: 100%;
-		margin-top: .7*$m;
+		max-width: 350px;
+		margin-left: 5*$m;
+
+		@include tablet {
+			margin-left: 0;
+			margin-top: $m;
+		}
 		
 		p {
-			font-family: 'Open Sans';
 			font-size: 1.8*$m;
 			text-align: justify;
-			line-height: 1.3;
+			line-height: 1.5;
 
 			&:not(:last-child) {
 				margin-bottom: .7*$m;
