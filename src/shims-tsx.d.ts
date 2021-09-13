@@ -11,11 +11,15 @@ declare global {
     }
   }
 
-  type TimeEvent = {
-    title: string;
-    duration?: string;
-    intro?: string;
-    description: string;
+  type Contact = {
+    image: string;
+    text: string;
+    href: string;
+  }
+
+  type Link = {
+    class: string;
+    text: string;
   }
 
   type Skill = {
@@ -23,10 +27,11 @@ declare global {
     progress: number;
   }
 
-  type Contact = {
-    image: string;
-    text: string;
-    href: string;
+  type TimeEvent = {
+    title: string;
+    duration?: string;
+    intro?: string;
+    description: string;
   }
 
 }
