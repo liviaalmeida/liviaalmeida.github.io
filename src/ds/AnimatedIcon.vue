@@ -2,8 +2,7 @@
 	<div :class="[
 		{ 'icon--active': active },
 		'icon',
-	]">
-	</div>
+	]" />
 </template>
 
 <script lang="ts">
