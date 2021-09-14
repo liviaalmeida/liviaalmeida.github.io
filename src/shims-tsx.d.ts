@@ -22,7 +22,6 @@ declare global {
     subject: string;
     message: string;
     email?: string;
-    phone?: string;
   }
 
   type Link = {
