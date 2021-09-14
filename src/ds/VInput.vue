@@ -1,11 +1,13 @@
 <template>
   <div
     :class="['input', {
+      'input--disabled': disabled,
       'input--focused': focus,
     }]"
   >
     <label
       :class="['input-label', {
+        'input-label--disabled': disabled,
         'input-label--focused': focus,
       }]"
     >
@@ -50,6 +52,14 @@ export default Vue.extend({
       focus: false,
     }
   },
+  computed: {
+    disabled(): boolean {
+      return this.$attrs.disabled !== undefined &&
+        // eslint-disable-next-line
+        // @ts-ignore
+        this.$attrs.disabled !== false
+    },
+  },
   methods: {
     onBlur() {
       this.focus = false
@@ -75,6 +85,10 @@ $blur: rgba($lv-purple, .7);
   padding: 2px 5px;
   transition: border-color .5s;
 
+  &--disabled {
+    border-color: $lv-grey;
+  }
+
   &--focused {
     border-color: $lv-purple;
   }
@@ -84,7 +98,12 @@ $blur: rgba($lv-purple, .7);
     font-size: 13px;
     font-weight: 600;
     margin-bottom: .5*$m;
+    margin-left: .3*$m;
     transition: color .5s;
+
+    &--disabled {
+      color: $lv-grey;
+    }
 
     &--focused {
       color: $lv-purple;
