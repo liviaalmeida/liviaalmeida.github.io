@@ -53,7 +53,6 @@ export default Vue.extend({
 
 .profile {
   img {
-    border: 10px solid white;
     border-radius: 5px;
     height: 30*$m;
 
