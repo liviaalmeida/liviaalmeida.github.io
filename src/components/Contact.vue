@@ -1,6 +1,11 @@
 <template>
-  <Section small>
-    <div class="contact">
+  <Section
+    small
+    title-icon="message"
+    :title="$t('title.contact')"
+    class="contact"
+  >
+    <div class="contact-icons">
       <AnimatedLink
         v-for="(contact, index) in contacts"
         :key="index"
@@ -47,6 +52,9 @@ export default Vue.extend({
 
 <style lang="scss" scoped>
 .contact {
+  background-color: $lv-lilac;
+}
+.contact-icons {
 	display: flex;
 	align-content: flex-end;
 	justify-content: space-between;
