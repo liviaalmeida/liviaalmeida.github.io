@@ -1,9 +1,0 @@
-<template>
-  <div>
-		<Timeline
-      :icon="require('@/assets/icons/education.png')"
-      :timeEvents="$t('education')"
-      :title="$t('title.education')"
-    />
-  </div>
-</template>
