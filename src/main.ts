@@ -13,6 +13,8 @@ import Icon from '@/ds/Icon.vue'
 import ProgressBar from '@/ds/ProgressBar.vue'
 import Section from '@/ds/Section.vue'
 import Timeline from '@/ds/Timeline.vue'
+import VButton from '@/ds/VButton.vue'
+import VInput from '@/ds/VInput.vue'
 
 Vue.component('AnimatedIcon', AnimatedIcon)
 Vue.component('AnimatedLink', AnimatedLink)
@@ -22,6 +24,8 @@ Vue.component('Icon', Icon)
 Vue.component('ProgressBar', ProgressBar)
 Vue.component('Section', Section)
 Vue.component('Timeline', Timeline)
+Vue.component('VButton', VButton)
+Vue.component('VInput', VInput)
 
 Vue.directive('visibility', ObserveVisibility)
 Vue.directive('mask', VueMaskDirective)
