@@ -3,6 +3,7 @@ import App from './App.vue'
 import router from './router'
 import i18n from './i18n'
 import { ObserveVisibility } from 'vue-observe-visibility'
+import { VueMaskDirective } from 'v-mask'
 
 import AnimatedIcon from '@/ds/AnimatedIcon.vue'
 import AnimatedLink from '@/ds/AnimatedLink.vue'
@@ -23,6 +24,7 @@ Vue.component('Section', Section)
 Vue.component('Timeline', Timeline)
 
 Vue.directive('visibility', ObserveVisibility)
+Vue.directive('mask', VueMaskDirective)
 
 Vue.config.productionTip = false
 

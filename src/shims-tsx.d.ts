@@ -17,6 +17,14 @@ declare global {
     href: string;
   }
 
+  type Email = {
+    name: string;
+    subject: string;
+    message: string;
+    email?: string;
+    phone?: string;
+  }
+
   type Link = {
     class: string;
     text: string;
