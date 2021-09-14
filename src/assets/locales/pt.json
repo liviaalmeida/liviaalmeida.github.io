@@ -7,12 +7,18 @@
     "presentations": "Apresentações",
     "profile": "Sobre mim",
     "programming": "Linguagens",
-    "projects": "Projetos"
+    "projects": "Projetos",
+    "contact": "Contato"
+  },
+  "menu": {
+    "about": "Sobre",
+    "programming": "Linguagens",
+    "experience": "Experiência"
   },
   "education": [
     {
-      "title": "UFMG",
-      "duration": "conclusão prevista 09/2021",
+      "title": "Universidade Federal de Minas Gerais (UFMG)",
+      "duration": "12/2021",
       "intro": "Bacharelado",
       "description": "Ciência da Computação"
     }
@@ -57,13 +63,15 @@
   "languages": [
     {
       "title": "Inglês",
+      "duration": "IELTS 7.5 - 06/03/2021",
       "intro": "Fluência:",
-      "description": "leitura fluente, escrita fluente, fala fluente<br>IELTS 8.0 - 25/10/2014"
+      "description": "leitura fluente, escrita fluente, fala fluente"
     },
     {
       "title": "Francês",
+      "duration": "Nível A1.3",
       "intro": "Fluência:",
-      "description": "leitura média, escrita básica, fala básica<br>Nível A1.3"
+      "description": "leitura média, escrita básica, fala básica"
     }
   ],
   "presentations": [

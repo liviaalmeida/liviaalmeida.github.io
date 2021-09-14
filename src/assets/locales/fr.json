@@ -7,12 +7,18 @@
     "presentations": "Conférence",
     "profile": "À propos de moi",
     "programming": "Compétences de Programmation",
-    "projects": "Projets"
+    "projects": "Projets",
+    "contact": "Contact"
+  },
+  "menu": {
+    "about": "À propos",
+    "programming": "Compétences",
+    "experience": "Expérience"
   },
   "education": [
     {
       "title": "Université Fédérale de Minas Gerais (UFMG)",
-      "duration": "terminée en 09/2021",
+      "duration": "fin 12/2021",
       "intro": "Baccalauréat",
       "description": "Informatique"
     }
@@ -57,13 +63,15 @@
   "languages": [
     {
       "title": "Anglais",
+      "duration": "IELTS 7.5 - 06/03/2021",
       "intro": "Compétence:",
-      "description": "compétente en lecture, compétente en écriture, compétente à l'oral<br>IELTS 8.0 - 25/10/2014"
+      "description": "compétente en lecture, compétente en écriture, compétente à l'oral"
     },
     {
       "title": "Français",
+      "duration": "Niveau A1.3",
       "intro": "Compétence:",
-      "description": "intermediáire en lecture, débutant en écriture, débutant à l'oral<br>Niveau A1.3"
+      "description": "intermediáire en lecture, débutant en écriture, débutant à l'oral"
     }
   ],
   "presentations": [

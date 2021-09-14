@@ -7,12 +7,18 @@
     "presentations": "Talks",
     "profile": "About me",
     "programming": "Programming Skills",
-    "projects": "Projects"
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "menu": {
+    "about": "About",
+    "programming": "Skills",
+    "experience": "Experience"
   },
   "education": [
     {
       "title": "Universidade Federal de Minas Gerais (UFMG)",
-      "duration": "due to 09/2021",
+      "duration": "due to 12/2021",
       "intro": "Bachelor's Degree",
       "description": "Computer Science"
     }
@@ -57,13 +63,15 @@
   "languages": [
     {
       "title": "English",
+      "duration": "IELTS 7.5 - 03/06/2021",
       "intro": "Proficiency:",
-      "description": "fluent reading, fluent writing, fluent speech<br>IELTS 8.0 - 25/10/2014"
+      "description": "fluent reading, fluent writing, fluent speech"
     },
     {
       "title": "French",
+      "duration": "Level A1.3",
       "intro": "Proficiency:",
-      "description": "intermediate reading, basic writing, basic speech<br>Level A1.3"
+      "description": "intermediate reading, basic writing, basic speech"
     }
   ],
   "presentations": [
