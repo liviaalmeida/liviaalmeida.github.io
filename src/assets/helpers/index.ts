@@ -1,6 +1,30 @@
+import jsCaptcha from 'js-captcha'
 const client = require('@/assets/helpers/smtp').Email
 
+export type captchaCallback = (
+  response: 'success' | 'error',
+  captcha: Element,
+  tries: number,
+) => void
+
 export default {
+  captcha(el: string, callback: captchaCallback): jsCaptcha {
+    return new jsCaptcha({
+      el,
+      callback,
+      canvasClass: 'captcha-canvas',
+      canvasStyle: {
+        fillStyle: 'rgb(60, 0, 70)',
+        font: '14px Open Sans',
+        textAlign: 'left',
+        textBaseline: 'top',
+        height: 14,
+        width: 45,
+      },
+      requiredValue: '=',
+    })
+  },
+
   elementStyle(el: Element | null): CSSStyleDeclaration {
     return (el as HTMLElement).style
   },
