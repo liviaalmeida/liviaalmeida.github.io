@@ -21,7 +21,6 @@ export default {
         
         CONTACT
         ${email.email || 'NO MAIL'}
-        ${email.phone || 'NO PHONE'}
         
         MESSAGE
         ${email.message}
