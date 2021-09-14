@@ -39,7 +39,7 @@ export default Vue.extend({
 <style lang="scss">
 .section {
   @include flex-column;
-  padding: 50px 30px;
+  padding: 50px;
   justify-content: center;
 
   &:not(&--small) {
@@ -53,6 +53,10 @@ export default Vue.extend({
   &-content {
     margin: 0 auto;
     max-width: 800px;
+
+    @include phone {
+      width: 100%;
+    }
   }
 }
 </style>
