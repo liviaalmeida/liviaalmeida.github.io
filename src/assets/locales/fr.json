@@ -1,14 +1,15 @@
 {
   "title": {
-    "position": "Développeuse Front-end",
+    "contact": "Contact",
     "education": "Education",
     "experience": "Expérience Professionnelle",
     "languages": "Langues",
+    "position": "Développeuse Front-end",
     "presentations": "Conférence",
     "profile": "À propos de moi",
     "programming": "Compétences de Programmation",
     "projects": "Projets",
-    "contact": "Contact"
+    "resume": "Curriculum vitæ"
   },
   "menu": {
     "about": "À propos",
@@ -91,7 +92,7 @@
     }
   ],
   "profile": [
-    "Mon objectif est de construire des produits qui résolvent des problèmes d'utilisateurs afin qu'ils fournissent une bonne utilisabilité. J'apprécie travailler en étroite collaboration avec les équipes de design, et particulièrement dans des environnements de travail coopératifs.",
+    "Mon objectif est de construire des produits qui améliorent la vie des gens tout en fournissant aussi une bonne utilisabilité. J'apprécie travailler en étroite collaboration avec les équipes de design, et particulièrement dans des environnements de travail coopératifs.",
     "Je m'intéresse principalement à l'architecture du code et sa qualité, design systems, et les animations CSS. J'ai acquis une très bonne maîtrise de JavaScript et TypeScript, ayant notamment travaillé avec les frameworks Angular et Vue."
   ],
   "projects": [
@@ -119,6 +120,14 @@
     "message": {
       "label": "Message",
       "placeholder": "Saisissez votre message"
+    },
+    "captcha": {
+      "label": "Je suis pas un robot",
+      "placeholder": "Somme",
+      "errors": {
+        "abused": "Trop de tentatives",
+        "incorrect": "Résultat incorrect"
+      }
     },
     "button": "Envoyer"
   }

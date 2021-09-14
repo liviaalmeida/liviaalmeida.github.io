@@ -1,14 +1,15 @@
 {
   "title": {
-    "position": "Desenvolvedora Front-end",
+    "contact": "Contato",
     "education": "Formação",
     "experience": "Experiência Profissional",
     "languages": "Idiomas",
+    "position": "Desenvolvedora Front-end",
     "presentations": "Apresentações",
     "profile": "Sobre mim",
     "programming": "Linguagens",
     "projects": "Projetos",
-    "contact": "Contato"
+    "resume": "Currículo"
   },
   "menu": {
     "about": "Sobre",
@@ -91,7 +92,7 @@
     }
   ],
   "profile": [
-    "Meu objetivo é construir produtos que resolvem os problemas de seus usuários enquanto oferecem ótima usabilidade. Gosto de trabalhar próxima ao time de design, em ambientes altamente colaborativos.",
+    "Meu objetivo é construir produtos que melhorem a vida das pessoas enquanto oferecem ótima usabilidade. Gosto de trabalhar próxima ao time de design, em ambientes altamente colaborativos.",
     "Me interesso por arquitetura e qualidade de código, design systems, e animações em CSS. Tenho experiência com JavaScript e TypeScript, tendo trabalhado principalmente com os frameworks Angular e Vue."
   ],
   "projects": [
@@ -120,6 +121,15 @@
       "label": "Mensagem",
       "placeholder": "Digite aqui sua mensagem"
     },
+    "captcha": {
+      "label": "Não sou um robô",
+      "placeholder": "Soma",
+      "errors": {
+        "abused": "Muitas tentativas",
+        "incorrect": "Resultado incorreto"
+      }
+    },
+    "sent": "Mensagem enviada com sucesso!",
     "button": "Enviar"
   }
 }
