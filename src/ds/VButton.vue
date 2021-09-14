@@ -3,8 +3,12 @@
     v-bind="$attrs"
     v-on="$listeners"
     :disabled="$attrs.disabled || loading"
+    @click="onClick"
     class="button"
   >
+    <span
+      class="button-wave"
+    />
     <span
       v-if="loading"
       class="button-loading"
@@ -26,11 +30,29 @@ export default Vue.extend({
       type: Boolean,
     },
   },
+  computed: {
+    wave(): HTMLSpanElement {
+      return this.$el.querySelector('.button-wave') as HTMLSpanElement
+    },
+  },
+  methods: {
+    async onClick() {
+      const animate = 'animate'
+      const { classList } = this.wave
+      if (classList.contains(animate)) return
+
+      classList.add('animate')
+      setTimeout(() => {
+        classList.remove('animate')
+      }, 400)
+    },
+  },
 })
 </script>
 
 <style lang="scss">
 $color: rgba($lv-purple, .7);
+$height: 45px;
 $loading: 25px;
 
 .button {
@@ -41,13 +63,15 @@ $loading: 25px;
   display: block;
   font-family: 'Bebas Neue';
   font-size: 20px;
-  height: 45px;
+  height: $height;
   min-width: 150px;
   margin: 0 auto;
+  overflow: hidden;
+  position: relative;
 
   &:disabled {
-    background-color: rgba($lv-grey, .3);
     border-color: $lv-grey;
+    color: rgba($lv-grey, .5);
   }
 
   &:not(:disabled) {
@@ -64,9 +88,32 @@ $loading: 25px;
     width: $loading;
     margin-top: 4px;
   }
+
+  &-wave {
+    background-color: rgba(black, .2);
+    display: inline-block;
+    height: $height;
+    width: $height;
+    position: absolute;
+    top: -2px;
+    left: calc(50% - $width);
+    transform: scaleX(0);
+    transition: all .4s ease-in;
+
+    &.animate {
+			animation: wave .4s ease-in 1;
+    }
+  }
 }
 
 @keyframes spin {
   100% { transform: rotate(360deg); }
+}
+
+@keyframes wave {
+	100% {
+		opacity: 0;
+		transform: scaleX(10);
+	}
 }
 </style>
