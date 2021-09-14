@@ -33,27 +33,30 @@ export default {
     return `${num}rem`
   },
 
-  sendMail(email: Email): void {
-    client.send({
-      SecureToken: process.env.VUE_APP_MJ_SECURE_TOKEN,
-      From: process.env.VUE_APP_MJ_FROM,
-      To: 'leave.ah@gmail.com',
-      Subject: email.subject,
-      Body: `
-        FROM
-        ${email.name}
-        
-        CONTACT
-        ${email.email || 'NO MAIL'}
-        
-        MESSAGE
-        ${email.message}
-      `,
-    }).then(
-      (message: string) => {
-        if (!/^OK$/.test(message)) window.alert(message)
-        else window.alert('Success')
-      },
-    )
+  sendMail(email: Email): Promise<void> {
+    return new Promise((resolve, reject) => {
+      try {
+        client.send({
+          SecureToken: process.env.VUE_APP_MJ_SECURE_TOKEN,
+          From: process.env.VUE_APP_MJ_FROM,
+          To: 'leave.ah@gmail.com',
+          Subject: email.subject,
+          Body: `
+            FROM: ${email.name}
+            |
+            CONTACT: ${email.email || 'NO MAIL'}
+            |
+            MESSAGE: ${email.message}
+          `,
+        }).then(
+          (message: string) => {
+            if (!/^OK$/.test(message)) reject(message)
+            resolve()
+          },
+        )
+      } catch (error) {
+        reject(error)
+      }
+    })
   },
 }
