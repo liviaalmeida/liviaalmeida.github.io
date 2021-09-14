@@ -13,24 +13,26 @@
     >
       {{ label }}
     </label>
-    <textarea
-      v-if="$attrs.type === 'textarea'"
-      v-bind="$attrs"
-      v-on="$listeners"
-      class="input-textarea"
-      @blur="onBlur"
-      @focus="onFocus"
-      @input="onModel($event.target)"
-    />
-    <input
-      v-else
-      v-bind="$attrs"
-      v-on="$listeners"
-      class="input-input"
-      @blur="onBlur"
-      @focus="onFocus"
-      @input="onModel($event.target)"
-    >
+    <div class="input-wrapper">
+      <textarea
+        v-if="$attrs.type === 'textarea'"
+        v-bind="$attrs"
+        v-on="$listeners"
+        class="input-textarea"
+        @blur="onBlur"
+        @focus="onFocus"
+        @input="onModel($event.target)"
+      />
+      <input
+        v-else
+        v-bind="$attrs"
+        v-on="$listeners"
+        class="input-input"
+        @blur="onBlur"
+        @focus="onFocus"
+        @input="onModel($event.target)"
+      >
+    </div>
   </div>
 </template>
 
@@ -110,12 +112,17 @@ $blur: rgba($lv-purple, .7);
     }
   }
 
+  &-wrapper {
+    display: flex;
+  }
+
   &-input,
   &-textarea {
     background-color: transparent;
     border: none;
     font-family: 'Open Sans';
     font-size: 14px;
+    width: 100%;
 
     &:focus {
       outline-color: transparent;
