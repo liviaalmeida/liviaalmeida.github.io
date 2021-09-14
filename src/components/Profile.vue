@@ -15,6 +15,14 @@
         </p>
       </div>
     </div>
+    <Timeline
+      v-for="info in infos"
+      :key="info.title"
+      :icon="info.icon"
+      :time-events="$t(info.items)"
+      :title="$t(info.title)"
+      class="profile-info"
+    />
   </Section>
 </template>
 
@@ -22,7 +30,22 @@
 import Vue from 'vue'
 
 export default Vue.extend({
-
+  computed: {
+    infos() {
+      return [
+        {
+          icon: 'education',
+          title: 'title.education',
+          items: 'education',
+        },
+        {
+          icon: 'language',
+          title: 'title.languages',
+          items: 'languages',
+        },
+      ]
+    },
+  },
 })
 </script>
 
@@ -54,7 +77,7 @@ export default Vue.extend({
   }
 
   &-text {
-    max-width: 350px;
+    max-width: 400px;
     margin-left: 5*$m;
 
     @include tablet {
@@ -71,6 +94,11 @@ export default Vue.extend({
         margin-bottom: .7*$m;
       }
     }
+  }
+
+  &-info {
+    margin: 6*$m auto 0;
+    max-width: 420px;
   }
 }
 </style>
