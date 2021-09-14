@@ -102,5 +102,24 @@
       "intro": "Database Query Learning",
       "description": "The goal of sq-learn is to help everyone who wants to learn queries in SQL by having an intuitive interface to visualize the database."
     }
-  ]
+  ],
+  "contact": {
+    "name": {
+      "label": "Name",
+      "placeholder": "Type your name"
+    },
+    "subject": {
+      "label": "Subject",
+      "placeholder": "Type the subject"
+    },
+    "email": {
+      "label": "E-mail",
+      "placeholder": "Type your e-mail"
+    },
+    "message": {
+      "label": "Message",
+      "placeholder": "Type your message here"
+    },
+    "button": "Send"
+  }
 }

@@ -102,5 +102,24 @@
       "intro": "Apprentissage des requêtes de base de données",
       "description": "Le but de sq-learn est de aider à l'apprentissage des requêtes SQL via une interface intuitive pour visualiser la base de données."
     }
-  ]
+  ],
+  "contact": {
+    "name": {
+      "label": "Nom",
+      "placeholder": "Saisissez votre nom"
+    },
+    "subject": {
+      "label": "Objet",
+      "placeholder": "Saisissez l'objet de votre message"
+    },
+    "email": {
+      "label": "E-mail",
+      "placeholder": "Saisissez votre adresse e-mail"
+    },
+    "message": {
+      "label": "Message",
+      "placeholder": "Saisissez votre message"
+    },
+    "button": "Envoyer"
+  }
 }

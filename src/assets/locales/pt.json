@@ -102,5 +102,24 @@
       "intro": "Aprendizado em consultas a bancos de dados",
       "description": "O objetivo do sq-learn é ajudar no aprendizado de consultas em SQL através de uma interface intuitiva que permite visualizar o banco de dados."
     }
-  ]
+  ],
+  "contact": {
+    "name": {
+      "label": "Nome",
+      "placeholder": "Digite seu nome"
+    },
+    "subject": {
+      "label": "Assunto",
+      "placeholder": "Digite o assunto"
+    },
+    "email": {
+      "label": "E-mail",
+      "placeholder": "Digite seu e-mail"
+    },
+    "message": {
+      "label": "Mensagem",
+      "placeholder": "Digite aqui sua mensagem"
+    },
+    "button": "Enviar"
+  }
 }
