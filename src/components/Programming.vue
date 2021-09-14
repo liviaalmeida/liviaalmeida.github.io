@@ -71,6 +71,9 @@ export default Vue.extend({
 	justify-content: space-around;
 	align-self: center;
 	flex-grow: 1;
+  margin: 0 auto;
+  max-width: 226px;
+  transform: translateX(-20px);
 }
 
 .skill {
