@@ -10,26 +10,30 @@
         @click="onNav(link.class)"
         class="menu-link"
       >
-        {{ link.text }}
+        {{ $t(link.text) }}
       </button>
     </nav>
     <MenuButton
       v-model="open"
       class="menu-button"
     />
-    <div
-      v-if="open"
-      class="menu-drop"
-    >
-      <button
-        v-for="link in links"
-        :key="link.text"
-        @click="onNav(link.class)"
-        class="menu-link"
+    <transition name="dropdown">
+      <div
+        v-if="open"
+        :class="['menu-drop', {
+          'menu-drop--background': background,
+        }]"
       >
-        {{ link.text }}
-      </button>
-    </div>
+        <button
+          v-for="link in links"
+          :key="link.text"
+          @click="onNav(link.class)"
+          class="menu-link"
+        >
+          {{ $t(link.text) }}
+        </button>
+      </div>
+    </transition>
   </div>
 </template>
 
@@ -56,16 +60,20 @@ export default Vue.extend({
     links(): Array<Link> {
       return [
         {
-          text: 'Sobre',
+          text: 'menu.about',
           class: 'profile',
         },
         {
-          text: 'Linguagens',
+          text: 'menu.programming',
           class: 'programming',
         },
         {
-          text: 'Experiência',
-          class: '',
+          text: 'menu.experience',
+          class: 'experience',
+        },
+        {
+          text: 'title.contact',
+          class: 'contact',
         },
       ]
     },
@@ -96,8 +104,18 @@ export default Vue.extend({
 
 <style lang="scss">
 $height: 60px;
+$link: 35px;
+
+@mixin background {
+  transition: background-color 1s;
+
+  &--background {
+    background-color: darken($lv-purple, 10%);
+  }
+}
 
 .menu {
+  @include background;
   background-color: $lv-purple;
   width: 100%;
   height: $height;
@@ -105,13 +123,8 @@ $height: 60px;
   align-items: center;
   justify-content: space-between;
   padding: 10px;
-  transition: background-color 1s;
   position: relative;
   z-index: 200;
-
-  &--background {
-    background-color: darken($lv-purple, 10%);
-  }
 
   &-link {
     background-color: transparent;
@@ -121,6 +134,7 @@ $height: 60px;
     font-family: 'Bebas Neue';
     font-size: 2.5*$m;
     font-weight: 700;
+    height: $link;
     margin: 0 2*$m;
     text-transform: uppercase;
   }
@@ -141,12 +155,30 @@ $height: 60px;
 
   &-drop {
     @include flex-column;
+    @include background;
     align-items: center;
     background-color: $lv-purple;
+    height: 4 * $link;
+    overflow: hidden;
     position: absolute;
     left: 0;
     top: $height;
+    transition: height .4s;
     width: 100%;
+  }
+}
+
+.dropdown {
+  &-enter {
+    height: 0;
+  }
+
+  &-enter-to {
+    height: 4 * $link;
+  }
+
+  &-leave-to {
+    height: 0;
   }
 }
 </style>
