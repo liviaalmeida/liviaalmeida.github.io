@@ -5,6 +5,9 @@
     :title="$t('title.contact')"
     class="contact"
   >
+    <Message
+      class="contact-form"
+    />
     <div class="contact-icons">
       <AnimatedLink
         v-for="(contact, index) in contacts"
@@ -19,8 +22,12 @@
 
 <script lang="ts">
 import Vue from 'vue'
+import Message from '@/components/Message.vue'
 
 export default Vue.extend({
+  components: {
+    Message,
+  },
   data() {
     return {
       contacts: [
@@ -53,23 +60,28 @@ export default Vue.extend({
 <style lang="scss" scoped>
 .contact {
   background-color: $lv-lilac;
-}
-.contact-icons {
-	display: flex;
-	align-content: flex-end;
-	justify-content: space-between;
 
-  > *:not(:last-of-type) {
-    margin-right: 5*$m;
+  &-form {
+    margin-bottom: 6*$m;
   }
 
-  @include tablet {
-		flex-direction: column;
-		align-content: center;
+  &-icons {
+    display: flex;
+    align-content: flex-end;
+    justify-content: space-between;
 
     > *:not(:last-of-type) {
-      margin-bottom: 5*$m;
-      margin-right: 0;
+      margin-right: 5*$m;
+    }
+
+    @include tablet {
+      flex-direction: column;
+      align-content: center;
+
+      > *:not(:last-of-type) {
+        margin-bottom: 5*$m;
+        margin-right: 0;
+      }
     }
   }
 }
