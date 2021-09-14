@@ -1,6 +1,7 @@
 <template>
 	<component
 		:is="icon"
+    :class="[ 'icon', `icon--${name}`]"
 	/>
 </template>
 
