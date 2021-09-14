@@ -1,5 +1,15 @@
 <template>
   <div class="timeline">
+    <div class="timeline-header"
+    v-if="icon && title">
+      <Icon
+        :name="icon"
+      />
+      <div class="timeline-title">
+        {{ title }}
+        <div class="timeline-hr" />
+      </div>
+    </div>
     <ol class="timeline-list">
       <li
         v-for="(timeEvent, index) in timeEvents"
@@ -47,9 +57,17 @@ export default Vue.extend({
     }
   },
   props: {
+    icon: {
+      required: true,
+      type: String,
+    },
     timeEvents: {
       type: Array as () => TimeEvent[],
       required: true,
+    },
+    title: {
+      required: true,
+      type: String,
     },
   },
 })
@@ -58,11 +76,37 @@ export default Vue.extend({
 <style lang="scss" scoped>
 $border: 0.3*$m solid $lv-purple;
 $bullet-size: 1.3*$m;
+$icon: 35px;
+
+.timeline-header {
+  display: flex;
+  align-items: center;
+  font-family: 'Bebas Neue';
+  font-size: 24px;
+
+  svg {
+    height: $icon;
+    width: $icon;
+    fill: $lv-purple;
+  }
+}
+
+.timeline-title {
+  width: 100%;
+  margin-left: .5*$m;
+}
+
+.timeline-hr {
+  background-color: transparent;
+  border-top: 2px solid $lv-purple;
+  height: 0;
+  margin: 0;
+}
 
 .timeline-list {
   list-style: none;
   padding: 0 0 0 2*$m;
-  margin: 0 0 0 3*$m;
+  margin: 0 0 0 1.4*$m;
   border-left: $border;
   z-index: 0;
 
