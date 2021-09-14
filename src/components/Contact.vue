@@ -1,6 +1,5 @@
 <template>
   <Section
-    small
     title-icon="message"
     :title="$t('title.contact')"
     class="contact"
@@ -16,6 +15,9 @@
         :text="contact.text"
         :href="contact.href"
       />
+    </div>
+    <div class="contact-copyright">
+      Copyright © Lívia Almeida
     </div>
   </Section>
 </template>
@@ -61,14 +63,11 @@ export default Vue.extend({
 .contact {
   background-color: $lv-lilac;
 
-  &-form {
-    margin-bottom: 6*$m;
-  }
-
   &-icons {
     display: flex;
     align-content: flex-end;
     justify-content: space-between;
+    margin: 7*$m auto 0;
 
     > *:not(:last-of-type) {
       margin-right: 5*$m;
@@ -83,6 +82,12 @@ export default Vue.extend({
         margin-right: 0;
       }
     }
+  }
+
+  &-copyright {
+    font-size: 12px;
+    text-align: center;
+    transform: translateY(25px);
   }
 }
 </style>
