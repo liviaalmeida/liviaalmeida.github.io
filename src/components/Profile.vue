@@ -11,8 +11,12 @@
           v-for="(paragraph, p) in $t('profile')"
           :key="p"
         >
-          {{paragraph}}
+          {{ paragraph }}
         </p>
+        <VButton>
+          <Icon name="download" />
+          {{ $t('title.resume') }}
+        </VButton>
       </div>
     </div>
     <Timeline
@@ -69,6 +73,7 @@ export default Vue.extend({
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-bottom: 10*$m;
 
     @include tablet {
       flex-direction: column;
@@ -88,15 +93,16 @@ export default Vue.extend({
       font-size: 1.8*$m;
       text-align: justify;
       line-height: 1.5;
+      margin-bottom: .7*$m;
 
-      &:not(:last-child) {
-        margin-bottom: .7*$m;
+      &:last-of-type {
+        margin-bottom: 1.5*$m;
       }
     }
   }
 
   &-info {
-    margin: 6*$m auto 0;
+    margin: 6*$m auto;
     max-width: 420px;
   }
 }

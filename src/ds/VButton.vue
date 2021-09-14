@@ -53,7 +53,7 @@ export default Vue.extend({
 <style lang="scss">
 $color: rgba($lv-purple, .7);
 $height: 45px;
-$loading: 25px;
+$icon: 25px;
 
 .button {
   background-color: transparent;
@@ -64,7 +64,7 @@ $loading: 25px;
   font-family: 'Bebas Neue';
   font-size: 20px;
   height: $height;
-  min-width: 150px;
+  min-width: 200px;
   margin: 0 auto;
   overflow: hidden;
   position: relative;
@@ -78,14 +78,22 @@ $loading: 25px;
     cursor: pointer;
   }
 
+  svg {
+    height: $icon;
+    width: $icon;
+    fill: $color;
+    margin-right: .3*$m;
+    transform: translateY(1px);
+  }
+
   &-loading {
     animation: spin 1s ease-in 0s infinite;
     border: 5px solid $color;
     border-right-color: transparent;
     border-radius: 50%;
     display: inline-block;
-    height: $loading;
-    width: $loading;
+    height: $icon;
+    width: $icon;
     margin-top: 4px;
   }
 
