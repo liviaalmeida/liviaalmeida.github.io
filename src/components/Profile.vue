@@ -14,7 +14,7 @@
           {{ paragraph }}
         </p>
         <a
-          href="https://livia.tech/resume/curriculum-en.pdf"
+          href="/resume/curriculum-en.pdf"
           download="resume.pdf"
           class="profile-resume"
         >
