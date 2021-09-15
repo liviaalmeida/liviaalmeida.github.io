@@ -71,7 +71,7 @@ $icon: 25px;
 
   &:disabled {
     border-color: $lv-grey;
-    color: rgba($lv-grey, .5);
+    color: $lv-grey;
   }
 
   &:not(:disabled) {
