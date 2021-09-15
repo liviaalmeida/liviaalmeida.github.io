@@ -1,5 +1,8 @@
 <template>
-  <div class="animated-link">
+  <div
+    class="animated-link"
+    v-visible="onVisible"
+  >
     <a
       :href="href"
       class="icon"
@@ -42,6 +45,13 @@ export default Vue.extend({
     href: {
       type: String,
       required: true,
+    },
+  },
+  methods: {
+    onVisible(visible: boolean) {
+      this.active = visible
+
+      if (visible) setTimeout(() => this.active = false, 1000)
     },
   },
 })

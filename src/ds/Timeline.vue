@@ -1,5 +1,11 @@
 <template>
-  <div class="timeline">
+  <div
+    v-visible="{
+      callback: onVisible,
+      throttle: 200,
+    }"
+    class="timeline"
+  >
     <div class="timeline-header"
     v-if="icon && title">
       <Icon
@@ -11,6 +17,10 @@
       </div>
     </div>
     <ol class="timeline-list">
+      <div
+        v-if="visible"
+        class="timeline-list-line"
+      />
       <li
         v-for="(timeEvent, index) in timeEvents"
         :key="index"
@@ -54,6 +64,7 @@ export default Vue.extend({
   data() {
     return {
       active: false,
+      visible: false,
     }
   },
   props: {
@@ -68,6 +79,11 @@ export default Vue.extend({
     title: {
       required: true,
       type: String,
+    },
+  },
+  methods: {
+    onVisible(visible: boolean) {
+      this.visible = visible
     },
   },
 })
@@ -105,10 +121,23 @@ $icon: 35px;
 
 .timeline-list {
   list-style: none;
-  padding: 0 0 0 2*$m;
+  padding: 0 0 0 2.4*$m;
   margin: 0 0 0 1.4*$m;
-  border-left: $border;
   z-index: 0;
+  position: relative;
+
+  &-line {
+    background-color: $lv-purple;
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0.3*$m;
+    transform-origin: top;
+    @include animation-on-load(grow-line);
+  }
 
   li {
     position: relative;
@@ -128,7 +157,7 @@ $icon: 35px;
       border: $border;
       content: '';
       top: 0.5*$m;
-      left: -3.1*$m;
+      left: -3.2*$m;
       z-index: 2;
       transition: all $animation-time ease-in;
       @include animation-on-load(grow-ball);
@@ -177,6 +206,12 @@ $icon: 35px;
 @keyframes grow-ball {
   0% {
     transform: scale(0);
+  }
+}
+
+@keyframes grow-line {
+  0% {
+    transform: scaleY(0);
   }
 }
 </style>

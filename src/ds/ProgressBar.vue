@@ -1,6 +1,12 @@
 <template>
-	<div class="progress-bar">
-		<div class="progress" />
+	<div
+    v-visible="onVisible"
+    class="progress"
+  >
+		<div
+      v-if="visible"
+      class="progress-bar"
+    />
 	</div>
 </template>
 
@@ -14,27 +20,27 @@ export default Vue.extend({
       type: Number,
       required: true,
     },
-    width: {
-      type: Number,
-      required: false,
-      default: 8,
-    },
+  },
+  data() {
+    return {
+      visible: false,
+    }
   },
   computed: {
-    elStyle(): CSSStyleDeclaration {
-      return helper.elementStyle(this.$el)
-    },
     progressStyle(): CSSStyleDeclaration {
       return helper.elementStyle(this.$el.firstElementChild)
     },
   },
-  mounted() {
-    this.defineWidth()
-  },
   methods: {
     defineWidth() {
-      this.elStyle.width = helper.numberToRem(this.width)
-      this.progressStyle.width = helper.numberToRem(this.progress * this.width)
+      const bar = this.$el.firstElementChild as HTMLDivElement
+      bar.style.width = `${this.progress * 100}%`
+    },
+    onVisible(visible: boolean) {
+      this.visible = visible
+      if (!visible) return
+
+      this.$nextTick(() => this.defineWidth())
     },
   },
 })
@@ -44,18 +50,19 @@ export default Vue.extend({
 $height: $m;
 $border-radius: .5*$m;
 
-.progress-bar {
+.progress {
 	display: inline-flex;
 	background-color: rgba($lv-purple, .5);
 	height: $height;
 	border-radius: $border-radius;
+  width: 12.5*$m;
 
-	&:hover .progress {
+	&:hover .progress-bar {
 		animation: barGrow ease-in-out 2s infinite alternate;
 		transform-origin: 0;
 	}
 
-	.progress {
+	&-bar {
 		background-color: $lv-purple;
 		height: $height;
 		border-radius: $border-radius;
