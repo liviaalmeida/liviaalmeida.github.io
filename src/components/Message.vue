@@ -48,7 +48,7 @@
       :disabled="!valid || disabled"
       :loading="sending"
     >
-      Send
+      {{ $t('contact.button') }}
     </VButton>
     
     <Modal
