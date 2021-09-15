@@ -104,7 +104,7 @@ $icon: 25px;
     width: $height;
     position: absolute;
     top: -2px;
-    left: calc(50% - $width);
+    left: calc(50% - 23px);
     transform: scaleX(0);
     transition: all .4s ease-in;
 
