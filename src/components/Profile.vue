@@ -13,10 +13,16 @@
         >
           {{ paragraph }}
         </p>
-        <VButton>
-          <Icon name="download" />
-          {{ $t('title.resume') }}
-        </VButton>
+        <a
+          href="https://livia.tech/resume/curriculum-en.pdf"
+          download="resume.pdf"
+          class="profile-resume"
+        >
+          <VButton>
+            <Icon name="download" />
+            {{ $t('title.resume') }}
+          </VButton>
+        </a>
       </div>
     </div>
     <Timeline
@@ -99,6 +105,13 @@ export default Vue.extend({
         margin-bottom: 1.5*$m;
       }
     }
+  }
+
+  &-resume {
+    display: block;
+    text-decoration: none;
+    margin: 0 auto;
+    width: 200px;
   }
 
   &-info {
