@@ -90,7 +90,7 @@ export default Vue.extend({
       this.open = false
     },
     onScroll() {
-      this.background = window.scrollY > window.innerHeight - this.heigth - 1
+      this.background = window.scrollY > this.heigth + 1
     },
   },
   mounted() {
@@ -105,12 +105,11 @@ export default Vue.extend({
 <style lang="scss">
 $height: 60px;
 $link: 35px;
+$transition: background-color 1s;
 
 @mixin background {
-  transition: background-color 1s;
-
   &--background {
-    background-color: darken($lv-purple, 10%);
+    background-color: darken($lv-purple, 5%);
   }
 }
 
@@ -124,6 +123,7 @@ $link: 35px;
   justify-content: space-between;
   padding: 10px;
   position: relative;
+  transition: $transition;
   z-index: 200;
 
   &-link {
@@ -163,7 +163,7 @@ $link: 35px;
     position: absolute;
     left: 0;
     top: $height;
-    transition: height .4s;
+    transition: height .4s, $transition;
     width: 100%;
   }
 }
