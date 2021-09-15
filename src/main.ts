@@ -31,7 +31,7 @@ Vue.component('Timeline', Timeline)
 Vue.component('VButton', VButton)
 Vue.component('VInput', VInput)
 
-Vue.directive('visibility', ObserveVisibility)
+Vue.directive('visible', ObserveVisibility)
 
 Vue.use(VueCookies)
 
