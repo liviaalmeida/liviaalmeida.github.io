@@ -5,11 +5,15 @@
 		class="programming"
 	>
 		<div class="skills">
-			<div class="skill"
-			v-for="(skill,index) in skills" :key="index"
-			@mouseover="active = true" @mouseout="active = false">
+			<div
+        v-for="(skill,index) in skills"
+        :key="index"
+        class="skill"
+      >
 				<span>{{skill.name}}</span>
-				<ProgressBar :progress="skill.progress" />
+				<ProgressBar
+          :progress="skill.progress"
+        />
 			</div>
 		</div>
 	</Section>
@@ -21,7 +25,6 @@ import Vue from 'vue'
 export default Vue.extend({
   data() {
     return {
-      active: false,
       skills: [
         {
           'name': 'C/C++',
