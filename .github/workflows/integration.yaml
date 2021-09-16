@@ -27,10 +27,11 @@ jobs:
       - name: 🔧 Install Yarn
         run: npm install -g yarn
 
+      - name: 🔨 Install Packages
+        run: yarn
+
       - name: 👌🏽 Lint
         run: yarn lint
 
-      - name: 🔨 Build
-        run: |
-          yarn
-          yarn build
+      - name: 🛠 Build
+        run: yarn build
