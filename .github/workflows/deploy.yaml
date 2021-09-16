@@ -1,14 +1,14 @@
 name: Continuous Deploy
 
 on:
-  push:
-    paths:
-      - dist/*
   workflow_run:
     workflows:
       - Continuous Integration
     types:
       - completed
+  push:
+    paths:
+      - dist/*
 
 jobs:
   FTP-Deploy-Action:
@@ -23,8 +23,8 @@ jobs:
     - name: FTP-Deploy-Action
       uses: SamKirkland/FTP-Deploy-Action@master
       with:
-        ftp-server: ${{ secrets.FTP_HOST }}
-        ftp-username: ${{ secrets.FTP_USERNAME }}
-        ftp-password: ${{ secrets.FTP_PASSWORD }}
+        server: ${{ secrets.FTP_HOST }}
+        username: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
         local-dir: dist/
         server-dir: public_html/
