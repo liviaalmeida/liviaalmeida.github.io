@@ -1,0 +1,30 @@
+name: Continuous Deploy
+
+on:
+  push:
+    paths:
+      - dist/*
+  workflow_run:
+    workflows:
+      - Continuous Integration
+    types:
+      - completed
+
+jobs:
+  FTP-Deploy-Action:
+    name: FTP-Deploy-Action
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2.1.0
+      with:
+        fetch-depth: 2
+
+    - name: FTP-Deploy-Action
+      uses: SamKirkland/FTP-Deploy-Action@master
+      with:
+        ftp-server: ${{ secrets.FTP_HOST }}
+        ftp-username: ${{ secrets.FTP_USERNAME }}
+        ftp-password: ${{ secrets.FTP_PASSWORD }}
+        local-dir: dist/
+        server-dir: public_html/
