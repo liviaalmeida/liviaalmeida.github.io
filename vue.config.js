@@ -1,4 +1,16 @@
 module.exports = {
+  chainWebpack: config => {
+    config.module
+      .rule('images')
+      .test(/\.(png|jpe?g)(\?.*)?$/)
+      .use('url-loader')
+      .loader('file-loader')
+      .tap(options => {
+        options.name = 'img/[name].[ext]'
+        return options
+      })
+  },
+
   css: {
     loaderOptions: {
       scss: {
