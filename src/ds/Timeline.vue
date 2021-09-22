@@ -29,6 +29,7 @@
       >
         <a
           v-if="timeEvent.link"
+          @click="onEventClick(timeEvent.title)"
           :href="timeEvent.link"
           target="_blank"
         >
@@ -58,6 +59,7 @@
 </template>
 
 <script lang="ts">
+import mixpanel from 'mixpanel-browser'
 import Vue from 'vue'
 
 export default Vue.extend({
@@ -82,6 +84,11 @@ export default Vue.extend({
     },
   },
   methods: {
+    onEventClick(title: string) {
+      mixpanel.track('Event-click', {
+        event: title,
+      })
+    },
     onVisible(visible: boolean) {
       this.visible = visible
     },
@@ -168,7 +175,7 @@ $icon: 35px;
     }
 
     a, h5, h6 {
-      display: inline-block;
+      display: inline;
     }
 
     a, a:visited {

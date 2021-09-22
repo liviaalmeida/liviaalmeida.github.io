@@ -14,6 +14,7 @@
           {{ paragraph }}
         </p>
         <a
+          @click="onDownload"
           href="/resume/curriculum-en.pdf"
           download="resume.pdf"
           class="profile-resume"
@@ -37,6 +38,7 @@
 </template>
 
 <script lang="ts">
+import mixpanel from 'mixpanel-browser'
 import Vue from 'vue'
 
 export default Vue.extend({
@@ -54,6 +56,13 @@ export default Vue.extend({
           items: 'languages',
         },
       ]
+    },
+  },
+  methods: {
+    onDownload() {
+      mixpanel.track('CV-download', {
+        lang: this.$i18n.locale,
+      })
     },
   },
 })

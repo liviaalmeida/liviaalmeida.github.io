@@ -4,6 +4,7 @@ import router from './router'
 import i18n from './i18n'
 import { ObserveVisibility } from 'vue-observe-visibility'
 import VueCookies from 'vue-cookies'
+import Mixpanel from 'mixpanel-browser'
 
 import AnimatedIcon from '@/ds/AnimatedIcon.vue'
 import AnimatedLink from '@/ds/AnimatedLink.vue'
@@ -34,6 +35,8 @@ Vue.component('VInput', VInput)
 Vue.directive('visible', ObserveVisibility)
 
 Vue.use(VueCookies)
+
+Mixpanel.init('993c79eddca27044b045ea158973bd99')
 
 Vue.config.productionTip = false
 

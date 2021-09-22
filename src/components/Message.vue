@@ -62,6 +62,7 @@
 import Vue from 'vue'
 import jsCaptcha from 'js-captcha'
 import helper from '@/assets/helpers'
+import mixpanel from 'mixpanel-browser'
 
 export default Vue.extend({
   data() {
@@ -115,9 +116,14 @@ export default Vue.extend({
       this.modal = true
     },
     sendMessage() {
+      mixpanel.track('Message-send')
+
       try {
         this.captchaElement.validate()
       } catch (error) {
+        mixpanel.track('Message-error-captcha', {
+          error: error.message,
+        })
         this.feedback = {
           ...this.feedback,
           title: 'Ops!',
@@ -151,12 +157,16 @@ export default Vue.extend({
             name: '',
             subject: '',
           }
+          mixpanel.track('Message-sent')
         }).catch((error) => {
           this.feedback = {
             message: error.message,
             title: 'Ops!',
             type: 'error',
           }
+          mixpanel.track('Message-error-send', {
+            error: error.message,
+          })
         }).finally(() => {
           this.sending = false
           this.sendFinish()

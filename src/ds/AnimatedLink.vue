@@ -4,6 +4,7 @@
     v-visible="onVisible"
   >
     <a
+      @click="onClick(href)"
       :href="href"
       class="icon"
     >
@@ -14,6 +15,7 @@
       />
     </a>
     <a
+      @click="onClick(href)"
       :href="href"
       @mouseover="active = true"
       @mouseout="active = false"
@@ -25,6 +27,7 @@
 </template>
 
 <script lang="ts">
+import mixpanel from 'mixpanel-browser'
 import Vue from 'vue'
 
 export default Vue.extend({
@@ -48,6 +51,11 @@ export default Vue.extend({
     },
   },
   methods: {
+    onClick(href: string) {
+      mixpanel.track('Icon-click', {
+        to: href,
+      })
+    },
     onVisible(visible: boolean) {
       this.active = visible
 

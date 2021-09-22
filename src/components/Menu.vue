@@ -41,6 +41,7 @@
 import Vue from 'vue'
 import Locale from '@/components/Locale.vue'
 import MenuButton from './MenuButton.vue'
+import mixpanel from 'mixpanel-browser'
 
 export default Vue.extend({
   components: {
@@ -88,6 +89,10 @@ export default Vue.extend({
       })
 
       this.open = false
+
+      mixpanel.track('Menu-click', {
+        to: toClass,
+      })
     },
     onScroll() {
       this.background = window.scrollY > this.heigth + 1

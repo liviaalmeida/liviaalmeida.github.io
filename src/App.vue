@@ -10,10 +10,14 @@
 <script lang="ts">
 import Vue from 'vue'
 import Header from '@/components/Header.vue'
+import mixpanel from 'mixpanel-browser'
 
 export default Vue.extend({
   components: {
     Header,
+  },
+  mounted() {
+    mixpanel.track('Page-view')
   },
 })
 </script>

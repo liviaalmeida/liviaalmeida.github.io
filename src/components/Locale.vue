@@ -18,6 +18,7 @@
 </template>
 
 <script lang="ts">
+import mixpanel from 'mixpanel-browser'
 import Vue from 'vue'
 
 export default Vue.extend({
@@ -35,7 +36,13 @@ export default Vue.extend({
   methods: {
     updateLocale({ target }: MouseEvent) {
       const value = (target as HTMLInputElement).value
-      if (value && value !== this.$i18n.locale) this.$i18n.locale = value
+      if (value && value !== this.$i18n.locale) {
+        mixpanel.track('Locale-change', {
+          from: this.$i18n.locale,
+          to: value,
+        })
+        this.$i18n.locale = value
+      }
     },
   },
 })
