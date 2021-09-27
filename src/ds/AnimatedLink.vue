@@ -7,6 +7,7 @@
       @click="onClick(href)"
       :href="href"
       class="icon"
+      rel="noopener"
     >
       <AnimatedIcon
         :image="image"

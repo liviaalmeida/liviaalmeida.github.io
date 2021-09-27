@@ -18,7 +18,7 @@
       class="menu-button"
     />
     <transition name="dropdown">
-      <div
+      <nav
         v-if="open"
         :class="['menu-drop', {
           'menu-drop--background': background,
@@ -32,7 +32,7 @@
         >
           {{ $t(link.text) }}
         </button>
-      </div>
+      </nav>
     </transition>
   </div>
 </template>

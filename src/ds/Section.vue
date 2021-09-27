@@ -1,5 +1,5 @@
 <template>
-  <div
+  <section
     :class="['section', {
       'section--small': small,
     }]"
@@ -13,7 +13,7 @@
     <div class="section-content">
       <slot name="default" />
     </div>
-  </div>
+  </section>
 </template>
 
 <script lang="ts">

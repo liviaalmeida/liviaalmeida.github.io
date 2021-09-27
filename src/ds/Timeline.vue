@@ -32,6 +32,7 @@
           @click="onEventClick(timeEvent.title)"
           :href="timeEvent.link"
           target="_blank"
+          rel="noopener"
         >
           {{ timeEvent.title }}
         </a>

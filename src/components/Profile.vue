@@ -18,6 +18,7 @@
           href="/resume/curriculum-en.pdf"
           download="resume.pdf"
           class="profile-resume"
+          rel="alternate"
         >
           <VButton>
             <Icon name="download" />
