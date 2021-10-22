@@ -1,0 +1,68 @@
+name: CI/CD
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  integration:
+    name: Integration
+    strategy:
+      matrix:
+        node-version: [14.16.1]
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 🚚 Git Checkout
+        uses: actions/checkout@v2
+
+      - name: ⚙️ Set Up Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: 🔧 Install Yarn
+        run: npm install -g yarn
+
+      - name: ⚙️ Install Packages
+        run: yarn
+
+      - name: 👌🏽 Lint
+        run: yarn lint
+
+      - name: 🔨 Build
+        run: yarn build
+
+      - name: 💾 Archive Build
+        uses: actions/upload-artifact@v2
+        with:
+          name: production
+          path: dist
+          retention-days: 1
+  
+  deploy:
+    name: Deploy
+    strategy:
+      matrix:
+        node-version: [14.16.1]
+    runs-on: ubuntu-latest
+    needs: integration
+
+    steps:
+      - name: 📠 Download Build
+        uses: actions/download-artifact@v2
+        with:
+          name: production
+    
+      - name: 📂 FTP Deploy
+        uses: SamKirkland/FTP-Deploy-Action@master
+        with:
+          server: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: dist/
+          dangerous-clean-slate: true
