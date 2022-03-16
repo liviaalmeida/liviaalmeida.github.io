@@ -48,11 +48,6 @@ export default Vue.extend({
           text: 'leave.ah@gmail.com',
           href: 'mailto:leave.ah@gmail.com',
         },
-        {
-          image: require('@/assets/icons/phone.png'),
-          text: '+55 31 99435 8223',
-          href: 'tel:+5531994358223',
-        },
       ] as Contact[],
     }
   },
