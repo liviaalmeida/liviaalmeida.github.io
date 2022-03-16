@@ -120,7 +120,8 @@ export default Vue.extend({
 
       try {
         this.captchaElement.validate()
-      } catch (error) {
+      } catch (exception) {
+        const error = exception as Error
         mixpanel.track('Message-error-captcha', {
           error: error.message,
         })
