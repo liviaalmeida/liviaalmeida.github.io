@@ -1,4 +1,6 @@
 module.exports = {
+  assetsDir: 'assets',
+
   chainWebpack: config => {
     config.module
       .rule('images')
@@ -18,6 +20,8 @@ module.exports = {
       },
     },
   },
+
+  outputDir: '../',
 
   pluginOptions: {
     i18n: {
