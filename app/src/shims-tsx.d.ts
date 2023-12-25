@@ -38,6 +38,7 @@ declare global {
     title: string;
     duration?: string;
     intro?: string;
+    link?: string;
     description: string;
   }
 
