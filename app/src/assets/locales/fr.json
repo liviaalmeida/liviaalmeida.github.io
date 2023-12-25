@@ -19,7 +19,7 @@
   "education": [
     {
       "title": "Université Fédérale de Minas Gerais (UFMG)",
-      "duration": "2021",
+      "duration": "2022",
       "intro": "Baccalauréat",
       "description": "Informatique"
     }
@@ -29,15 +29,15 @@
       "title": "Ecosia",
       "link": "https://ecosia.org",
       "duration": "avr 2021 - aujourd'hui",
-      "intro": "Ingénieure Logiciel:",
-      "description": "travaillant comme ingénieure logiciel pour le moteur de recherche qui plantent des arbres. Utilisant Vue.JS et Nuxt avec HTML et SCSS dans le front-end."
+      "intro": "Ingénieure Front-end:",
+      "description": "travaillant comme ingénieure front-end pour le moteur de recherche qui plantent des arbres. Utilisant JavaScript pour Vue, Nuxt et Vite, ainsi que HTML et SCSS."
     },
     {
       "title": "Symbaros",
       "link": "https://symbaros.com.br",
-      "duration": "août 2021 - aujourd'hui",
+      "duration": "août 2021 - mars 2022",
       "intro": "Associée / Consultante:",
-      "description": "traivallant comme consultante architecte front-end pour une plateforme spécialisée dans la location d'espaces commerciaux. Configurant l'architecture et créant un site web utilisant Vue.JS."
+      "description": "traivallant comme consultante architecte front-end pour une plateforme spécialisée dans la location d'espaces commerciaux à l'aide de l'IA. Configurant l'architecture et créant un site web utilisant Vue.JS."
     },
     {
       "title": "Questrade",
@@ -48,16 +48,16 @@
     },
     {
       "title": "Take.Blip",
-      "link": "https://take.net",
+      "link": "https://blip.ai",
       "duration": "juin 2019 - avr 2020",
       "intro": "Développeuse Full Stack:",
       "description": "j'ai travaillé comme développeuse full stack utilisant AngularJS et VueJS pour front-end, .NET core pour back-end, et occasionnellement Python pour analyses de modèles NLP."
     },
     {
       "title": "Take.Blip",
-      "link": "https://take.net",
+      "link": "https://blip.ai",
       "duration": "jan 2018 - mai 2019",
-      "intro": "Stage de Développement:",
+      "intro": "Stagiaire en Informatique:",
       "description": "j'ai travaillé comme interne front-end dans la plateforme de construction de chatbot BLiP.ai utilisant des frameworks AngularJS et VueJS, j'ai fourni des solutions sur l'intelligence artificielle en utilisant Python, et j'ai analysé des modelès NLP basés sur des intentions et entités."
     }
   ],
@@ -70,7 +70,7 @@
     },
     {
       "title": "Français",
-      "duration": "Niveau A1.3",
+      "duration": "Niveau A2",
       "intro": "Compétence:",
       "description": "intermediáire en lecture, débutant en écriture, débutant à l'oral"
     }

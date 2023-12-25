@@ -19,7 +19,7 @@
   "education": [
     {
       "title": "Universidade Federal de Minas Gerais (UFMG)",
-      "duration": "2021",
+      "duration": "2022",
       "intro": "Bacharelado",
       "description": "Ciência da Computação"
     }
@@ -30,14 +30,14 @@
       "link": "https://ecosia.org",
       "duration": "abr 2021 - presente",
       "intro": "Software Engineer:",
-      "description": "atuando como software engineer no motor de busca que planta árvores. Usando Vue.JS e Nuxt com HTML e SCSS no front-end."
+      "description": "atuando como software engineer no motor de busca que planta árvores. Usando JavaScript com Vue, Nuxt e Vite, assim como HTML e SCSS."
     },
     {
       "title": "Symbaros",
       "link": "https://symbaros.com.br",
-      "duration": "ago 2021 - presente",
+      "duration": "ago 2021 - mar 2022",
       "intro": "Sócia / Consultora:",
-      "description": "atuando como consultora em arquitetura front-end para uma plataforma especializada em aluguel de espaços comerciais. Definindo arquitetura e construindo um website em Vue.JS."
+      "description": "atuando como consultora em arquitetura front-end para uma plataforma especializada em aluguel de espaços comerciais usando IA. Definindo arquitetura e construindo um website em Vue.JS."
     },
     {
       "title": "Questrade",
@@ -48,16 +48,16 @@
     },
     {
       "title": "Take.Blip",
-      "link": "https://take.net",
+      "link": "https://blip.ai",
       "duration": "jun 2019 - mai 2020",
       "intro": "Full Stack Developer:",
       "description": "atuação em front-end utilizando os frameworks AngularJS e VueJS, back-end com .NET core e soluções de inteligência artificial com Python."
     },
     {
       "title": "Take.Blip",
-      "link": "https://take.net",
+      "link": "https://blip.ai",
       "duration": "jan 2018 - mai 2019",
-      "intro": "Estágio em desenvolvimento:",
+      "intro": "Estagiária em desenvolvimento:",
       "description": "atuação no front-end da plataforma BLiP.ai utilizando os frameworks AngularJS e VueJS, soluções de inteligência artificial com Python e análises de modelos de NLP baseados em intenções e entidades."
     }
   ],
@@ -70,7 +70,7 @@
     },
     {
       "title": "Francês",
-      "duration": "Nível A1.3",
+      "duration": "Nível A2",
       "intro": "Fluência:",
       "description": "leitura média, escrita básica, fala básica"
     }

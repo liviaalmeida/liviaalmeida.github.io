@@ -19,7 +19,7 @@
   "education": [
     {
       "title": "Universidade Federal de Minas Gerais (UFMG)",
-      "duration": "2021",
+      "duration": "2022",
       "intro": "Bachelor's Degree",
       "description": "Computer Science"
     }
@@ -29,15 +29,15 @@
       "title": "Ecosia",
       "link": "https://ecosia.org",
       "duration": "apr 2021 - present",
-      "intro": "Software Engineer:",
-      "description": "working as a software engineer for the search engine that plants trees. Using Vue.JS and Nuxt with HTML and SCSS in the front-end."
+      "intro": "Front-end Engineer:",
+      "description": "working as a front-end engineer for the search engine that plants trees. Using JavaScript for Vue, Nuxt and Vite, along with with HTML and SCSS."
     },
     {
       "title": "Symbaros",
       "link": "https://symbaros.com.br",
-      "duration": "aug 2021 - present",
+      "duration": "aug 2021 - mar 2022",
       "intro": "Partner / Consultant:",
-      "description": "working as a front-end architect consultant for a platform specialized in renting commercial spaces. Setting up architecture and building a website in Vue.JS."
+      "description": "working as a front-end architect consultant for a platform specialized in renting commercial spaces using AI. Setting up architecture and building a website in Vue.JS."
     },
     {
       "title": "Questrade",
@@ -48,16 +48,16 @@
     },
     {
       "title": "Take.Blip",
-      "link": "https://take.net",
+      "link": "https://blip.ai",
       "duration": "june 2019 - may 2020",
       "intro": "Full Stack Developer:",
       "description": "worked with AngularJS and VueJS in the front-end, .NET core in the back-end, and occasionally Python for NLP models analysis."
     },
     {
       "title": "Take.Blip",
-      "link": "https://take.net",
+      "link": "https://blip.ai",
       "duration": "jan 2018 - may 2019",
-      "intro": "Development Internship:",
+      "intro": "Development Intern:",
       "description": "worked as a front-end intern in the chatbot building platform BLiP.ai using frameworks AngularJS and VueJS, provided solutions on Artificial Intelligence using Python, and analyzed NLP models based on intents and entities."
     }
   ],
@@ -70,7 +70,7 @@
     },
     {
       "title": "French",
-      "duration": "Level A1.3",
+      "duration": "Level A2",
       "intro": "Proficiency:",
       "description": "intermediate reading, basic writing, basic speech"
     }
