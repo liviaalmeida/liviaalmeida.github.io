@@ -65,7 +65,8 @@ export default Vue.extend({
     margin: 7*$m auto 0;
 
     > *:not(:last-of-type) {
-      margin-right: 5*$m;
+      margin-left: 2.5*$m;
+      margin-right: 2.5*$m;
     }
 
     @include tablet {
@@ -73,8 +74,7 @@ export default Vue.extend({
       align-content: center;
 
       > *:not(:last-of-type) {
-        margin-bottom: 5*$m;
-        margin-right: 0;
+        margin: 0 0 5*$m;
       }
     }
   }
@@ -82,7 +82,7 @@ export default Vue.extend({
   &-copyright {
     font-size: 12px;
     text-align: center;
-    transform: translateY(25px);
+    transform: translateY(40px);
   }
 }
 </style>
