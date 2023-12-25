@@ -2,6 +2,7 @@
   <div
     v-visible="{
       callback: onVisible,
+      once: true,
       throttle: 200,
     }"
     class="timeline"

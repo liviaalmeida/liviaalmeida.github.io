@@ -1,6 +1,9 @@
 <template>
 	<div
-    v-visible="onVisible"
+    v-visible="{
+      callback: onVisible,
+      once: true,
+    }"
     class="progress"
   >
 		<div

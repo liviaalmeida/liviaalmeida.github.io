@@ -5,7 +5,10 @@
     class="profile"
   >
     <div class="profile-content">
-      <img :src="require('@/assets/images/livia.jpeg')">
+      <img
+        :src="require('@/assets/images/livia.jpeg')"
+        alt="Profile picture"
+      >
       <div class="profile-text">
         <p
           v-for="(paragraph, p) in $t('profile')"

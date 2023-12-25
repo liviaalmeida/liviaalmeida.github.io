@@ -1,11 +1,15 @@
 <template>
   <div
     class="animated-link"
-    v-visible="onVisible"
+    v-visible="{
+      callback: onVisible,
+      once: true,
+    }"
   >
     <a
       @click="onClick(href)"
       :href="href"
+      :aria-label="text"
       class="icon"
       rel="noopener"
     >
