@@ -8,8 +8,14 @@
 <script lang="ts">
 import Vue from 'vue'
 
-type COLOR = 'purple' | 'white'
-const COLORS = { 'purple': '#3c0046', 'white': '#fff' }
+type COLOR = 'green' | 'purple' | 'red' | 'white' | 'yellow'
+const COLORS = {
+  green: '#008000',
+  purple: '#3c0046',
+  red: '#ff0000',
+  white: '#fff',
+  yellow: '#ffff00',
+}
 const SIZES = ['s', 'm', 'l', 'xl']
 
 export default Vue.extend({

@@ -130,5 +130,8 @@
       }
     },
     "button": "Envoyer"
+  },
+  "common": {
+    "close": "Fermer"
   }
 }

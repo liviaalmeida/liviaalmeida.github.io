@@ -11,13 +11,15 @@
       >
         <div class="modal-content">
           <VIcon
+            :color="color"
             :name="type"
+            size="l"
             class="modal-icon"
           />
           <p class="modal-title">
             {{ title }}
           </p>
-          <p class="modal-message">
+          <p>
             {{ message }}
           </p>
         </div>
@@ -26,7 +28,7 @@
           type="button"
           @click="close"
         >
-          Fechar
+          {{ $t('common.close') }}
         </button>
       </div>
     </div>
@@ -35,6 +37,12 @@
 
 <script lang="ts">
 import Vue from 'vue'
+
+const ERRORCOLOR = {
+  'error': 'red',
+  'info': 'yellow',
+  'success': 'green',
+}
 
 export default Vue.extend({
   model: {
@@ -58,6 +66,11 @@ export default Vue.extend({
       type: Boolean,
     },
   },
+  computed: {
+    color(): string {
+      return ERRORCOLOR[this.type]
+    },
+  },
   methods: {
     close() {
       this.$emit('show', false)
@@ -71,6 +84,7 @@ export default Vue.extend({
   background: $lv-white;
   border-radius: 5px;
   font-family: 'Open Sans';
+  font-size: 14px;
   text-align: center;
   width: 450px;
 
@@ -89,34 +103,15 @@ export default Vue.extend({
 
   &-content {
     padding: 10px;
-  }
-
-  &-icon {
-    height: 45px;
-
-    &.icon--error {
-      fill: red;
-    }
-
-    &.icon--info {
-      fill: yellow;
-
-    }
-
-    &.icon--success {
-      fill: green;
-    }
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   &-title {
-    font-size: 14px;
     font-weight: 600;
-    margin-bottom: 10px;
+    margin-right: 8px;
     text-transform: uppercase;
-  }
-
-  &-message {
-    font-size: 13px;
   }
 
   &-close {
