@@ -4,6 +4,7 @@
 		<h1>Lívia Almeida</h1>
 		<h2>{{$t('title.position')}}</h2>
     <Coffee />
+    <ScrollDown to-class="app-view" class="header-scroll" />
 	</header>
 </template>
 
@@ -31,11 +32,17 @@ export default Vue.extend({
   color: $lv-white;
   font-family: 'Bebas Neue';
   font-weight: 600;
+  position: relative;
 
   &-menu {
     position: fixed;
     top: 0;
     left: 0;
+  }
+
+  &-scroll {
+    position: absolute;
+    bottom: 10px;
   }
 
   h1 {

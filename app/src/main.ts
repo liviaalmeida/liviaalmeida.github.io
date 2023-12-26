@@ -14,6 +14,7 @@ import Coffee from '@/ds/Coffee.vue'
 import Icon from '@/ds/Icon.vue'
 import Modal from '@/ds/Modal.vue'
 import ProgressBar from '@/ds/ProgressBar.vue'
+import ScrollDown from '@/ds/ScrollDown.vue'
 import Section from '@/ds/Section.vue'
 import Timeline from '@/ds/Timeline.vue'
 import VButton from '@/ds/VButton.vue'
@@ -27,6 +28,7 @@ Vue.component('Coffee', Coffee)
 Vue.component('Icon', Icon)
 Vue.component('Modal', Modal)
 Vue.component('ProgressBar', ProgressBar)
+Vue.component('ScrollDown', ScrollDown)
 Vue.component('Section', Section)
 Vue.component('Timeline', Timeline)
 Vue.component('VButton', VButton)
