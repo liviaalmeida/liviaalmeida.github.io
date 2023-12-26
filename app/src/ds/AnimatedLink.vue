@@ -37,15 +37,15 @@ import Vue from 'vue'
 
 export default Vue.extend({
   props: {
+    href: {
+      type: String,
+      required: true,
+    },
     image: {
       type: String,
       required: true,
     },
     text: {
-      type: String,
-      required: true,
-    },
-    href: {
       type: String,
       required: true,
     },
