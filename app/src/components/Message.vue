@@ -182,7 +182,7 @@ $gap: .5*$m;
 
 .message {
   margin: 0 auto;
-  width: 550px;
+  width: 500px;
 
   @include tablet {
     width: 380px;
