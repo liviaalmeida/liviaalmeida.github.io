@@ -43,7 +43,7 @@
   }
 
   &-cup {
-    width: 100px;
+    width: 99px;
     height: 80px;
     background-color: gray(249);
     position: absolute;
