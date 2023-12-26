@@ -9,8 +9,8 @@
     />
     <div class="contact-icons">
       <AnimatedLink
-        v-for="(contact, index) in contacts"
-        :key="index"
+        v-for="contact in contacts"
+        :key="contact.image"
         :image="contact.image"
         :text="contact.text"
         :href="contact.href"
