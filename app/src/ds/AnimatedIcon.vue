@@ -31,10 +31,14 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" scoped>
+$size: 48px;
+
 .animated-icon {
   background-color: $lv-purple;
 	border-radius: 50%;
   opacity: 0.6;
+  height: $size;
+  width: $size;
   display: inline-flex;
   align-items: center;
   justify-content: center;
