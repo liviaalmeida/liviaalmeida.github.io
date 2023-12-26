@@ -33,6 +33,15 @@ export default {
     return `${num}rem`
   },
 
+  navigateTo(targetClass: string, offset = 0): void {
+    const el = document.querySelector(`.${targetClass}`) as HTMLElement
+    const { top } = el.getBoundingClientRect()
+
+    window.scrollTo({
+      top: window.scrollY + top + offset,
+    })
+  },
+
   sendMail(email: Email): Promise<void> {
     return new Promise((resolve, reject) => {
       try {

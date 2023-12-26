@@ -39,6 +39,7 @@
 
 <script lang="ts">
 import Vue from 'vue'
+import helper from '@/assets/helpers'
 import Locale from '@/components/Locale.vue'
 import MenuButton from './MenuButton.vue'
 import mixpanel from 'mixpanel-browser'
@@ -81,13 +82,7 @@ export default Vue.extend({
   },
   methods: {
     onNav(toClass: string) {
-      const el = document.querySelector(`.${toClass}`) as HTMLElement
-      const { top } = el.getBoundingClientRect()
-
-      window.scrollTo({
-        top: window.scrollY + top - 60,
-      })
-
+      helper.navigateTo(toClass, -60)
       this.open = false
 
       mixpanel.track('Menu-click', {
