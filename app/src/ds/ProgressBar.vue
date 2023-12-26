@@ -15,7 +15,6 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import helper from '@/assets/helpers'
 
 export default Vue.extend({
   props: {
@@ -31,7 +30,8 @@ export default Vue.extend({
   },
   computed: {
     progressStyle(): CSSStyleDeclaration {
-      return helper.elementStyle(this.$el.firstElementChild)
+      const { style } = (this.$el.firstElementChild as HTMLElement)
+      return style
     },
   },
   methods: {

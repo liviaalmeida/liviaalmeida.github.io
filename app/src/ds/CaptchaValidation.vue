@@ -11,7 +11,7 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import helper, { captchaCallback } from '@/assets/helpers'
+import { captcha, captchaCallback } from '@/assets/helpers'
 
 export default Vue.extend({
   model: {
@@ -41,7 +41,7 @@ export default Vue.extend({
   },
   mounted() {
     const callback = this.callback as captchaCallback
-    this.captcha = helper.captcha('.captcha .input-input', callback)
+    this.captcha = captcha('.captcha .input-input', callback)
   },
 })
 </script>

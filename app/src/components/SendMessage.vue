@@ -61,7 +61,7 @@
 <script lang="ts">
 import Vue from 'vue'
 import jsCaptcha from 'js-captcha'
-import helper from '@/assets/helpers'
+import { sendMail } from '@/assets/helpers'
 import mixpanel from 'mixpanel-browser'
 
 export default Vue.extend({
@@ -145,7 +145,7 @@ export default Vue.extend({
       }
 
       this.sending = true
-      helper.sendMail(this.email)
+      sendMail(this.email)
         .then(() => {
           this.feedback = {
             message: this.$t('contact.sent').toString(),

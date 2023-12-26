@@ -10,7 +10,6 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import helper from '@/assets/helpers'
 
 export default Vue.extend({
   props: {
@@ -26,26 +25,6 @@ export default Vue.extend({
       type: Number,
       required: false,
       default: 4,
-    },
-  },
-  computed: {
-    elStyle(): CSSStyleDeclaration {
-      return helper.elementStyle(this.$el)
-    },
-  },
-  mounted() {
-    this.setIconSize()
-    this.setBackgroundImage()
-  },
-  methods: {
-    setIconSize(): void {
-      const remSize = helper.numberToRem(this.size)
-
-      this.elStyle.width = remSize
-      this.elStyle.height = remSize
-    },
-    setBackgroundImage(): void {
-      this.elStyle.backgroundImage = `url('${this.image}')`
     },
   },
 })

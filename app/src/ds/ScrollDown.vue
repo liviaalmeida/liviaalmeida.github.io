@@ -15,7 +15,7 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import helper from '@/assets/helpers'
+import { navigateTo } from '@/assets/helpers'
 
 export default Vue.extend({
   props: {
@@ -26,7 +26,7 @@ export default Vue.extend({
   },
   methods: {
     onScroll() {
-      helper.navigateTo(this.toClass, -60)
+      navigateTo(this.toClass, -60)
     },
   },
 })
