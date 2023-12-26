@@ -2,15 +2,15 @@
   <transition name="modal-transition">
     <div
       v-if="value"
-      @click="close"
       class="modal-wrapper"
+      @click="close"
     >
       <div
         class="modal"
         @click.stop
       >
         <div class="modal-content">
-          <Icon
+          <VIcon
             :name="type"
             class="modal-icon"
           />
@@ -22,9 +22,9 @@
           </p>
         </div>
         <button
-          @click="close"
           class="modal-close"
           type="button"
+          @click="close"
         >
           Fechar
         </button>
@@ -66,7 +66,7 @@ export default Vue.extend({
 })
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .modal {
   background: $lv-white;
   border-radius: 5px;

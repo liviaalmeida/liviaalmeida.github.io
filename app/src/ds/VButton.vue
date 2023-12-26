@@ -1,10 +1,10 @@
 <template>
   <button
+    :disabled="!!$attrs.disabled || loading"
+    class="button"
     v-bind="$attrs"
     v-on="$listeners"
-    :disabled="$attrs.disabled || loading"
     @click="onClick"
-    class="button"
   >
     <span
       class="button-wave"
@@ -50,7 +50,7 @@ export default Vue.extend({
 })
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 $color: rgba($lv-purple, .7);
 $height: 45px;
 $icon: 25px;

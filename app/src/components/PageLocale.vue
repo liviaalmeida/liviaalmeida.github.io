@@ -11,7 +11,7 @@
         @click="updateLocale"
       >
       <span>
-        {{lang}}
+        {{ lang }}
       </span>
     </label>
   </div>
@@ -48,7 +48,7 @@ export default Vue.extend({
 })
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .locale {
   label {
     font-weight: 400;

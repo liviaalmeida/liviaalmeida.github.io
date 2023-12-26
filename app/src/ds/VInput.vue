@@ -17,8 +17,8 @@
       <textarea
         v-if="$attrs.type === 'textarea'"
         v-bind="$attrs"
-        v-on="$listeners"
         class="input-textarea"
+        v-on="$listeners"
         @blur="onBlur"
         @focus="onFocus"
         @input="onModel($event.target)"
@@ -26,8 +26,8 @@
       <input
         v-else
         v-bind="$attrs"
-        v-on="$listeners"
         class="input-input"
+        v-on="$listeners"
         @blur="onBlur"
         @focus="onFocus"
         @input="onModel($event.target)"
@@ -76,7 +76,7 @@ export default Vue.extend({
 })
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 $blur: rgba($lv-purple, .7);
 
 .input {

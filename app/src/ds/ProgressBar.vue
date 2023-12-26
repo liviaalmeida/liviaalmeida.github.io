@@ -1,16 +1,16 @@
 <template>
-	<div
+  <div
     v-visible="{
       callback: onVisible,
       once: true,
     }"
     class="progress"
   >
-		<div
+    <div
       v-if="visible"
       class="progress-bar"
     />
-	</div>
+  </div>
 </template>
 
 <script lang="ts">

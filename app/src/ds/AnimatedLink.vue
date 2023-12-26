@@ -1,17 +1,17 @@
 <template>
   <div
-    class="animated-link"
     v-visible="{
       callback: onVisible,
       once: true,
     }"
+    class="animated-link"
   >
     <a
-      @click="onClick(href)"
       :href="href"
       :aria-label="text"
       class="icon"
       rel="noopener"
+      @click="onClick(href)"
     >
       <AnimatedIcon
         :image="image"
@@ -20,13 +20,13 @@
       />
     </a>
     <a
-      @click="onClick(href)"
       :href="href"
+      class="text"
       @mouseover="active = true"
       @mouseout="active = false"
-      class="text"
+      @click="onClick(href)"
     >
-      {{text}}
+      {{ text }}
     </a>
   </div>
 </template>
@@ -36,11 +36,6 @@ import mixpanel from 'mixpanel-browser'
 import Vue from 'vue'
 
 export default Vue.extend({
-  data() {
-    return {
-      active: false,
-    }
-  },
   props: {
     image: {
       type: String,
@@ -54,6 +49,11 @@ export default Vue.extend({
       type: String,
       required: true,
     },
+  },
+  data() {
+    return {
+      active: false,
+    }
   },
   methods: {
     onClick(href: string) {

@@ -1,10 +1,10 @@
 <template>
-  <Section
+  <PageSection
     title-icon="message"
     :title="$t('title.contact')"
     class="contact"
   >
-    <Message
+    <SendMessage
       class="contact-form"
     />
     <div class="contact-icons">
@@ -19,32 +19,32 @@
     <div class="contact-copyright">
       Copyright © Lívia Almeida
     </div>
-  </Section>
+  </PageSection>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
-import Message from '@/components/Message.vue'
+import SendMessage from '@/components/SendMessage.vue'
 
 export default Vue.extend({
   components: {
-    Message,
+    SendMessage,
   },
   data() {
     return {
       contacts: [
         {
-          image: require('@/assets/icons/linkedin.png'),
+          image: 'linkedin',
           text: 'Lívia Almeida',
           href: 'https://linkedin.com/in/livia001',
         },
         {
-          image: require('@/assets/icons/github.png'),
+          image: 'github',
           text: '@liviaalmeida',
           href: 'https://github.com/liviaalmeida',
         },
         {
-          image: require('@/assets/icons/mail.png'),
+          image: 'mail',
           text: 'leave.ah@gmail.com',
           href: 'mailto:leave.ah@gmail.com',
         },

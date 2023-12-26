@@ -21,22 +21,22 @@ import Vue from 'vue'
 export default Vue.extend({
   props: {
     small: {
-      required: false,
+      default: false,
       type: Boolean,
     },
     title: {
-      required: false,
+      default: '',
       type: String,
     },
     titleIcon: {
-      required: false,
+      default: '',
       type: String,
     },
   },
 })
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .section {
   @include flex-column;
   padding: 50px;

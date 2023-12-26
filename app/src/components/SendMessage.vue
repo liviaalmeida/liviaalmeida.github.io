@@ -1,8 +1,8 @@
 <template>
   <form
+    class="message"
     @input="onInput($event.target.form)"
     @submit.prevent="sendMessage"
-    class="message"
   >
     <VInput
       v-model="email.name"
@@ -38,7 +38,7 @@
       class="message-text"
       required
     />
-    <Captcha
+    <CaptchaValidation
       ref="captcha"
       v-model="captcha"
       :callback="captchaCallback"
@@ -51,7 +51,7 @@
       {{ $t('contact.button') }}
     </VButton>
     
-    <Modal
+    <VModal
       v-model="modal"
       v-bind="feedback"
     />
@@ -177,7 +177,7 @@ export default Vue.extend({
 })
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 $gap: .5*$m;
 
 .message {

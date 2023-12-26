@@ -1,11 +1,11 @@
 <template>
   <VInput
     v-model="model"
-    @model="$emit('captcha', $event)"
     :label="$t('contact.captcha.label')"
     :placeholder="$t('contact.captcha.placeholder')"
     type="number"
     class="captcha"
+    @model="$emit('captcha', $event)"
   />
 </template>
 
@@ -21,6 +21,7 @@ export default Vue.extend({
     callback: {
       required: false,
       type: Function,
+      default: undefined,
     },
     value: {
       required: true,
@@ -45,7 +46,7 @@ export default Vue.extend({
 })
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .captcha-canvas {
   transform: translateX(5px);
   margin-right: $m;

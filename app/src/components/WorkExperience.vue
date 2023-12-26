@@ -1,10 +1,10 @@
 <template>
-  <Section
+  <PageSection
     class="experience"
     title-icon="tools"
     :title="$t('menu.experience')"
   >
-    <Timeline
+    <VTimeline
       v-for="experience in experiences"
       :key="experience.title"
       :icon="experience.icon"
@@ -12,7 +12,7 @@
       :title="$t(experience.title)"
       class="experience-info"
     />
-  </Section>
+  </PageSection>
 </template>
 
 <script lang="ts">
@@ -42,7 +42,7 @@ export default Vue.extend({
 })
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .experience-info {
   max-width: 500px;
 

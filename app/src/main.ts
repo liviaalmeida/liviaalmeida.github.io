@@ -9,30 +9,30 @@ import Mixpanel from 'mixpanel-browser'
 import AnimatedIcon from '@/ds/AnimatedIcon.vue'
 import AnimatedLink from '@/ds/AnimatedLink.vue'
 import AnimatedTitle from '@/ds/AnimatedTitle.vue'
-import Captcha from '@/ds/Captcha.vue'
-import Coffee from '@/ds/Coffee.vue'
-import Icon from '@/ds/Icon.vue'
-import Modal from '@/ds/Modal.vue'
+import CaptchaValidation from '@/ds/CaptchaValidation.vue'
+import CoffeeCup from '@/ds/CoffeeCup.vue'
+import PageSection from '@/ds/PageSection.vue'
 import ProgressBar from '@/ds/ProgressBar.vue'
 import ScrollDown from '@/ds/ScrollDown.vue'
-import Section from '@/ds/Section.vue'
-import Timeline from '@/ds/Timeline.vue'
 import VButton from '@/ds/VButton.vue'
+import VIcon from '@/ds/VIcon.vue'
 import VInput from '@/ds/VInput.vue'
+import VModal from '@/ds/VModal.vue'
+import VTimeline from '@/ds/VTimeline.vue'
 
 Vue.component('AnimatedIcon', AnimatedIcon)
 Vue.component('AnimatedLink', AnimatedLink)
 Vue.component('AnimatedTitle', AnimatedTitle)
-Vue.component('Captcha', Captcha)
-Vue.component('Coffee', Coffee)
-Vue.component('Icon', Icon)
-Vue.component('Modal', Modal)
+Vue.component('CaptchaValidation', CaptchaValidation)
+Vue.component('CoffeeCup', CoffeeCup)
+Vue.component('PageSection', PageSection)
 Vue.component('ProgressBar', ProgressBar)
 Vue.component('ScrollDown', ScrollDown)
-Vue.component('Section', Section)
-Vue.component('Timeline', Timeline)
 Vue.component('VButton', VButton)
+Vue.component('VIcon', VIcon)
 Vue.component('VInput', VInput)
+Vue.component('VModal', VModal)
+Vue.component('VTimeline', VTimeline)
 
 Vue.directive('visible', ObserveVisibility)
 
@@ -41,6 +41,8 @@ Vue.use(VueCookies)
 Mixpanel.init('993c79eddca27044b045ea158973bd99')
 
 Vue.config.productionTip = false
+
+import '@/assets/scss/reset.scss'
 
 new Vue({
   router,

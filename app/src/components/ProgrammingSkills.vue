@@ -1,22 +1,22 @@
 <template>
-	<Section
-		title-icon="programming"
-		:title="$t('title.programming')"
-		class="programming"
-	>
-		<div class="skills">
-			<div
+  <PageSection
+    title-icon="programming"
+    :title="$t('title.programming')"
+    class="programming"
+  >
+    <div class="skills">
+      <div
         v-for="(skill,index) in skills"
         :key="index"
         class="skill"
       >
-				<span>{{skill.name}}</span>
-				<ProgressBar
+        <span>{{ skill.name }}</span>
+        <ProgressBar
           :progress="skill.progress"
         />
-			</div>
-		</div>
-	</Section>
+      </div>
+    </div>
+  </PageSection>
 </template>
 
 <script lang="ts">

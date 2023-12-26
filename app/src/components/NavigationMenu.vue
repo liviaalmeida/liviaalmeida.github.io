@@ -1,14 +1,12 @@
 <template>
-  <div :class="['menu', {
-    'menu--background': background,
-  }]">
-    <Locale class="menu-locale" />
+  <div :class="['menu', {'menu--background': background}]">
+    <PageLocale class="menu-locale" />
     <nav class="menu-nav">
       <button
         v-for="link in links"
         :key="link.text"
-        @click="onNav(link.class)"
         class="menu-link"
+        @click="onNav(link.class)"
       >
         {{ $t(link.text) }}
       </button>
@@ -27,8 +25,8 @@
         <button
           v-for="link in links"
           :key="link.text"
-          @click="onNav(link.class)"
           class="menu-link"
+          @click="onNav(link.class)"
         >
           {{ $t(link.text) }}
         </button>
@@ -40,13 +38,13 @@
 <script lang="ts">
 import Vue from 'vue'
 import helper from '@/assets/helpers'
-import Locale from '@/components/Locale.vue'
+import PageLocale from '@/components/PageLocale.vue'
 import MenuButton from './MenuButton.vue'
 import mixpanel from 'mixpanel-browser'
 
 export default Vue.extend({
   components: {
-    Locale,
+    PageLocale,
     MenuButton,
   },
   data() {
@@ -80,6 +78,12 @@ export default Vue.extend({
       ]
     },
   },
+  mounted() {
+    window.addEventListener('scroll', this.onScroll)
+  },
+  beforeDestroy() {
+    window.removeEventListener('scroll', this.onScroll)
+  },
   methods: {
     onNav(toClass: string) {
       helper.navigateTo(toClass, -60)
@@ -93,16 +97,10 @@ export default Vue.extend({
       this.background = window.scrollY > this.heigth + 1
     },
   },
-  mounted() {
-    window.addEventListener('scroll', this.onScroll)
-  },
-  beforeDestroy() {
-    window.removeEventListener('scroll', this.onScroll)
-  },
 })
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 $height: 60px;
 $link: 35px;
 $transition: background-color 1s;

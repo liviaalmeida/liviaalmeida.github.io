@@ -1,20 +1,20 @@
 <template>
   <div id="app">
-    <Header />
+    <PageHeader />
     <router-view
-			class="app-view"
-		/>
+      class="app-view"
+    />
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
-import Header from '@/components/Header.vue'
+import PageHeader from '@/components/PageHeader.vue'
 import mixpanel from 'mixpanel-browser'
 
 export default Vue.extend({
   components: {
-    Header,
+    PageHeader,
   },
   mounted() {
     mixpanel.track('Page-view')
@@ -23,10 +23,6 @@ export default Vue.extend({
 </script>
 
 <style lang="scss">
-@import '~@/assets/scss/reset.scss';
-
-$loader-img: 250px;
-
 html {
 	scroll-behavior: smooth;
 }

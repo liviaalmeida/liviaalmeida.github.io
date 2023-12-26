@@ -1,25 +1,28 @@
 <template>
-	<header class="header">
-		<Menu class="header-menu" />
-		<h1>Lívia Almeida</h1>
-		<h2>{{$t('title.position')}}</h2>
-    <Coffee />
-    <ScrollDown to-class="app-view" class="header-scroll" />
-	</header>
+  <header class="header">
+    <NavigationMenu class="header-menu" />
+    <h1>Lívia Almeida</h1>
+    <h2>{{ $t('title.position') }}</h2>
+    <CoffeeCup />
+    <ScrollDown
+      to-class="app-view"
+      class="header-scroll"
+    />
+  </header>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
-import Menu from '@/components/Menu.vue'
+import NavigationMenu from '@/components/NavigationMenu.vue'
 
 export default Vue.extend({
   components: {
-    Menu,
+    NavigationMenu,
   },
 })
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .header {
   @include flex-column;
   width: 100%;

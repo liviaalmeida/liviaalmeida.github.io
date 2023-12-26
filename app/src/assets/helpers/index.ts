@@ -1,5 +1,5 @@
 import jsCaptcha from 'js-captcha'
-const client = require('@/assets/helpers/smtp').Email
+import { Email as client } from '@/assets/helpers/smtp'
 
 export type captchaCallback = (
   response: 'success' | 'error',

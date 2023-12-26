@@ -39,7 +39,7 @@ export default Vue.extend({
 })
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 $line-spin: 220deg;
 $line-inclination: 50deg;
 

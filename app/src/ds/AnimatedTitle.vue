@@ -2,11 +2,12 @@
   <div
     class="animated-title"
   >
-      <Icon
-        :name="icon"
-        class="animated-title-icon"
-      />
-      <h2>{{ text }}</h2>
+    <VIcon
+      :name="icon"
+      size="l"
+      class="animated-title-icon"
+    />
+    <h2>{{ text }}</h2>
   </div>
 </template>
 

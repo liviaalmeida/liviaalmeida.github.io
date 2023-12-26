@@ -1,5 +1,5 @@
 <template>
-  <Section
+  <PageSection
     :title="$t('title.profile')"
     title-icon="profile"
     class="profile"
@@ -18,20 +18,24 @@
           {{ paragraph }}
         </p>
         <a
-          @click="onDownload"
           href="/resume/curriculum-en.pdf"
           download="resume.pdf"
           class="profile-resume"
           rel="alternate"
+          @click="onDownload"
         >
-          <VButton>
-            <Icon name="download" />
+          <VButton class="profile-button">
+            <VIcon
+              name="download"
+              :opacity="0.7"
+              class="profile-download"
+            />
             {{ $t('title.resume') }}
           </VButton>
         </a>
       </div>
     </div>
-    <Timeline
+    <VTimeline
       v-for="info in infos"
       :key="info.title"
       :icon="info.icon"
@@ -39,7 +43,7 @@
       :title="$t(info.title)"
       class="profile-info"
     />
-  </Section>
+  </PageSection>
 </template>
 
 <script lang="ts">
@@ -73,7 +77,7 @@ export default Vue.extend({
 })
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 
 .profile {
   img {
@@ -126,6 +130,17 @@ export default Vue.extend({
     text-decoration: none;
     margin: 0 auto;
     width: 200px;
+  }
+
+  &-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+  }
+
+  &-download {
+    transform: translateY(-4px) scale(1.2);
   }
 
   &-info {

@@ -4,11 +4,13 @@
     aria-label="Scroll Down"
     @click="onScroll"
   >
-    <Icon
+    <VIcon
+      color="white"
       name="double-down"
+      size="xl"
       class="scroll-down-icon"
     />
-</button>
+  </button>
 </template>
 
 <script lang="ts">
@@ -19,7 +21,7 @@ export default Vue.extend({
   props: {
     toClass: {
       type: String,
-      required: false,
+      required: true,
     },
   },
   methods: {

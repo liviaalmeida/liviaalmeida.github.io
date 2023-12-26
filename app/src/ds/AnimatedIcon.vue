@@ -1,8 +1,11 @@
 <template>
-	<div :class="[
-		{ 'icon--active': active },
-		'icon',
-	]" />
+  <div :class="['animated-icon', {'animated-icon--active': active }]">
+    <VIcon
+      color="white"
+      :name="image"
+      :class="['icon', {'icon--active': active }]"
+    />
+  </div>
 </template>
 
 <script lang="ts">
@@ -25,14 +28,14 @@ export default Vue.extend({
       default: 4,
     },
   },
-  mounted() {
-    this.setIconSize()
-    this.setBackgroundImage()
-  },
   computed: {
     elStyle(): CSSStyleDeclaration {
       return helper.elementStyle(this.$el)
     },
+  },
+  mounted() {
+    this.setIconSize()
+    this.setBackgroundImage()
   },
   methods: {
     setIconSize(): void {
@@ -49,29 +52,24 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" scoped>
-@mixin icon-active {
-	background-size: 50%;
-	opacity: 1;
-}
-
-.icon {
-	display: inline-flex;
-	background-color: $lv-purple;
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: 40%;
+.animated-icon {
+  background-color: $lv-purple;
 	border-radius: 50%;
-	opacity: 0.6;
-	transition: all $animation-time;
-	@include animation-on-load(on-icon-load);
-
-	&:hover, &--active {
-		@include icon-active;
-	}
+  opacity: 0.6;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
-@keyframes on-icon-load {
-	0% { @include icon-active; }
+.animated-icon, .icon {
+  transition: all $animation-time;
 }
 
+.animated-icon:hover, .animated-icon--active {
+  opacity: 1;
+
+  .icon {
+    transform: scale(1.5);
+  }
+}
 </style>

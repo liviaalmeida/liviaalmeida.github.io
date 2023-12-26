@@ -7,10 +7,13 @@
     }"
     class="timeline"
   >
-    <div class="timeline-header"
-    v-if="icon && title">
-      <Icon
+    <div
+      v-if="icon && title"
+      class="timeline-header"
+    >
+      <VIcon
         :name="icon"
+        size="m"
       />
       <div class="timeline-title">
         {{ title }}
@@ -30,10 +33,10 @@
       >
         <a
           v-if="timeEvent.link"
-          @click="onEventClick(timeEvent.title)"
           :href="timeEvent.link"
           target="_blank"
           rel="noopener"
+          @click="onEventClick(timeEvent.title)"
         >
           {{ timeEvent.title }}
         </a>
@@ -57,7 +60,6 @@
       </li>
     </ol>
   </div>
-  
 </template>
 
 <script lang="ts">
@@ -65,12 +67,6 @@ import mixpanel from 'mixpanel-browser'
 import Vue from 'vue'
 
 export default Vue.extend({
-  data() {
-    return {
-      active: false,
-      visible: false,
-    }
-  },
   props: {
     icon: {
       required: true,
@@ -84,6 +80,12 @@ export default Vue.extend({
       required: true,
       type: String,
     },
+  },
+  data() {
+    return {
+      active: false,
+      visible: false,
+    }
   },
   methods: {
     onEventClick(title: string) {
