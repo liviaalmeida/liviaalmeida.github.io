@@ -6,6 +6,7 @@
   >
     <div class="profile-content">
       <img
+        loading="lazy"
         :src="require('@/assets/images/livia.jpeg')"
         alt="Profile picture"
       >
