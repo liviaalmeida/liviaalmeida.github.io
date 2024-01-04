@@ -116,7 +116,7 @@ export default Vue.extend({
     font-size: 1.8*$m;
     line-height: 1.5;
     margin-bottom: .7*$m;
-    text-align: justify;
+    text-align: left;
 
     &:last-of-type {
       margin-bottom: 1.5*$m;

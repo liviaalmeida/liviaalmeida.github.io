@@ -218,7 +218,7 @@ $icon: 35px;
 .timeline-list-text {
   font-size: 1.5*$m;
   line-height: 1.3;
-  text-align: justify;
+  text-align: left;
 }
 
 .timeline-list-intro {
