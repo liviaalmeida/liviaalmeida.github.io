@@ -3,7 +3,10 @@
     <VIcon
       color="white"
       :name="image"
-      :class="['icon', {'icon--active': active }]"
+      :class="[
+        'animated-icon-icon',
+        {'animated-icon-icon--active': active },
+      ]"
     />
   </div>
 </template>
@@ -44,14 +47,14 @@ $size: 48px;
   justify-content: center;
 }
 
-.animated-icon, .icon {
+.animated-icon, .animated-icon-icon {
   transition: all $animation-time;
 }
 
 .animated-icon:hover, .animated-icon--active {
   opacity: 1;
 
-  .icon {
+  .animated-icon-icon {
     transform: scale(1.5);
   }
 }

@@ -94,44 +94,44 @@ $blur: rgba($lv-purple, .7);
   &--focused {
     border-color: $lv-purple;
   }
+}
 
-  &-label {
-    color: $blur;
-    font-size: 13px;
-    font-weight: 600;
-    margin-bottom: .5*$m;
-    margin-left: .3*$m;
-    transition: color .5s;
+.input-label {
+  color: $blur;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: .5*$m;
+  margin-left: .3*$m;
+  transition: color .5s;
 
-    &--disabled {
-      color: $lv-grey;
-    }
-
-    &--focused {
-      color: $lv-purple;
-    }
+  &--disabled {
+    color: $lv-grey;
   }
 
-  &-wrapper {
-    display: flex;
+  &--focused {
+    color: $lv-purple;
   }
+}
 
-  &-input,
-  &-textarea {
-    background-color: transparent;
-    border: none;
-    font-family: 'Open Sans';
-    font-size: 14px;
-    width: 100%;
+.input-wrapper {
+  display: flex;
+}
 
-    &:focus {
-      outline-color: transparent;
-    }
+.input-input,
+.input-textarea {
+  background-color: transparent;
+  border: none;
+  font-family: 'Open Sans';
+  font-size: 14px;
+  width: 100%;
+
+  &:focus {
+    outline-color: transparent;
   }
+}
 
-  &-textarea {
-    min-height: 65px;
-    resize: vertical;
-  }
+.input-textarea {
+  min-height: 65px;
+  resize: vertical;
 }
 </style>

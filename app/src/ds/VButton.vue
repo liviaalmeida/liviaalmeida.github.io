@@ -37,13 +37,13 @@ export default Vue.extend({
   },
   methods: {
     async onClick() {
-      const animate = 'animate'
+      const animate = 'button-wave--animate'
       const { classList } = this.wave
       if (classList.contains(animate)) return
 
-      classList.add('animate')
+      classList.add(animate)
       setTimeout(() => {
-        classList.remove('animate')
+        classList.remove(animate)
       }, 400)
     },
   },
@@ -85,32 +85,32 @@ $icon: 25px;
     margin-right: .3*$m;
     transform: translateY(1px);
   }
+}
 
-  &-loading {
-    animation: spin 1s ease-in 0s infinite;
-    border: 5px solid $color;
-    border-right-color: transparent;
-    border-radius: 50%;
-    display: inline-block;
-    height: $icon;
-    width: $icon;
-    margin-top: 4px;
-  }
+.button-loading {
+  animation: spin 1s ease-in 0s infinite;
+  border: 5px solid $color;
+  border-right-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  margin-top: 4px;
+  height: $icon;
+  width: $icon;
+}
 
-  &-wave {
-    background-color: rgba(black, .2);
-    display: inline-block;
-    height: $height;
-    width: $height;
-    position: absolute;
-    top: -2px;
-    left: calc(50% - 23px);
-    transform: scaleX(0);
-    transition: all .4s ease-in;
+.button-wave {
+  background-color: rgba(black, .2);
+  display: inline-block;
+  transform: scaleX(0);
+  transition: all .4s ease-in;
+  height: $height;
+  width: $height;
+  position: absolute;
+  top: -2px;
+  left: calc(50% - 23px);
 
-    &.animate {
-			animation: wave .4s ease-in 1;
-    }
+  &--animate {
+    animation: wave .4s ease-in 1;
   }
 }
 

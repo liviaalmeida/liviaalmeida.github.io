@@ -114,56 +114,56 @@ $transition: background-color 1s;
 .menu {
   @include background;
   background-color: $lv-purple;
-  width: 100%;
-  height: $height;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   padding: 10px;
   position: relative;
   transition: $transition;
   z-index: 200;
+  height: $height;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
-  &-link {
-    background-color: transparent;
-    border: none;
-    color: $lv-white;
-    cursor: pointer;
-    font-family: 'Bebas Neue';
-    font-size: 2.5*$m;
-    font-weight: 700;
-    height: $link;
-    margin: 0 2*$m;
-    text-transform: uppercase;
-  }
+.menu-link {
+  background-color: transparent;
+  border: none;
+  color: $lv-white;
+  cursor: pointer;
+  font-family: 'Bebas Neue';
+  font-size: 2.5*$m;
+  font-weight: 700;
+  height: $link;
+  margin: 0 2*$m;
+  text-transform: uppercase;
+}
 
-  &-nav {
-    @include tablet {
-      display: none;
-    }
-  }
-
-  &-button {
+.menu-nav {
+  @include tablet {
     display: none;
-
-    @include tablet {
-      display: flex;
-    }
   }
+}
 
-  &-drop {
-    @include flex-column;
-    @include background;
-    align-items: center;
-    background-color: $lv-purple;
-    height: 4 * $link;
-    overflow: hidden;
-    position: absolute;
-    left: 0;
-    top: $height;
-    transition: height .4s, $transition;
-    width: 100%;
+.menu-button {
+  display: none;
+
+  @include tablet {
+    display: flex;
   }
+}
+
+.menu-drop {
+  @include background;
+  @include flex-column;
+  align-items: center;
+  background-color: $lv-purple;
+  overflow: hidden;
+  transition: height .4s, $transition;
+  position: absolute;
+  left: 0;
+  top: $height;
+  height: 4 * $link;
+  width: 100%;
 }
 
 .dropdown {

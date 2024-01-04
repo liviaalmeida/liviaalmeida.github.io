@@ -57,32 +57,32 @@ export default Vue.extend({
 <style lang="scss" scoped>
 .contact {
   background-color: $lv-lilac;
+}
 
-  &-icons {
-    display: flex;
-    align-content: flex-end;
-    justify-content: space-between;
-    margin: 7*$m auto 0;
+.contact-icons {
+  display: flex;
+  align-content: flex-end;
+  justify-content: space-between;
+  margin: 7*$m auto 0;
+
+  > *:not(:last-of-type) {
+    margin-left: 2.5*$m;
+    margin-right: 2.5*$m;
+  }
+
+  @include tablet {
+    flex-direction: column;
+    align-content: center;
 
     > *:not(:last-of-type) {
-      margin-left: 2.5*$m;
-      margin-right: 2.5*$m;
-    }
-
-    @include tablet {
-      flex-direction: column;
-      align-content: center;
-
-      > *:not(:last-of-type) {
-        margin: 0 0 5*$m;
-      }
+      margin: 0 0 5*$m;
     }
   }
+}
 
-  &-copyright {
-    font-size: 12px;
-    text-align: center;
-    transform: translateY(40px);
-  }
+.contact-copyright {
+  font-size: 12px;
+  text-align: center;
+  transform: translateY(40px);
 }
 </style>

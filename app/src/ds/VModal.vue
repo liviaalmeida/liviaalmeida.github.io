@@ -88,44 +88,6 @@ export default Vue.extend({
   text-align: center;
   width: 450px;
 
-  &-wrapper {
-    background: rgba(black, .5);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-  }
-
-  &-content {
-    padding: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  &-title {
-    font-weight: 600;
-    margin-right: 8px;
-    text-transform: uppercase;
-  }
-
-  &-close {
-    background: none;
-    border: none;
-    border-top: 1px solid $lv-grey;
-    color: $lv-grey;
-    cursor: pointer;
-    font-family: 'Open Sans';
-    padding: 5px;
-    text-transform: uppercase;
-    width: 100%;
-  }
-
   &-transition {
     &-enter {
       opacity: 0;
@@ -148,6 +110,44 @@ export default Vue.extend({
       }
     }
   }
+}
+
+.modal-wrapper {
+  background: rgba(black, .5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.modal-content {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-title {
+  font-weight: 600;
+  margin-right: 8px;
+  text-transform: uppercase;
+}
+
+.modal-close {
+  background: none;
+  border: none;
+  border-top: 1px solid $lv-grey;
+  color: $lv-grey;
+  cursor: pointer;
+  font-family: 'Open Sans';
+  padding: 5px;
+  text-transform: uppercase;
+  width: 100%;
 }
 
 @keyframes grow {

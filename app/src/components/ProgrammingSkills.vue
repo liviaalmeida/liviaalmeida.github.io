@@ -4,13 +4,13 @@
     :title="$t('title.programming')"
     class="programming"
   >
-    <div class="skills">
+    <div class="programming-skills">
       <div
         v-for="(skill,index) in skills"
         :key="index"
-        class="skill"
+        class="programming-skill"
       >
-        <span>{{ skill.name }}</span>
+        <span class="programming-label">{{ skill.name }}</span>
         <ProgressBar
           :progress="skill.progress"
         />
@@ -69,7 +69,7 @@ export default Vue.extend({
 	background-color: $lv-lilac;
 }
 
-.skills {
+.programming-skills {
 	@include flex-column;
 	justify-content: space-around;
 	align-self: center;
@@ -79,13 +79,13 @@ export default Vue.extend({
   transform: translateX(-20px);
 }
 
-.skill {
+.programming-skill {
 	align-self: flex-end;
 	font-size: 1.7*$m;
 	margin-top: 3*$m;
+}
 
-	span {
-		margin-right: 1.5*$m;
-	}
+.programming-label {
+  margin-right: 1.5*$m;
 }
 </style>

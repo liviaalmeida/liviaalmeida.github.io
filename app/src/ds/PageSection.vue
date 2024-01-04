@@ -45,18 +45,18 @@ export default Vue.extend({
   &:not(&--small) {
     min-height: calc(100vh - 60px);
   }
+}
 
-  &-title {
-    margin-bottom: 40px;
-  }
-  
-  &-content {
-    margin: 0 auto;
-    max-width: 800px;
+.section-title {
+  margin-bottom: 40px;
+}
 
-    @include phone {
-      width: 100%;
-    }
+.section-content {
+  margin: 0 auto;
+  max-width: 800px;
+
+  @include phone {
+    width: 100%;
   }
 }
 </style>

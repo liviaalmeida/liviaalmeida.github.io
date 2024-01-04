@@ -191,34 +191,34 @@ $gap: .5*$m;
   @include phone {
     width: 100%;
   }
+}
 
-  &-row {
-    display: grid;
-    grid-template-columns: 2fr 3fr;
+.message-row {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+
+  *:first-child {
+    margin-right: $gap;
+  }
+
+  @include tablet {
+    grid-template-columns: 1fr;
 
     *:first-child {
-      margin-right: $gap;
-    }
-
-    @include tablet {
-      grid-template-columns: 1fr;
-
-      *:first-child {
-        margin-bottom: $gap;
-        margin-right: 0;
-      }
+      margin-bottom: $gap;
+      margin-right: 0;
     }
   }
+}
 
-  &-name,
-  &-row,
-  &-text {
-    margin-bottom: $gap;
-  }
+.message-name,
+.message-row,
+.message-text {
+  margin-bottom: $gap;
+}
 
-  &-captcha {
-    margin: $m auto;
-    max-width: 150px;
-  }
+.message-captcha {
+  margin: $m auto;
+  max-width: 150px;
 }
 </style>

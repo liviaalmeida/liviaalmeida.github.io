@@ -28,6 +28,7 @@
       <li
         v-for="(timeEvent, index) in timeEvents"
         :key="index"
+        class="timeline-list-item"
         @mouseover="active = true"
         @mouseout="active = false"
       >
@@ -36,20 +37,27 @@
           :href="timeEvent.link"
           target="_blank"
           rel="noopener"
+          class="timeline-list-link"
           @click="onEventClick(timeEvent.title)"
         >
           {{ timeEvent.title }}
         </a>
-        <h5 v-else>
+        <h5
+          v-else
+          class="timeline-list-title"
+        >
           {{ timeEvent.title }}
         </h5>
-        <h6 v-if="timeEvent.duration">
+        <h6
+          v-if="timeEvent.duration"
+          class="timeline-list-duration"
+        >
           {{ timeEvent.duration }}
         </h6>
-        <p>
+        <p class="timeline-list-text">
           <span
             v-if="timeEvent.intro"
-            class="intro"
+            class="timeline-list-intro"
           >
             {{ timeEvent.intro }}
           </span> 
@@ -136,82 +144,86 @@ $icon: 35px;
   margin: 0 0 0 1.4*$m;
   z-index: 0;
   position: relative;
+}
 
-  &-line {
-    background-color: $lv-purple;
+.timeline-list-line {
+  @include animation-on-load(grow-line);
+  background-color: $lv-purple;
+  content: '';
+  display: block;
+  transform-origin: top;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0.3*$m;
+}
+
+.timeline-list-item {
+  padding-top: 0.5*$m;
+  position: relative;
+
+  &:not(:last-child) {
+    margin-bottom: 2*$m;
+  }
+
+  &:after {
+    @include animation-on-load(grow-ball);
+    background: $lv-white;
+    border: $border;
+    border-radius: 50%;
     content: '';
     display: block;
+    transition: all $animation-time ease-in;
+    z-index: 2;
+    height: $bullet-size;
+    width: $bullet-size;
     position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 0.3*$m;
-    transform-origin: top;
-    @include animation-on-load(grow-line);
+    top: 0.5*$m;
+    left: -3.2*$m;
   }
 
-  li {
-    position: relative;
-    padding-top: 0.5*$m;
-
-    &:not(:last-child) {
-      margin-bottom: 2*$m;
-    }
-
-    &:after {
-      height: $bullet-size;
-      width: $bullet-size;
-      display: block;
-      position: absolute;
-      background: $lv-white;
-      border-radius: 50%;
-      border: $border;
-      content: '';
-      top: 0.5*$m;
-      left: -3.2*$m;
-      z-index: 2;
-      transition: all $animation-time ease-in;
-      @include animation-on-load(grow-ball);
-    }
-
-    &:hover:after {
-      background: lighten($lv-purple, 10%);
-    }
-
-    a, h5, h6 {
-      display: inline;
-    }
-
-    a, a:visited {
-      color: $lv-purple;
-
-      &:focus {
-        color: $lv-purple;
-      }
-    }
-
-    h5, a, a:visited {
-      font-family: 'Bebas Neue';
-      font-weight: 600;
-      font-size: 2*$m;
-    }
-
-    h6 {
-      font-size: 1*$m;
-      margin-left: 0.5*$m;
-    }
-
-    p {
-      .intro {
-        font-weight: 600;
-        margin-right: 0.5*$m;
-      }
-
-      font-size: 1.5*$m;
-      text-align: justify;
-      line-height: 1.3;
-    }
+  &:hover:after {
+    background: lighten($lv-purple, 10%);
   }
+}
+
+.timeline-list-link,
+.timeline-list-title,
+.timeline-list-duration {
+  display: inline;
+}
+
+.timeline-list-link, .timeline-list-link:visited {
+  color: $lv-purple;
+
+  &:focus {
+    color: $lv-purple;
+  }
+}
+
+.timeline-list-title,
+.timeline-list-link,
+.timeline-list-link:visited {
+  font-family: 'Bebas Neue';
+  font-weight: 600;
+  font-size: 2*$m;
+}
+
+.timeline-list-duration {
+  font-size: 1*$m;
+  margin-left: 0.5*$m;
+}
+
+.timeline-list-text {
+  font-size: 1.5*$m;
+  line-height: 1.3;
+  text-align: justify;
+}
+
+.timeline-list-intro {
+  font-weight: 600;
+  margin-right: 0.5*$m;
 }
 
 @keyframes grow-ball {

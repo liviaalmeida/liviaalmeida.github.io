@@ -9,6 +9,7 @@
         loading="lazy"
         :src="require('@/assets/images/livia.jpeg')"
         alt="Profile picture"
+        class="profile-photo"
       >
       <div class="profile-text">
         <p
@@ -78,74 +79,71 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" scoped>
+.profile-photo {
+  border-radius: 5px;
+  height: 30*$m;
 
-.profile {
-  img {
-    border-radius: 5px;
-    height: 30*$m;
+  @include tablet {
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: 50% 0;
+    height: 20*$m;
+    width: 20*$m;
+  }
+}
 
-    @include tablet {
-      border-radius: 50%;
-      height: 20*$m;
-      width: 20*$m;
-      object-fit: cover;
-      object-position: 50% 0;
+.profile-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10*$m;
+
+  @include tablet {
+    flex-direction: column;
+  }
+}
+
+.profile-text {
+  margin-left: 5*$m;
+  max-width: 400px;
+
+  @include tablet {
+    margin-left: 0;
+    margin-top: $m;
+  }
+  
+  p {
+    font-size: 1.8*$m;
+    line-height: 1.5;
+    margin-bottom: .7*$m;
+    text-align: justify;
+
+    &:last-of-type {
+      margin-bottom: 1.5*$m;
     }
   }
+}
 
-  &-content {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 10*$m;
+.profile-resume {
+  display: block;
+  margin: 0 auto;
+  text-decoration: none;
+  width: 200px;
+}
 
-    @include tablet {
-      flex-direction: column;
-    }
-  }
+.profile-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
 
-  &-text {
-    max-width: 400px;
-    margin-left: 5*$m;
+.profile-download {
+  transform: translateY(-4px) scale(1.2);
+}
 
-    @include tablet {
-      margin-left: 0;
-      margin-top: $m;
-    }
-    
-    p {
-      font-size: 1.8*$m;
-      text-align: justify;
-      line-height: 1.5;
-      margin-bottom: .7*$m;
-
-      &:last-of-type {
-        margin-bottom: 1.5*$m;
-      }
-    }
-  }
-
-  &-resume {
-    display: block;
-    text-decoration: none;
-    margin: 0 auto;
-    width: 200px;
-  }
-
-  &-button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 5px;
-  }
-
-  &-download {
-    transform: translateY(-4px) scale(1.2);
-  }
-
-  &-info {
-    margin: 6*$m auto;
-    max-width: 420px;
-  }
+.profile-info {
+  margin: 6*$m auto;
+  max-width: 420px;
 }
 </style>

@@ -7,7 +7,9 @@
       size="l"
       class="animated-title-icon"
     />
-    <h2>{{ text }}</h2>
+    <h2 class="animated-title-heading">
+      {{ text }}
+    </h2>
   </div>
 </template>
 
@@ -36,16 +38,16 @@ $icon: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
+}
 
-  h2 {
-    font-family: 'Bebas Neue';
-    font-size: 4*$m;
-    margin-left: $m;
-  }
+.animated-title-icon {
+  fill: $lv-purple;
+  width: $icon;
+}
 
-  &-icon {
-    width: $icon;
-    fill: $lv-purple;
-  }
+.animated-title-heading {
+  font-family: 'Bebas Neue';
+  font-size: 4*$m;
+  margin-left: $m;
 }
 </style>

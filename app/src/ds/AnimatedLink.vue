@@ -9,7 +9,7 @@
     <a
       :href="href"
       :aria-label="text"
-      class="icon"
+      class="animated-link-icon"
       rel="noopener"
       @click="onClick(href)"
     >
@@ -21,7 +21,7 @@
     </a>
     <a
       :href="href"
-      class="text"
+      class="animated-link-text"
       @mouseover="active = true"
       @mouseout="active = false"
       @click="onClick(href)"
@@ -74,13 +74,16 @@ export default Vue.extend({
 .animated-link {
   @include inline-flex-column;
   align-items: center;
+}
 
-  a, a:visited {
-    text-decoration: none;
+.animated-link-icon,
+.animated-link-text {
+  &, &:visited {
     color: $lv-purple;
     font-family: 'Neuton';
-    font-weight: 600;
     font-size: 2*$m;
+    font-weight: 600;
+    text-decoration: none;
   }
 }
 </style>

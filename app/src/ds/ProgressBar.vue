@@ -54,23 +54,23 @@ $height: $m;
 $border-radius: .5*$m;
 
 .progress {
-	display: inline-flex;
 	background-color: rgba($lv-purple, .5);
-	height: $height;
 	border-radius: $border-radius;
+	display: inline-flex;
+	height: $height;
   width: 12.5*$m;
 
 	&:hover .progress-bar {
 		animation: barGrow ease-in-out 2s infinite alternate;
 		transform-origin: 0;
 	}
+}
 
-	&-bar {
-		background-color: $lv-purple;
-		height: $height;
-		border-radius: $border-radius;
-		@include animation-on-load(no-width-on-load);
-	}
+.progress-bar {
+  @include animation-on-load(no-width-on-load);
+  background-color: $lv-purple;
+  border-radius: $border-radius;
+  height: $height;
 }
 
 @keyframes barGrow {

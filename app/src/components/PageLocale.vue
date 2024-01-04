@@ -3,14 +3,16 @@
     <label
       v-for="lang in langs"
       :key="lang"
+      class="locale-label"
     >
       <input
         type="radio"
         name="lang"
         :value="lang"
+        class="locale-input"
         @click="updateLocale"
       >
-      <span>
+      <span class="locale-lang">
         {{ lang }}
       </span>
     </label>
@@ -49,29 +51,27 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" scoped>
-.locale {
-  label {
-    font-weight: 400;
-    font-size: 18px;
+.locale-label {
+  font-weight: 400;
+  font-size: 18px;
 
-    &:not(:last-child):after {
-      content: '|';
-      margin: 0 3px;
-    }
-
-    span {
-      opacity: .5;
-      cursor: pointer;
-    }
-
-    input {
-      display: none;
-
-      &:checked ~ span {
-        font-weight: 700;
-        opacity: 1;
-      }
-    }
+  &:not(:last-child):after {
+    content: '|';
+    margin: 0 3px;
   }
+}
+
+.locale-input {
+  display: none;
+
+  &:checked ~ .locale-lang {
+    font-weight: 700;
+    opacity: 1;
+  }
+}
+
+.locale-lang {
+  opacity: .5;
+  cursor: pointer;
 }
 </style>
