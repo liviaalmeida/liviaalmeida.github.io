@@ -37,8 +37,8 @@ function sendMail(email: Email): Promise<void> {
   return new Promise((resolve, reject) => {
     try {
       client.send({
-        SecureToken: process.env.VUE_APP_MJ_SECURE_TOKEN,
-        From: process.env.VUE_APP_MJ_FROM,
+        SecureToken: import.meta.env.VITE_MJ_SECURE_TOKEN,
+        From: import.meta.env.VITE_MJ_FROM,
         To: 'leave.ah@gmail.com',
         Subject: email.subject,
         Body: `
