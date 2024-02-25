@@ -1,22 +1,26 @@
 <template>
   <div
-    class="animated-title"
+    class="title"
   >
-    <VIcon
+    <Icon
       :name="icon"
       size="l"
-      class="animated-title-icon"
+      class="title-icon"
     />
-    <h2 class="animated-title-heading">
+    <h2 class="title-heading">
       {{ text }}
     </h2>
   </div>
 </template>
 
-<script lang="ts">
-import Vue from 'vue'
+<script setup lang="ts">
+import Icon from '@/ui/Icon.vue'
+</script>
 
-export default Vue.extend({
+<script lang="ts">
+import { defineComponent } from 'vue'
+
+export default defineComponent({
   props: {
     icon: {
       required: true,
@@ -33,19 +37,19 @@ export default Vue.extend({
 <style lang="scss" scoped>
 $icon: 30px;
 
-.animated-title {
+.title {
   color: $lv-purple;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.animated-title-icon {
+.title-icon {
   fill: $lv-purple;
   width: $icon;
 }
 
-.animated-title-heading {
+.title-heading {
   font-family: 'Bebas Neue';
   font-size: 4*$m;
   margin-left: $m;

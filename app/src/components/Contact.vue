@@ -1,14 +1,14 @@
 <template>
-  <PageSection
+  <Section
     title-icon="message"
     :title="$t('title.contact')"
     class="contact"
   >
-    <SendMessage
+    <Message
       class="contact-form"
     />
     <div class="contact-icons">
-      <AnimatedLink
+      <Social
         v-for="contact in contacts"
         :key="contact.image"
         :image="contact.image"
@@ -19,17 +19,20 @@
     <div class="contact-copyright">
       Copyright © Lívia Almeida
     </div>
-  </PageSection>
+  </Section>
 </template>
 
-<script lang="ts">
-import Vue from 'vue'
-import SendMessage from '@/components/SendMessage.vue'
+<script setup lang="ts">
+import Section from '@/ui/Section.vue'
+import Social from '@/ui/Social.vue'
 
-export default Vue.extend({
-  components: {
-    SendMessage,
-  },
+import Message from '@/components/Message.vue'
+</script>
+
+<script lang="ts">
+import { defineComponent } from 'vue'
+
+export default defineComponent({
   data() {
     return {
       contacts: [

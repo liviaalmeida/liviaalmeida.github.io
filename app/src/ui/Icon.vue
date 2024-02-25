@@ -6,9 +6,8 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
+import { defineComponent } from 'vue'
 
-type COLOR = 'green' | 'purple' | 'red' | 'white' | 'yellow'
 const COLORS = {
   green: '#008000',
   purple: '#3c0046',
@@ -18,7 +17,7 @@ const COLORS = {
 }
 const SIZES = ['s', 'm', 'l', 'xl']
 
-export default Vue.extend({
+export default defineComponent({
   props: {
     color: {
       default: 'purple',

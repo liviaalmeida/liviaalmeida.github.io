@@ -4,7 +4,7 @@
       'section--small': small,
     }]"
   >
-    <AnimatedTitle
+    <Title
       v-if="title && titleIcon"
       :icon="titleIcon"
       :text="title"
@@ -16,9 +16,14 @@
   </section>
 </template>
 
+<script setup lang="ts">
+import Title from '@/ui/Title.vue'
+</script>
+
 <script lang="ts">
-import Vue from 'vue'
-export default Vue.extend({
+import { defineComponent } from 'vue'
+
+export default defineComponent({
   props: {
     small: {
       default: false,

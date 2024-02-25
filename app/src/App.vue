@@ -1,45 +1,26 @@
 <template>
-  <div id="app">
-    <PageHeader />
-    <router-view
-      class="app-view"
-    />
-  </div>
+  <Header />
+  <Profile />
+  <Skills />
+  <Experience />
+  <Contact />
 </template>
 
+<script setup lang="ts">
+import Contact from '@/components/Contact.vue'
+import Experience from '@/components/Experience.vue'
+import Header from '@/components/Header.vue'
+import Profile from '@/components/Profile.vue'
+import Skills from '@/components/Skills.vue'
+</script>
+
 <script lang="ts">
-import Vue from 'vue'
-import PageHeader from '@/components/PageHeader.vue'
+import { defineComponent } from 'vue'
 import mixpanel from 'mixpanel-browser'
 
-export default Vue.extend({
-  components: {
-    PageHeader,
-  },
+export default defineComponent({
   mounted() {
     mixpanel.track('Page-view')
   },
 })
 </script>
-
-<style lang="scss">
-html {
-	scroll-behavior: smooth;
-}
-
-html, body, #app {
-  width: 100%;
-  height: 100%;
-}
-
-#app {
-  font-family: 'Open Sans', Helvetica;
-	color: $lv-purple;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-
-  * {
-    box-sizing: border-box;
-  }
-}
-</style>

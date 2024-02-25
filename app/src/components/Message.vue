@@ -1,10 +1,10 @@
 <template>
   <form
     class="message"
-    @input="onInput($event.target.form)"
-    @submit.prevent="sendMessage"
+    @input="onInput(($event.target as HTMLFormElement).form)"
+    @submit.prevent="onSubmit"
   >
-    <VInput
+    <Input
       v-model="email.name"
       :label="required($t('contact.name.label'))"
       :placeholder="$t('contact.name.placeholder')"
@@ -14,14 +14,14 @@
       required
     />
     <div class="message-row">
-      <VInput
+      <Input
         v-model="email.subject"
         :label="required($t('contact.subject.label'))"
         :placeholder="$t('contact.subject.placeholder')"
         :disabled="disabled"
         required
       />
-      <VInput
+      <Input
         v-model="email.email"
         :label="$t('contact.email.label')"
         :placeholder="$t('contact.email.placeholder')"
@@ -29,7 +29,7 @@
         type="email"
       />
     </div>
-    <VInput
+    <Input
       v-model="email.message"
       :label="required($t('contact.message.label'))"
       :placeholder="$t('contact.message.placeholder')"
@@ -38,33 +38,43 @@
       class="message-text"
       required
     />
-    <CaptchaValidation
-      ref="captcha"
+    <Captcha
       v-model="captcha"
-      :callback="captchaCallback"
+      :validate="sending"
       class="message-captcha"
+      @abuse="onError(true)"
+      @error="onError(false)"
+      @success="sendMessage"
     />
-    <VButton
+    <Button
       :disabled="!valid || disabled"
       :loading="sending"
     >
       {{ $t('contact.button') }}
-    </VButton>
+    </Button>
     
-    <VModal
+    <Modal
       v-model="modal"
-      v-bind="feedback"
+      :message="feedback.message"
+      :reason="feedback.reason"
+      :title="feedback.title"
     />
   </form>
 </template>
 
+<script setup lang="ts">
+import Button from '@/ui/Button.vue'
+import Captcha from '@/ui/Captcha.vue'
+import Input from '@/ui/Input.vue'
+import Modal from '@/ui/Modal.vue'
+</script>
+
 <script lang="ts">
-import Vue from 'vue'
-import jsCaptcha from 'js-captcha'
+import { defineComponent } from 'vue'
 import { sendMail } from '@/assets/helpers'
 import mixpanel from 'mixpanel-browser'
 
-export default Vue.extend({
+export default defineComponent({
   data() {
     return {
       captcha: '',
@@ -77,8 +87,8 @@ export default Vue.extend({
       } as Email,
       feedback: {
         message: '',
+        reason: 'info' as ModalReason,
         title: '',
-        type: '',
       },
       modal: false,
       sending: false,
@@ -86,10 +96,6 @@ export default Vue.extend({
     }
   },
   computed: {
-    captchaElement(): jsCaptcha {
-      const child = this.$refs.captcha as Vue
-      return child.$data.captcha
-    },
     errors(): { abused: string; incorrect: string } {
       return {
         abused: this.$t('contact.captcha.errors.abused').toString(),
@@ -98,59 +104,38 @@ export default Vue.extend({
     },
   },
   methods: {
-    captchaCallback(response: 'success' | 'error', _: Element, tries: number) {
-      if (response === 'success') return
-      if (tries > 3) throw Error(this.errors.abused)
-      throw Error(this.errors.incorrect)
+    onError(abuse: Boolean) {
+      const message = abuse ? this.errors.abused : this.errors.incorrect
+      this.feedback = {
+        message,
+        reason: 'error',
+        title: 'Ops!',
+      }
+      this.reset()
     },
     onInput(form: HTMLFormElement) {
       this.valid = form.checkValidity() && !!this.captcha.length
     },
+    onSubmit() {
+      mixpanel.track('Message-send')
+      this.sending = true
+    },
     required(label: string) {
       return `${label} *`
     },
-    sendFinish() {
-      this.captchaElement.reset()
+    reset() {
+      this.sending = false
       this.captcha = ''
       this.valid = false
       this.modal = true
     },
     sendMessage() {
-      mixpanel.track('Message-send')
-
-      try {
-        this.captchaElement.validate()
-      } catch (exception) {
-        const error = exception as Error
-        mixpanel.track('Message-error-captcha', {
-          error: error.message,
-        })
-        this.feedback = {
-          ...this.feedback,
-          title: 'Ops!',
-          type: 'error',
-        }
-        switch (error.message) {
-        case this.errors.abused:
-          this.$cookies.set('CTMT', true)
-          this.disabled = true
-          this.feedback.message = this.errors.abused
-          break
-        case this.errors.incorrect:
-          this.feedback.message = this.errors.incorrect
-          break
-        }
-        this.sendFinish()
-        return
-      }
-
-      this.sending = true
       sendMail(this.email)
         .then(() => {
           this.feedback = {
             message: this.$t('contact.sent').toString(),
+            reason: 'success',
             title: 'Ok!',
-            type: 'success',
           }
           this.email = {
             email: '',
@@ -162,15 +147,14 @@ export default Vue.extend({
         }).catch((error) => {
           this.feedback = {
             message: error.message,
+            reason: 'error',
             title: 'Ops!',
-            type: 'error',
           }
           mixpanel.track('Message-error-send', {
             error: error.message,
           })
         }).finally(() => {
-          this.sending = false
-          this.sendFinish()
+          this.reset()
         })
     },
   },

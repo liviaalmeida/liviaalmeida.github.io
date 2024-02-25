@@ -1,6 +1,6 @@
 <template>
   <div :class="['menu', {'menu--background': background}]">
-    <PageLocale class="menu-locale" />
+    <Locale class="menu-locale" />
     <nav class="menu-nav">
       <button
         v-for="link in links"
@@ -11,7 +11,7 @@
         {{ $t(link.text) }}
       </button>
     </nav>
-    <MenuButton
+    <Hamburger
       v-model="open"
       class="menu-button"
     />
@@ -35,18 +35,17 @@
   </div>
 </template>
 
+<script setup lang="ts">
+import Hamburger from '@/ui/Hamburger.vue'
+import Locale from '@/components/Locale.vue'
+</script>
+
 <script lang="ts">
-import Vue from 'vue'
+import { defineComponent } from 'vue'
 import { navigateTo } from '@/assets/helpers'
-import PageLocale from '@/components/PageLocale.vue'
-import MenuButton from './MenuButton.vue'
 import mixpanel from 'mixpanel-browser'
 
-export default Vue.extend({
-  components: {
-    PageLocale,
-    MenuButton,
-  },
+export default defineComponent({
   data() {
     return {
       background: false,

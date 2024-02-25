@@ -1,5 +1,5 @@
 <template>
-  <PageSection
+  <Section
     title-icon="programming"
     :title="$t('title.programming')"
     class="programming"
@@ -11,18 +11,23 @@
         class="programming-skill"
       >
         <span class="programming-label">{{ skill.name }}</span>
-        <ProgressBar
+        <Progress
           :progress="skill.progress"
         />
       </div>
     </div>
-  </PageSection>
+  </Section>
 </template>
 
-<script lang="ts">
-import Vue from 'vue'
+<script setup lang="ts">
+import Progress from '@/ui/Progress.vue'
+import Section from '@/ui/Section.vue'
+</script>
 
-export default Vue.extend({
+<script lang="ts">
+import { defineComponent } from 'vue'
+
+export default defineComponent({
   data() {
     return {
       skills: [

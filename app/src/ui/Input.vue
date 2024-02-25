@@ -18,37 +18,35 @@
         v-if="$attrs.type === 'textarea'"
         v-bind="$attrs"
         class="input-textarea"
-        v-on="$listeners"
         @blur="onBlur"
         @focus="onFocus"
-        @input="onModel($event.target)"
+        @input="onModel($event.target as HTMLTextAreaElement)"
       />
       <input
         v-else
         v-bind="$attrs"
         class="input-input"
-        v-on="$listeners"
         @blur="onBlur"
         @focus="onFocus"
-        @input="onModel($event.target)"
+        @input="onModel($event.target as HTMLInputElement)"
       >
     </div>
   </div>
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
+import { defineComponent } from 'vue'
 
-export default Vue.extend({
-  model: {
-    event: 'model',
-  },
+export default defineComponent({
   props: {
     label: {
       required: true,
       type: String,
     },
   },
+  emits: [
+    'update:modelValue',
+  ],
   data() {
     return {
       focus: false,
@@ -70,7 +68,7 @@ export default Vue.extend({
       this.focus = true
     },
     onModel({ value }: HTMLInputElement | HTMLTextAreaElement) {
-      this.$emit('model', value)
+      this.$emit('update:modelValue', value)
     },
   },
 })

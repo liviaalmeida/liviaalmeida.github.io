@@ -1,7 +1,7 @@
 <template>
   <transition name="modal-transition">
     <div
-      v-if="value"
+      v-if="modelValue"
       class="modal-wrapper"
       @click="close"
     >
@@ -10,9 +10,9 @@
         @click.stop
       >
         <div class="modal-content">
-          <VIcon
+          <Icon
             :color="color"
-            :name="type"
+            :name="reason"
             size="l"
             class="modal-icon"
           />
@@ -35,45 +35,49 @@
   </transition>
 </template>
 
-<script lang="ts">
-import Vue from 'vue'
+<script setup lang="ts">
+import Icon from '@/ui/Icon.vue'
+</script>
 
-const ERRORCOLOR = {
+<script lang="ts">
+import { defineComponent } from 'vue'
+
+const ERRORCOLOR: Indexable<COLOR> = {
   'error': 'red',
   'info': 'yellow',
   'success': 'green',
 }
 
-export default Vue.extend({
-  model: {
-    event: 'show',
-  },
+export default defineComponent({
   props: {
     message: {
       required: true,
       type: String,
     },
+    modelValue: {
+      required: true,
+      type: Boolean,
+    },
     title: {
       required: true,
       type: String,
     },
-    type: {
+    reason: {
       required: true,
-      type: String as () => 'error' | 'success' | 'info',
-    },
-    value: {
-      required: true,
-      type: Boolean,
+      type: String as () => ModalReason,
     },
   },
+  emits: [
+    'update:modelValue',
+  ],
   computed: {
-    color(): string {
-      return ERRORCOLOR[this.type]
+    color(): COLOR {
+      return ERRORCOLOR[this.reason]
     },
   },
   methods: {
     close() {
-      this.$emit('show', false)
+      this.$emit('update:modelValue', false)
     },
   },
 })

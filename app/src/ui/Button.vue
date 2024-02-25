@@ -3,7 +3,6 @@
     :disabled="!!$attrs.disabled || loading"
     class="button"
     v-bind="$attrs"
-    v-on="$listeners"
     @click="onClick"
   >
     <span
@@ -21,9 +20,9 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
+import { defineComponent } from 'vue'
 
-export default Vue.extend({
+export default defineComponent({
   props: {
     loading: {
       required: false,

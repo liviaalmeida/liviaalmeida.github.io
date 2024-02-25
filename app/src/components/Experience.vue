@@ -1,23 +1,31 @@
 <template>
-  <PageSection
+  <Section
     class="experience"
     title-icon="tools"
     :title="$t('menu.experience')"
   >
-    <VTimeline
+    <Timeline
       v-for="experience in experiences"
       :key="experience.title"
       :icon="experience.icon"
-      :time-events="$t(experience.items)"
+      :time-events="convertTimeEvent($tm(experience.items))"
       :title="$t(experience.title)"
       class="experience-info"
     />
-  </PageSection>
+  </Section>
 </template>
 
+<script setup lang="ts">
+import Section from '@/ui/Section.vue'
+import Timeline from '@/ui/Timeline.vue'
+
+import { convertTimeEvent } from '@/assets/helpers'
+</script>
+
 <script lang="ts">
-import Vue from 'vue'
-export default Vue.extend({
+import { defineComponent } from 'vue'
+
+export default defineComponent({
   computed: {
     experiences() {
       return [

@@ -11,7 +11,7 @@
       v-if="icon && title"
       class="timeline-header"
     >
-      <VIcon
+      <Icon
         :name="icon"
         size="m"
       />
@@ -70,11 +70,15 @@
   </div>
 </template>
 
-<script lang="ts">
-import mixpanel from 'mixpanel-browser'
-import Vue from 'vue'
+<script setup lang="ts">
+import Icon from '@/ui/Icon.vue'
+</script>
 
-export default Vue.extend({
+<script lang="ts">
+import { defineComponent } from 'vue'
+import mixpanel from 'mixpanel-browser'
+
+export default defineComponent({
   props: {
     icon: {
       required: true,

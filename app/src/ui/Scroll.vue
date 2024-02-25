@@ -1,23 +1,27 @@
 <template>
   <button
-    class="scroll-down"
+    class="scroll"
     aria-label="Scroll Down"
     @click="onScroll"
   >
-    <VIcon
+    <Icon
       color="white"
       name="double-down"
       size="xl"
-      class="scroll-down-icon"
+      class="scroll-icon"
     />
   </button>
 </template>
 
+<script setup lang="ts">
+import Icon from '@/ui/Icon.vue'
+</script>
+
 <script lang="ts">
-import Vue from 'vue'
+import { defineComponent } from 'vue'
 import { navigateTo } from '@/assets/helpers'
 
-export default Vue.extend({
+export default defineComponent({
   props: {
     toClass: {
       type: String,
@@ -33,7 +37,7 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" scoped>
-.scroll-down {
+.scroll {
   background-color: transparent;
   border: none;
   cursor: pointer;
@@ -41,7 +45,7 @@ export default Vue.extend({
   width: 80px;
 }
 
-.scroll-down-icon {
+.scroll-icon {
   fill: white;
   height: 70px;
   width: 70px;

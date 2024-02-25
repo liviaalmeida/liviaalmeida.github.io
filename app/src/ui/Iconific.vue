@@ -1,20 +1,24 @@
 <template>
-  <div :class="['animated-icon', {'animated-icon--active': active }]">
-    <VIcon
+  <div :class="['iconific', {'iconific--active': active }]">
+    <Icon
       color="white"
       :name="image"
       :class="[
-        'animated-icon-icon',
-        {'animated-icon-icon--active': active },
+        'iconific-icon',
+        {'iconific-icon--active': active },
       ]"
     />
   </div>
 </template>
 
-<script lang="ts">
-import Vue from 'vue'
+<script setup lang="ts">
+import Icon from '@/ui/Icon.vue'
+</script>
 
-export default Vue.extend({
+<script lang="ts">
+import { defineComponent } from 'vue'
+
+export default defineComponent({
   props: {
     active: {
       type: Boolean,
@@ -36,7 +40,7 @@ export default Vue.extend({
 <style lang="scss" scoped>
 $size: 48px;
 
-.animated-icon {
+.iconific {
   background-color: $lv-purple;
 	border-radius: 50%;
   opacity: 0.6;
@@ -47,14 +51,14 @@ $size: 48px;
   justify-content: center;
 }
 
-.animated-icon, .animated-icon-icon {
+.iconific, .iconific-icon {
   transition: all $animation-time;
 }
 
-.animated-icon:hover, .animated-icon--active {
+.iconific:hover, .iconific--active {
   opacity: 1;
 
-  .animated-icon-icon {
+  .iconific-icon {
     transform: scale(1.5);
   }
 }

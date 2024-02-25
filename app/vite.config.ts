@@ -1,7 +1,7 @@
-import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue2'
-import eslint from 'vite-plugin-eslint'
 import { resolve } from 'path'
+import { defineConfig } from 'vite'
+import vue from '@vitejs/plugin-vue'
+import eslint from 'vite-plugin-eslint'
 
 export default defineConfig({
   base: '',
@@ -13,16 +13,16 @@ export default defineConfig({
   css: {
     preprocessorOptions: {
       scss: {
-        additionalData: '@import "@/assets/scss/variables.scss"; @import "@/assets/scss/fonts.scss";',
+        additionalData: '@import "@/assets/scss/variables.scss";',
       },
     },
   },
   plugins: [
-    vue(),
     eslint(),
+    vue(),
   ],
   preview: {
-    port: '8080',
+    port: 8080,
   },
   resolve: {
     alias: {
@@ -30,8 +30,7 @@ export default defineConfig({
     },
   },
   server: {
-    base: '/',
     host: 'localhost',
-    port: '8080',
+    port: 8080,
   },
 })

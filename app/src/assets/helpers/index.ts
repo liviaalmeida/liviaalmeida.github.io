@@ -1,13 +1,7 @@
 import jsCaptcha from 'js-captcha'
 import { Email as client } from '@/assets/helpers/smtp'
 
-export type captchaCallback = (
-  response: 'success' | 'error',
-  captcha: Element,
-  tries: number,
-) => void
-
-function captcha(el: string, callback: captchaCallback): jsCaptcha {
+function captcha(el: string, callback: Captcha): jsCaptcha {
   return new jsCaptcha({
     el,
     callback,
@@ -22,6 +16,10 @@ function captcha(el: string, callback: captchaCallback): jsCaptcha {
     },
     requiredValue: '=',
   })
+}
+
+function convertTimeEvent(objects: unknown): TimeEvent[] {
+  return objects as TimeEvent[]
 }
 
 function navigateTo(targetClass: string, offset = 0): void {
@@ -62,6 +60,7 @@ function sendMail(email: Email): Promise<void> {
 
 export {
   captcha,
+  convertTimeEvent,
   navigateTo,
   sendMail,
 }

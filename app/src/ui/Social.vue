@@ -4,16 +4,16 @@
       callback: onVisible,
       once: true,
     }"
-    class="animated-link"
+    class="social"
   >
     <a
       :href="href"
       :aria-label="text"
-      class="animated-link-icon"
+      class="social-icon"
       rel="noopener"
       @click="onClick(href)"
     >
-      <AnimatedIcon
+      <Iconific
         :image="image"
         :size="3"
         :active="active"
@@ -21,7 +21,7 @@
     </a>
     <a
       :href="href"
-      class="animated-link-text"
+      class="social-text"
       @mouseover="active = true"
       @mouseout="active = false"
       @click="onClick(href)"
@@ -31,11 +31,15 @@
   </div>
 </template>
 
-<script lang="ts">
-import mixpanel from 'mixpanel-browser'
-import Vue from 'vue'
+<script setup lang="ts">
+import Iconific from '@/ui/Iconific.vue'
+</script>
 
-export default Vue.extend({
+<script lang="ts">
+import { defineComponent } from 'vue'
+import mixpanel from 'mixpanel-browser'
+
+export default defineComponent({
   props: {
     href: {
       type: String,
@@ -71,13 +75,13 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" scoped>
-.animated-link {
+.social {
   @include inline-flex-column;
   align-items: center;
 }
 
-.animated-link-icon,
-.animated-link-text {
+.social-icon,
+.social-text {
   &, &:visited {
     color: $lv-purple;
     font-family: 'Neuton';

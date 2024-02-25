@@ -1,16 +1,9 @@
-/* eslint-env node */
-require('@rushstack/eslint-patch/modern-module-resolution')
-
 module.exports = {
   root: true,
   env: {
     node: true,
   },
   extends: [
-    'plugin:vue/base',
-    'plugin:vue/essential',
-    'plugin:vue/recommended',
-    '@vue/eslint-config-typescript',
   ],
   ignorePatterns: [
     'coverage',

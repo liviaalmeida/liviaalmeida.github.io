@@ -1,29 +1,29 @@
 <template>
-  <label class="menu-close">
+  <label class="hamburger">
     <input
       v-model="checked"
       type="checkbox"
-      class="menu-close-checkbox"
+      class="hamburger-checkbox"
     >
-    <div class="menu-close-line menu-close-line-1" />
-    <div class="menu-close-line menu-close-line-2" />
-    <div class="menu-close-line menu-close-line-3" />
+    <div class="hamburger-line hamburger-line-1" />
+    <div class="hamburger-line hamburger-line-2" />
+    <div class="hamburger-line hamburger-line-3" />
   </label>
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
+import { defineComponent } from 'vue'
 
-export default Vue.extend({
-  model: {
-    event: 'change',
-  },
+export default defineComponent({
   props: {
-    value: {
+    modelValue: {
       type: Boolean,
       required: false,
     },
   },
+  emits: [
+    'update:modelValue',
+  ],
   data() {
     return {
       checked: false,
@@ -31,10 +31,10 @@ export default Vue.extend({
   },
   watch: {
     checked() {
-      this.$emit('change', this.checked)
+      this.$emit('update:modelValue', this.checked)
     },
     value() {
-      this.checked = this.value
+      this.checked = this.modelValue
     },
   },
 })
@@ -44,7 +44,7 @@ export default Vue.extend({
 $line-spin: 220deg;
 $line-inclination: 50deg;
 
-.menu-close {
+.hamburger {
   @include flex-column;
   cursor: pointer;
   width: 20px;
@@ -54,7 +54,7 @@ $line-inclination: 50deg;
   justify-content: space-between;
 }
 
-.menu-close-line {
+.hamburger-line {
   height: 2px;
   width: 20px;
   background-color: white;
@@ -63,27 +63,27 @@ $line-inclination: 50deg;
   top: 50%;
 }
 
-.menu-close-checkbox {
+.hamburger-checkbox {
   display: none;
 }
 
-.menu-close-checkbox:checked ~ .menu-close-line {
-  &.menu-close-line {
+.hamburger-checkbox:checked ~ .hamburger-line {
+  &.hamburger-line {
     position: absolute;
     background-color: gray;
     top: 50%;
   }
 
-  &.menu-close-line-1 {
+  &.hamburger-line-1 {
     animation: spin-left .6s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s 1 normal;
     transform: rotate($line-inclination);
   }
 
-  &.menu-close-line-2 {
+  &.hamburger-line-2 {
     opacity: 0;
   }
 
-  &.menu-close-line-3 {
+  &.hamburger-line-3 {
     animation: spin-right .6s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s 1 normal;
     transform: rotate(-$line-inclination);
   }

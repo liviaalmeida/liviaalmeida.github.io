@@ -21,9 +21,9 @@
 
 <script lang="ts">
 import mixpanel from 'mixpanel-browser'
-import Vue from 'vue'
+import { defineComponent } from 'vue'
 
-export default Vue.extend({
+export default defineComponent({
   data() {
     return {
       langs: ['en', 'fr', 'pt'],

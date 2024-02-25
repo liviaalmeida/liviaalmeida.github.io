@@ -1,5 +1,5 @@
 <template>
-  <PageSection
+  <Section
     :title="$t('title.profile')"
     title-icon="profile"
     class="profile"
@@ -7,14 +7,15 @@
     <div class="profile-content">
       <img
         loading="lazy"
-        :src="require('@/assets/images/livia.jpeg')"
+        src="@/assets/images/livia.jpeg"
         alt="Profile picture"
         class="profile-photo"
       >
       <div class="profile-text">
         <p
-          v-for="(paragraph, p) in $t('profile')"
+          v-for="(paragraph, p) in $tm('profile')"
           :key="p"
+          class="profile-paragraph"
         >
           {{ paragraph }}
         </p>
@@ -25,33 +26,42 @@
           rel="alternate"
           @click="onDownload"
         >
-          <VButton class="profile-button">
-            <VIcon
+          <Button class="profile-button">
+            <Icon
               name="download"
               :opacity="0.7"
               class="profile-download"
             />
             {{ $t('title.resume') }}
-          </VButton>
+          </Button>
         </a>
       </div>
     </div>
-    <VTimeline
+    <Timeline
       v-for="info in infos"
       :key="info.title"
       :icon="info.icon"
-      :time-events="$t(info.items)"
+      :time-events="convertTimeEvent($tm(info.items))"
       :title="$t(info.title)"
       class="profile-info"
     />
-  </PageSection>
+  </Section>
 </template>
 
-<script lang="ts">
-import mixpanel from 'mixpanel-browser'
-import Vue from 'vue'
+<script setup lang="ts">
+import Button from '@/ui/Button.vue'
+import Icon from '@/ui/Icon.vue'
+import Section from '@/ui/Section.vue'
+import Timeline from '@/ui/Timeline.vue'
 
-export default Vue.extend({
+import { convertTimeEvent } from '@/assets/helpers'
+</script>
+
+<script lang="ts">
+import { defineComponent } from 'vue'
+import mixpanel from 'mixpanel-browser'
+
+export default defineComponent({
   computed: {
     infos() {
       return [
@@ -111,8 +121,9 @@ export default Vue.extend({
     margin-left: 0;
     margin-top: $m;
   }
-  
-  p {
+}
+
+.profile-paragraph {
     font-size: 1.8*$m;
     line-height: 1.5;
     margin-bottom: .7*$m;
@@ -122,7 +133,6 @@ export default Vue.extend({
       margin-bottom: 1.5*$m;
     }
   }
-}
 
 .profile-resume {
   display: block;

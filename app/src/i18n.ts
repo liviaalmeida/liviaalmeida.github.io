@@ -1,28 +1,15 @@
-import Vue from 'vue'
-import VueI18n, { LocaleMessages } from 'vue-i18n'
+import { createI18n } from 'vue-i18n'
 
-Vue.use(VueI18n)
+import en from '@/assets/locales/en.json'
+import fr from '@/assets/locales/fr.json'
+import pt from '@/assets/locales/pt.json'
 
-type Indexable<T> = { [key: string]: T }
-type Context = Indexable<Indexable<string>>
-
-const context: Context = import.meta.glob('./assets/locales/*.json', { eager: true })
-const files = Object.keys(context)
-
-function loadLocaleMessages (): LocaleMessages {
-  const messages: LocaleMessages = {}
-  files.forEach(key => {
-    const matched = key.match(/([A-Za-z0-9-_]+)\./i)
-    if (matched && matched.length > 1) {
-      const locale = matched[1]
-      messages[locale] = context[key]
-    }
-  })
-  return messages
-}
-
-export default new VueI18n({
-  locale: import.meta.env.VITE_I18N_LOCALE || 'en',
-  fallbackLocale: import.meta.env.VITE_I18N_FALLBACK_LOCALE || 'en',
-  messages: loadLocaleMessages(),
+export default createI18n({
+  fallbackLocale: 'fr', 
+  locale: 'en',
+  messages: {
+    en,
+    fr,
+    pt,
+  },
 })

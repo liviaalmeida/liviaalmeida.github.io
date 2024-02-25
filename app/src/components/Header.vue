@@ -1,29 +1,25 @@
 <template>
   <header class="header">
-    <NavigationMenu class="header-menu" />
+    <Menu class="header-menu" />
     <h1 class="header-title">
       Lívia Almeida
     </h1>
     <h2 class="header-position">
       {{ $t('title.position') }}
     </h2>
-    <CoffeeCup />
-    <ScrollDown
-      to-class="app-view"
+    <Coffee />
+    <Scroll
+      to-class="profile"
       class="header-scroll"
     />
   </header>
 </template>
 
-<script lang="ts">
-import Vue from 'vue'
-import NavigationMenu from '@/components/NavigationMenu.vue'
+<script setup lang="ts">
+import Coffee from '@/ui/Coffee.vue'
+import Scroll from '@/ui/Scroll.vue'
 
-export default Vue.extend({
-  components: {
-    NavigationMenu,
-  },
-})
+import Menu from '@/components/Menu.vue'
 </script>
 
 <style lang="scss" scoped>
