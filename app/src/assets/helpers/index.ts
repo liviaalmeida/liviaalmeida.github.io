@@ -7,7 +7,7 @@ function captcha(el: string, callback: Captcha): jsCaptcha {
     callback,
     canvasClass: 'captcha-canvas',
     canvasStyle: {
-      fillStyle: 'rgb(60, 0, 70)',
+      fillStyle: 'rgb(0, 0, 0)',
       font: '14px Open Sans',
       textAlign: 'left',
       textBaseline: 'top',

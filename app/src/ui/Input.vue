@@ -75,13 +75,13 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-$blur: rgba($lv-purple, .7);
+$blur: rgba($lv-dark, .7);
 
 .input {
   @include flex-column;
   background-color: $lv-white;
-  border: 2px solid $blur;
-  border-radius: 5px;
+  border-bottom: 2px solid $blur;
+  border-radius: 2px;
   padding: 2px 5px;
   transition: border-color .5s;
 
@@ -90,7 +90,7 @@ $blur: rgba($lv-purple, .7);
   }
 
   &--focused {
-    border-color: $lv-purple;
+    border-color: $lv-darker;
   }
 }
 
@@ -98,8 +98,8 @@ $blur: rgba($lv-purple, .7);
   color: $blur;
   font-size: 13px;
   font-weight: 600;
-  margin-bottom: .5*$m;
-  margin-left: .3*$m;
+  margin-bottom: 5px;
+  margin-left: 3px;
   transition: color .5s;
 
   &--disabled {
@@ -107,7 +107,7 @@ $blur: rgba($lv-purple, .7);
   }
 
   &--focused {
-    color: $lv-purple;
+    color: $lv-darker;
   }
 }
 

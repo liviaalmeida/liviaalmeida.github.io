@@ -1,13 +1,15 @@
 <template>
   <Section
-    title-icon="message"
     :title="$t('title.contact')"
     class="contact"
   >
     <Message
       class="contact-form"
     />
-    <div class="contact-icons">
+    <h3 class="contact-social">
+      {{ $t('title.socials') }}
+    </h3>
+    <div class="contact-socials">
       <Social
         v-for="contact in contacts"
         :key="contact.image"
@@ -16,6 +18,7 @@
         :href="contact.href"
       />
     </div>
+    <Coffee class="contact-coffee" />
     <div class="contact-copyright">
       Copyright © Lívia Almeida
     </div>
@@ -23,6 +26,7 @@
 </template>
 
 <script setup lang="ts">
+import Coffee from '@/ui/Coffee.vue'
 import Section from '@/ui/Section.vue'
 import Social from '@/ui/Social.vue'
 
@@ -33,14 +37,14 @@ import Message from '@/components/Message.vue'
 import { defineComponent } from 'vue'
 
 export default defineComponent({
-  data() {
-    return {
-      contacts: [
-        {
-          image: 'linkedin',
-          text: 'Lívia Almeida',
-          href: 'https://linkedin.com/in/livia001',
-        },
+  computed: {
+    contacts(): Contact[] {
+      return [
+        // {
+        //   image: 'linkedin',
+        //   text: 'Lívia Almeida',
+        //   href: 'https://linkedin.com/in/livia001',
+        // },
         {
           image: 'github',
           text: '@liviaalmeida',
@@ -51,41 +55,43 @@ export default defineComponent({
           text: 'leave.ah@gmail.com',
           href: 'mailto:leave.ah@gmail.com',
         },
-      ] as Contact[],
-    }
+      ] as Contact[]
+    },
   },
 })
 </script>
 
 <style lang="scss" scoped>
 .contact {
-  background-color: $lv-lilac;
+  background-color: $lv-gray;
+  position: relative;
 }
 
-.contact-icons {
+.contact-social {
+  font-family: 'Abel';
+  font-size: 20px;
+  font-weight: bold;
+  margin: 70px 0 0;
+  text-align: center;
+}
+
+.contact-socials {
   display: flex;
-  align-content: flex-end;
-  justify-content: space-between;
-  margin: 7*$m auto 0;
+  flex-direction: column;
+  gap: 10px;
+  margin: 10px auto -10px;
+  width: 170px;
+}
 
-  > *:not(:last-of-type) {
-    margin-left: 2.5*$m;
-    margin-right: 2.5*$m;
-  }
-
-  @include tablet {
-    flex-direction: column;
-    align-content: center;
-
-    > *:not(:last-of-type) {
-      margin: 0 0 5*$m;
-    }
-  }
+.contact-coffee {
+  margin: 0 auto;
+  transform: scale(0.6) translateY(65px);
 }
 
 .contact-copyright {
+  position: absolute;
+  bottom: 2px;
+  left: calc(50% - 70px);
   font-size: 12px;
-  text-align: center;
-  transform: translateY(40px);
 }
 </style>

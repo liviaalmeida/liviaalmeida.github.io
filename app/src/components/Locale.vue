@@ -24,10 +24,10 @@ import mixpanel from 'mixpanel-browser'
 import { defineComponent } from 'vue'
 
 export default defineComponent({
-  data() {
-    return {
-      langs: ['en', 'fr', 'pt'],
-    }
+  computed: {
+    langs(): string[] {
+      return ['en', 'fr', 'pt']
+    },
   },
   mounted() {
     const inputs = this.$el.querySelectorAll('input')
@@ -51,9 +51,13 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
+.locale {
+  color: $lv-white;
+}
+
 .locale-label {
   font-weight: 400;
-  font-size: 18px;
+  font-size: 14px;
 
   &:not(:last-child):after {
     content: '|';

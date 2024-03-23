@@ -1,13 +1,11 @@
 <template>
   <Section
     class="experience"
-    title-icon="tools"
     :title="$t('menu.experience')"
   >
     <Timeline
       v-for="experience in experiences"
       :key="experience.title"
-      :icon="experience.icon"
       :time-events="convertTimeEvent($tm(experience.items))"
       :title="$t(experience.title)"
       class="experience-info"
@@ -30,17 +28,14 @@ export default defineComponent({
     experiences() {
       return [
         {
-          icon: 'work',
           title: 'title.experience',
           items: 'experience',
         },
         {
-          icon: 'microphone',
           title: 'title.presentations',
           items: 'presentations',
         },
         {
-          icon: 'rocket',
           title: 'title.projects',
           items: 'projects',
         },
@@ -55,7 +50,7 @@ export default defineComponent({
   max-width: 500px;
 
   &:not(:first-of-type) {
-    margin-top: 6*$m;
+    margin-top: 60px;
   }
 }
 </style>

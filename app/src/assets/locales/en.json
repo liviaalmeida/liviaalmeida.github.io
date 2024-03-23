@@ -6,15 +6,19 @@
     "languages": "Languages",
     "position": "Front-end Developer",
     "presentations": "Talks",
-    "profile": "About me",
     "programming": "Programming Skills",
     "projects": "Projects",
-    "resume": "Curriculum vitæ"
+    "socials": "Socials"
   },
   "menu": {
     "about": "About",
-    "programming": "Skills",
+    "knowledge": "Knowledge",
     "experience": "Experience"
+  },
+  "skills": {
+    "proficient": "Proficient",
+    "good": "Good",
+    "sufficient": "Sufficient"
   },
   "education": [
     {
@@ -37,7 +41,7 @@
       "link": "https://symbaros.com.br",
       "duration": "aug 2021 - mar 2022",
       "intro": "Partner / Consultant:",
-      "description": "working as a front-end architect consultant for a platform specialized in renting commercial spaces using AI. Setting up architecture and building a website in Vue.JS."
+      "description": "worked as a front-end architect consultant for a platform specialized in renting commercial spaces using AI. Set up architecture and built a website in Vue.JS."
     },
     {
       "title": "Questrade",
@@ -72,7 +76,7 @@
       "title": "French",
       "duration": "Level A2",
       "intro": "Proficiency:",
-      "description": "intermediate reading, basic writing, basic speech"
+      "description": "intermediate reading, intermediate writing, basic speech"
     }
   ],
   "presentations": [
@@ -91,10 +95,23 @@
       "description": "To use words in mathematical models, we rely on transforming them into some form of numerical representation. One of many algorithms that perform such task is the Word Embedding."
     }
   ],
-  "profile": [
-    "My goal is to build products that improve people's lives while providing a great usability. I like to work closely with the design team, in highly collaborative environments.",
-    "My main interests are code architecture and code quality, design systems, and CSS animations. I am proficient in both JavaScript and TypeScript, having worked mainly with the frameworks Angular and Vue."
-  ],
+  "profile": {
+    "about": [
+      "I like to use my skills to help communities, improve people's lives, and overall create a better world. I am already very lucky that I work for an environmental focused company, planting trees in a lot of countries.",
+      "I have 6+ years of front-end experience, mostly with Vue and Angular, and I'm also learning React to up my skills. I also have some machine learning knowledge and experience, although it's not my focus area.",
+      "My main interests are code architecture and code quality, and CSS animations. I am proficient in both JavaScript and TypeScript, and I have a good grasp of Python and MySQL."
+    ],
+    "areas": [
+      {
+        "title": "Volunteering",
+        "text": "If you represent a non-profit organization in search of volunteers to pick up some work, please don't hesitate to contact me. I'll be happy to lend my expertise for free on my spare time if our goals align."
+      },
+      {
+        "title": "Mentoring",
+        "text": "If you are from an underprivileged or discriminated group and in search for a mentor, please get in touch. I will be glad to offer mentorship, or have a small chat. I have helped a few free minority-aimed initiatives in the past, as a support for programming teachers."
+      }
+    ]
+  },
   "projects": [
     {
       "title": "sq-learn",

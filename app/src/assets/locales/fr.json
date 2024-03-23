@@ -6,21 +6,25 @@
     "languages": "Langues",
     "position": "Développeuse Front-end",
     "presentations": "Conférence",
-    "profile": "À propos de moi",
     "programming": "Compétences de Programmation",
     "projects": "Projets",
-    "resume": "Curriculum vitæ"
+    "socials": "Réseaux sociaux"
   },
   "menu": {
     "about": "À propos",
-    "programming": "Compétences",
+    "knowledge": "Compétences",
     "experience": "Expérience"
+  },
+  "skills": {
+    "proficient": "Compétent",
+    "good": "Bonne",
+    "sufficient": "Suffisant"
   },
   "education": [
     {
       "title": "Université Fédérale de Minas Gerais (UFMG)",
       "duration": "2022",
-      "intro": "Baccalauréat",
+      "intro": "Licence",
       "description": "Informatique"
     }
   ],
@@ -37,7 +41,7 @@
       "link": "https://symbaros.com.br",
       "duration": "août 2021 - mars 2022",
       "intro": "Associée / Consultante:",
-      "description": "traivallant comme consultante architecte front-end pour une plateforme spécialisée dans la location d'espaces commerciaux à l'aide de l'IA. Configurant l'architecture et créant un site web utilisant Vue.JS."
+      "description": "j'ai travaillé comme consultante architecte front-end pour une plateforme spécialisée dans la location d'espaces commerciaux à l'aide de l'IA. J'ai configuré l'architecture et j'ai créé un site web utilisant Vue.JS."
     },
     {
       "title": "Questrade",
@@ -72,7 +76,7 @@
       "title": "Français",
       "duration": "Niveau A2",
       "intro": "Compétence:",
-      "description": "intermediáire en lecture, débutant en écriture, débutant à l'oral"
+      "description": "intermediáire en lecture, intermediáire en écriture, débutant à l'oral"
     }
   ],
   "presentations": [
@@ -91,10 +95,23 @@
       "description": "Pour utiliser les mots en modèle mathématique, nous comptons sur leur transformation en une forme de représentation numérique. Un des nombreux algorythmes qui réalise cette tâche est le Word Embedding."
     }
   ],
-  "profile": [
-    "Mon objectif est de construire des produits qui améliorent la vie des gens tout en fournissant aussi une bonne utilisabilité. J'apprécie travailler en étroite collaboration avec les équipes de design, et particulièrement dans des environnements de travail coopératifs.",
-    "Je m'intéresse principalement à l'architecture du code et sa qualité, design systems, et les animations CSS. J'ai acquis une très bonne maîtrise de JavaScript et TypeScript, ayant notamment travaillé avec les frameworks Angular et Vue."
-  ],
+  "profile": {
+    "about": [
+      "J'aime utiliser mes compétences pour aider les communautés, améliorer la vie des gens et, d'une manière générale, créer un monde meilleur. J'ai déjà la chance de travailler pour une entreprise qui met l'accent sur l'environnement et qui plante des arbres dans plusieurs pays.",
+      "J'ai plus de 6 ans d'expérience en front-end, principalement avec Vue et Angular, et j'apprends React pour acquérir plus de connaissances. J'ai également des connaissances et de l'expérience avec le machine learning, mais ce n'est pas mon domaine de prédilection",
+      "Mes principaux intérêts sont l'architecture et la qualité du code, ainsi que les animations CSS. Je maîtrise le JavaScript et le TypeScript, et j'ai une bonne connaissance de Python et MySQL."
+    ],
+    "areas": [
+      {
+        "title": "Volontariat",
+        "text": "Si vous représentez une organisation à but non lucratif à la recherche de bénévoles pour effectuer un travail, n'hésitez pas à me contacter. Ce serait un plaisir d'utiliser mes compétences, gratuitement, pendant mon temps libre, si nos objectifs concordent."
+      },
+      {
+        "title": "Mentorat",
+        "text": "Si vous appartenez à une minorité ou à un groupe victime de discrimination et que vous cherchez une mentor, n'hésitez pas à me contacter. Je serais ravie de vous conseiller ou de discuter avec vous. Par le passé, j'ai contribué à des initiatives gratuites destinées aux minorités, telles que le soutien aux enseignantes en programmation."
+      }
+    ]
+  },
   "projects": [
     {
       "title": "sq-learn",

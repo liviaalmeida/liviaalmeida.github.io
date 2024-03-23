@@ -73,8 +73,8 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-.captcha-canvas {
-  transform: translateX(5px);
-  margin-right: $m;
+.captcha :deep(.captcha-canvas) {
+  transform: translateX(3px);
+  margin-right: 5px;
 }
 </style>

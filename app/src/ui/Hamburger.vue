@@ -57,7 +57,7 @@ $line-inclination: 50deg;
 .hamburger-line {
   height: 2px;
   width: 20px;
-  background-color: white;
+  background-color: $lv-white;
   border-radius: 5px;
   transition: all .5s;
   top: 50%;

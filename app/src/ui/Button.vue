@@ -50,7 +50,7 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-$color: rgba($lv-purple, .7);
+$color: rgba($lv-darker, .7);
 $height: 45px;
 $icon: 25px;
 
@@ -81,7 +81,7 @@ $icon: 25px;
     height: $icon;
     width: $icon;
     fill: $color;
-    margin-right: .3*$m;
+    margin-right: 3px;
     transform: translateY(1px);
   }
 }

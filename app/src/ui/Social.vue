@@ -1,38 +1,16 @@
 <template>
-  <div
-    v-visible="{
-      callback: onVisible,
-      once: true,
-    }"
+  <a
+    :href="href"
     class="social"
+    @click="onClick(href)"
   >
-    <a
-      :href="href"
-      :aria-label="text"
-      class="social-icon"
-      rel="noopener"
-      @click="onClick(href)"
-    >
-      <Iconific
-        :image="image"
-        :size="3"
-        :active="active"
-      />
-    </a>
-    <a
-      :href="href"
-      class="social-text"
-      @mouseover="active = true"
-      @mouseout="active = false"
-      @click="onClick(href)"
-    >
-      {{ text }}
-    </a>
-  </div>
+    <Icon :name="image" size="m" />
+    {{ text }}
+  </a>
 </template>
 
 <script setup lang="ts">
-import Iconific from '@/ui/Iconific.vue'
+import Icon from '@/ui/Icon.vue'
 </script>
 
 <script lang="ts">
@@ -54,21 +32,11 @@ export default defineComponent({
       required: true,
     },
   },
-  data() {
-    return {
-      active: false,
-    }
-  },
   methods: {
     onClick(href: string) {
       mixpanel.track('Icon-click', {
         to: href,
       })
-    },
-    onVisible(visible: boolean) {
-      this.active = visible
-
-      if (visible) setTimeout(() => this.active = false, 1000)
     },
   },
 })
@@ -76,17 +44,15 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .social {
-  @include inline-flex-column;
   align-items: center;
-}
+  display: inline-flex;
+  font-family: 'Abel';
+  font-size: 16px;
+  font-weight: 600;
+  gap: 5px;
 
-.social-icon,
-.social-text {
   &, &:visited {
-    color: $lv-purple;
-    font-family: 'Neuton';
-    font-size: 2*$m;
-    font-weight: 600;
+    color: $lv-darker;
     text-decoration: none;
   }
 }

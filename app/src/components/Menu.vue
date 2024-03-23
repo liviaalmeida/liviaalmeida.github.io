@@ -60,11 +60,11 @@ export default defineComponent({
       return [
         {
           text: 'menu.about',
-          class: 'profile',
+          class: 'hero',
         },
         {
-          text: 'menu.programming',
-          class: 'programming',
+          text: 'menu.knowledge',
+          class: 'knowledge',
         },
         {
           text: 'menu.experience',
@@ -106,15 +106,15 @@ $transition: background-color 1s;
 
 @mixin background {
   &--background {
-    background-color: darken($lv-purple, 5%);
+    background-color: darken($lv-darker, 5%);
   }
 }
 
 .menu {
   @include background;
-  background-color: $lv-purple;
+  background-color: $lv-dark;
   padding: 10px;
-  position: relative;
+  position: fixed;
   transition: $transition;
   z-index: 200;
   height: $height;
@@ -129,12 +129,12 @@ $transition: background-color 1s;
   border: none;
   color: $lv-white;
   cursor: pointer;
-  font-family: 'Bebas Neue';
-  font-size: 2.5*$m;
+  font-family: 'Abel';
+  font-size: 20px;
   font-weight: 700;
   height: $link;
-  margin: 0 2*$m;
-  text-transform: uppercase;
+  margin: 0 20px;
+  text-transform: lowercase;
 }
 
 .menu-nav {
@@ -155,7 +155,7 @@ $transition: background-color 1s;
   @include background;
   @include flex-column;
   align-items: center;
-  background-color: $lv-purple;
+  background-color: $lv-dark;
   overflow: hidden;
   transition: height .4s, $transition;
   position: absolute;

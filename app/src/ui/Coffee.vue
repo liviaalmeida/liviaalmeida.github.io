@@ -23,6 +23,7 @@
 .coffee {
   padding-top: 50px;
   position: relative;
+  width: 130px;
 }
 
 .coffee-liquid {

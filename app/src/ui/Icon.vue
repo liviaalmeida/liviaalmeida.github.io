@@ -9,8 +9,8 @@
 import { defineComponent } from 'vue'
 
 const COLORS = {
+  gray: '#1e1e1e',
   green: '#008000',
-  purple: '#3c0046',
   red: '#ff0000',
   white: '#fff',
   yellow: '#ffff00',
@@ -20,7 +20,7 @@ const SIZES = ['s', 'm', 'l', 'xl']
 export default defineComponent({
   props: {
     color: {
-      default: 'purple',
+      default: 'gray',
       type: String as () => COLOR,
     },
     name: {

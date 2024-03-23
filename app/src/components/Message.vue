@@ -162,11 +162,11 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-$gap: .5*$m;
+$gap: 5px;
 
 .message {
   margin: 0 auto;
-  width: 500px;
+  width: 450px;
 
   @include tablet {
     width: 380px;
@@ -202,7 +202,7 @@ $gap: .5*$m;
 }
 
 .message-captcha {
-  margin: $m auto;
+  margin: 10px auto;
   max-width: 150px;
 }
 </style>

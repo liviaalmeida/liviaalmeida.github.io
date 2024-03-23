@@ -8,17 +8,12 @@
     class="timeline"
   >
     <div
-      v-if="icon && title"
+      v-if="title"
       class="timeline-header"
     >
-      <Icon
-        :name="icon"
-        size="m"
-      />
-      <div class="timeline-title">
+      <h3 class="timeline-title">
         {{ title }}
-        <div class="timeline-hr" />
-      </div>
+      </h3>
     </div>
     <ol class="timeline-list">
       <div
@@ -70,20 +65,12 @@
   </div>
 </template>
 
-<script setup lang="ts">
-import Icon from '@/ui/Icon.vue'
-</script>
-
 <script lang="ts">
 import { defineComponent } from 'vue'
 import mixpanel from 'mixpanel-browser'
 
 export default defineComponent({
   props: {
-    icon: {
-      required: true,
-      type: String,
-    },
     timeEvents: {
       type: Array as () => TimeEvent[],
       required: true,
@@ -113,62 +100,48 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-$border: 0.3*$m solid $lv-purple;
-$bullet-size: 1.3*$m;
-$icon: 35px;
+$border: 2px solid $lv-darker;
+$bullet-size: 8px;
 
 .timeline-header {
-  display: flex;
-  align-items: center;
-  font-family: 'Bebas Neue';
-  font-size: 24px;
-
-  svg {
-    height: $icon;
-    width: $icon;
-    fill: $lv-purple;
-  }
+  font-family: 'Abel';
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 8px;
 }
 
 .timeline-title {
   width: 100%;
-  margin-left: .5*$m;
-}
-
-.timeline-hr {
-  background-color: transparent;
-  border-top: 2px solid $lv-purple;
-  height: 0;
-  margin: 0;
+  margin-left: 5px;
 }
 
 .timeline-list {
   list-style: none;
-  padding: 0 0 0 2.4*$m;
-  margin: 0 0 0 1.4*$m;
+  padding: 0 0 0 24px;
+  margin: 0 0 0 14px;
   z-index: 0;
   position: relative;
 }
 
 .timeline-list-line {
   @include animation-on-load(grow-line);
-  background-color: $lv-purple;
+  background-color: $lv-grey;
   content: '';
   display: block;
   transform-origin: top;
   position: absolute;
-  top: 0;
+  top: 11px;
   left: 0;
-  height: 100%;
-  width: 0.3*$m;
+  height: calc(100% - 15px);
+  width: 1.5px;
 }
 
 .timeline-list-item {
-  padding-top: 0.5*$m;
+  padding-top: 5px;
   position: relative;
 
   &:not(:last-child) {
-    margin-bottom: 2*$m;
+    margin-bottom: 20px;
   }
 
   &:after {
@@ -183,12 +156,12 @@ $icon: 35px;
     height: $bullet-size;
     width: $bullet-size;
     position: absolute;
-    top: 0.5*$m;
-    left: -3.2*$m;
+    top: 11px;
+    left: -28.5px;
   }
 
   &:hover:after {
-    background: lighten($lv-purple, 10%);
+    background: lighten($lv-darker, 10%);
   }
 }
 
@@ -199,10 +172,11 @@ $icon: 35px;
 }
 
 .timeline-list-link, .timeline-list-link:visited {
-  color: $lv-purple;
+  color: $lv-darker;
+  text-decoration: none;
 
   &:focus {
-    color: $lv-purple;
+    color: $lv-darker;
   }
 }
 
@@ -211,23 +185,23 @@ $icon: 35px;
 .timeline-list-link:visited {
   font-family: 'Bebas Neue';
   font-weight: 600;
-  font-size: 2*$m;
+  font-size: 20px;
 }
 
 .timeline-list-duration {
-  font-size: 1*$m;
-  margin-left: 0.5*$m;
+  font-size: 10px;
+  margin-left: 5px;
 }
 
 .timeline-list-text {
-  font-size: 1.5*$m;
+  font-size: 15px;
   line-height: 1.3;
   text-align: left;
 }
 
 .timeline-list-intro {
   font-weight: 600;
-  margin-right: 0.5*$m;
+  margin-right: 5px;
 }
 
 @keyframes grow-ball {

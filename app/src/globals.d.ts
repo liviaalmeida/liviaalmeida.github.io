@@ -1,3 +1,8 @@
+type Area = {
+  text: string;
+  title: string;
+}
+
 type Captcha = (
   response: CaptchaResponse,
   captcha: Element,
@@ -6,7 +11,7 @@ type Captcha = (
 
 type CaptchaResponse = 'abuse' | 'error' | 'success'
 
-type COLOR = 'green' | 'purple' | 'red' | 'white' | 'yellow'
+type COLOR = 'gray' | 'green' | 'red' | 'white' | 'yellow'
 
 type Contact = {
   href: string;
@@ -33,8 +38,9 @@ type Link = {
 type ModalReason = 'error' | 'success' | 'info';
 
 type Skill = {
-  name: string;
-  progress: number;
+  level: string;
+  listing: string[];
+  stars: number;
 }
 
 type TimeEvent = {

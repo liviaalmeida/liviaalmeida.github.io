@@ -1,13 +1,10 @@
-/*-------------  BASE  -------------*/
-
-$m: 0.625rem; //10px
-
 /*-------------  COLORS  -------------*/
 
-$lv-purple: rgb(60, 0, 70);
-$lv-lilac: rgb(230, 200, 230);
-$lv-grey: rgb(150, 150, 150);
 $lv-white: rgb(255, 255, 255);
+$lv-gray: rgb(230, 230, 230);
+$lv-grey: rgb(150, 150, 150);
+$lv-dark: rgb(80, 80, 80);
+$lv-darker: rgb(30, 30, 30);
 
 /*-------------  TIMES  -------------*/
 
@@ -24,11 +21,6 @@ $animation-time: 0.4s;
   flex-direction: column;
 }
 
-@mixin inline-flex-column {
-  display: inline-flex;
-  flex-direction: column;
-}
-
 @mixin phone {
   @media (max-width: 480px) {
     @content;
@@ -38,13 +30,5 @@ $animation-time: 0.4s;
 @mixin tablet {
   @media (max-width: 768px) {
     @content;
-  }
-}
-
-/*-------------  KEYFRAMES  -------------*/
-
-@keyframes no-width-on-load {
-  0% {
-    width: 0;
   }
 }

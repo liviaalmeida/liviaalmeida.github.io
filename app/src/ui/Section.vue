@@ -4,21 +4,17 @@
       'section--small': small,
     }]"
   >
-    <Title
-      v-if="title && titleIcon"
-      :icon="titleIcon"
-      :text="title"
+    <h2
+      v-if="title"
       class="section-title"
-    />
+    >
+      {{ title }}
+    </h2>
     <div class="section-content">
       <slot name="default" />
     </div>
   </section>
 </template>
-
-<script setup lang="ts">
-import Title from '@/ui/Title.vue'
-</script>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
@@ -30,10 +26,6 @@ export default defineComponent({
       type: Boolean,
     },
     title: {
-      default: '',
-      type: String,
-    },
-    titleIcon: {
       default: '',
       type: String,
     },
@@ -53,7 +45,11 @@ export default defineComponent({
 }
 
 .section-title {
+  font-family: 'Abel';
+  font-size: 32px;
+  font-weight: bold;
   margin-bottom: 40px;
+  text-align: center;
 }
 
 .section-content {
