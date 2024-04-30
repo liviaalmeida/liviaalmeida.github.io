@@ -24,7 +24,7 @@
     {
       "title": "Université Fédérale de Minas Gerais (UFMG)",
       "duration": "2022",
-      "intro": "Licence",
+      "intro": "BA",
       "description": "Informatique"
     }
   ],
@@ -77,6 +77,12 @@
       "duration": "Niveau A2",
       "intro": "Compétence:",
       "description": "intermediáire en lecture, intermediáire en écriture, débutant à l'oral"
+    },
+    {
+      "title": "Portugais",
+      "duration": "",
+      "intro": "Compétence:",
+      "description": "langue maternelle"
     }
   ],
   "presentations": [
