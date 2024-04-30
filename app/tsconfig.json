@@ -27,9 +27,9 @@
     "resolveJsonModule": true,
 
     /* Linting */
+    "noFallthroughCasesInSwitch": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true,
     "strict": true
   },
   "include": [
