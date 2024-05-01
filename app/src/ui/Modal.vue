@@ -13,7 +13,6 @@
           <Icon
             :color="color"
             :name="reason"
-            size="l"
             class="modal-icon"
           />
           <p class="modal-title">

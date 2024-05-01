@@ -4,7 +4,7 @@
     class="social"
     @click="onClick(href)"
   >
-    <Icon :name="image" size="m" />
+    <Icon :name="image" />
     {{ text }}
   </a>
 </template>
