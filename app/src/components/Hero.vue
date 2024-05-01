@@ -10,7 +10,7 @@
       <figure class="hero-frame">
         <img
           loading="lazy"
-          src="@/assets/images/profile.jpeg"
+          src="/img/profile.jpeg"
           alt=""
           class="hero-image"
         >
