@@ -5,7 +5,8 @@ import fr from '@/assets/locales/fr.json'
 import pt from '@/assets/locales/pt.json'
 
 export default createI18n({
-  fallbackLocale: 'fr', 
+  fallbackLocale: 'fr',
+  legacy: false,
   locale: 'en',
   messages: {
     en,
