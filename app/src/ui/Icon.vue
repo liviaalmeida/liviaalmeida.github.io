@@ -5,10 +5,15 @@
   />
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script setup lang="ts">
+import { computed } from 'vue'
 
-const COLORS = {
+const props = withDefaults(
+  defineProps<{ color?: COLOR, name: string }>(),
+  { color: 'gray' },
+)
+
+const COLORS: Record<COLOR,string> = {
   gray: '#1e1e1e',
   green: '#008000',
   red: '#ff0000',
@@ -16,28 +21,10 @@ const COLORS = {
   yellow: '#ffff00',
 }
 
-export default defineComponent({
-  props: {
-    color: {
-      default: 'gray',
-      type: String as () => COLOR,
-    },
-    name: {
-      required: true,
-      type: String,
-    },
-  },
-  computed: {
-    style(): { [key: string]: string } {
-      const backgroundColor = COLORS[this.color as COLOR]
-
-      return {
-        backgroundColor,
-        maskImage: `url('/icons/${this.name}.svg')`,
-      }
-    },
-  },
-})
+const style = computed(() => ({
+  backgroundColor: COLORS[props.color],
+  maskImage: `url('/icons/${props.name}.svg')`,
+}))
 </script>
 
 <style lang="scss" scoped>
