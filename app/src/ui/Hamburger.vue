@@ -4,39 +4,29 @@
       v-model="checked"
       type="checkbox"
       class="hamburger-checkbox"
+      @change="onChange"
     >
-    <div class="hamburger-line hamburger-line-1" />
-    <div class="hamburger-line hamburger-line-2" />
-    <div class="hamburger-line hamburger-line-3" />
+    <div
+      v-for="line in 3"
+      class="hamburger-line"
+      :class="`hamburger-line-${line}`"
+    />
   </label>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script setup lang="ts">
+import { ref, watch } from 'vue'
 
-export default defineComponent({
-  props: {
-    modelValue: {
-      type: Boolean,
-      required: false,
-    },
-  },
-  emits: [
-    'update:modelValue',
-  ],
-  data() {
-    return {
-      checked: false,
-    }
-  },
-  watch: {
-    checked() {
-      this.$emit('update:modelValue', this.checked)
-    },
-    value() {
-      this.checked = this.modelValue
-    },
-  },
+const props = defineProps<{ modelValue: boolean }>()
+const emit = defineEmits(['update:modelValue'])
+
+const checked = ref(props.modelValue)
+
+function onChange() {
+  emit('update:modelValue', checked.value)
+}
+watch(() => props.modelValue, (value) => {
+  checked.value = value
 })
 </script>
 

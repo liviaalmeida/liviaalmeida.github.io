@@ -1,17 +1,13 @@
 <template>
   <div
-    :class="['input', {
+    class="input"
+    :class="{
       'input--disabled': disabled,
       'input--focused': focus,
-    }]"
+    }"
   >
-    <label
-      :class="['input-label', {
-        'input-label--disabled': disabled,
-        'input-label--focused': focus,
-      }]"
-    >
-      {{ label }}
+    <label class="input-label">
+      {{ labelText }}
     </label>
     <div class="input-wrapper">
       <textarea
@@ -34,43 +30,29 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script setup lang="ts">
+import { computed, ref, useAttrs } from 'vue'
 
-export default defineComponent({
-  props: {
-    label: {
-      required: true,
-      type: String,
-    },
-  },
-  emits: [
-    'update:modelValue',
-  ],
-  data() {
-    return {
-      focus: false,
-    }
-  },
-  computed: {
-    disabled(): boolean {
-      return this.$attrs.disabled !== undefined &&
-        // eslint-disable-next-line
-        // @ts-ignore
-        this.$attrs.disabled !== false
-    },
-  },
-  methods: {
-    onBlur() {
-      this.focus = false
-    },
-    onFocus() {
-      this.focus = true
-    },
-    onModel({ value }: HTMLInputElement | HTMLTextAreaElement) {
-      this.$emit('update:modelValue', value)
-    },
-  },
+const props = defineProps<{ label: string }>()
+const emit = defineEmits(['update:modelValue'])
+
+const focus = ref(false)
+function onBlur() { focus.value = false }
+function onFocus() { focus.value = true }
+
+function onModel({ value }: HTMLInputElement | HTMLTextAreaElement) {
+  emit('update:modelValue', value)
+}
+
+const attrs = useAttrs()
+const labelText = computed(() => {
+  if ('required' in attrs && attrs.required !== false) {
+    return props.label.concat(' *')
+  }
+  return props.label
+})
+const disabled = computed(() => {
+  return 'disabled' in attrs && attrs.disabled !== false
 })
 </script>
 
@@ -84,13 +66,26 @@ $blur: rgba($lv-dark, .7);
   border-radius: 2px;
   padding: 2px 5px;
   transition: border-color .5s;
+}
 
-  &--disabled {
-    border-color: $lv-grey;
+.input--disabled {
+  background-color: $lv-gray-50;
+  border-color: $lv-gray;
+
+  .input-label,
+  .input-input,
+  .input-textarea {
+    &, &::placeholder {
+      color: $lv-grey;
+    }
   }
+}
 
-  &--focused {
-    border-color: $lv-darker;
+.input--focused {
+  border-color: $lv-darker;
+
+  .input-label {
+    color: $lv-darker;
   }
 }
 
@@ -101,14 +96,6 @@ $blur: rgba($lv-dark, .7);
   margin-bottom: 5px;
   margin-left: 3px;
   transition: color .5s;
-
-  &--disabled {
-    color: $lv-grey;
-  }
-
-  &--focused {
-    color: $lv-darker;
-  }
 }
 
 .input-wrapper {

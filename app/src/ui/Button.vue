@@ -7,6 +7,7 @@
   >
     <span
       class="button-wave"
+      ref="wave"
     />
     <span
       v-if="loading"
@@ -19,34 +20,24 @@
   </button>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script setup lang="ts">
+import { ref } from 'vue'
 
-export default defineComponent({
-  props: {
-    loading: {
-      required: false,
-      type: Boolean,
-    },
-  },
-  computed: {
-    wave(): HTMLSpanElement {
-      return this.$el.querySelector('.button-wave') as HTMLSpanElement
-    },
-  },
-  methods: {
-    async onClick() {
-      const animate = 'button-wave--animate'
-      const { classList } = this.wave
-      if (classList.contains(animate)) return
+defineProps<{ loading?: boolean }>()
 
-      classList.add(animate)
-      setTimeout(() => {
-        classList.remove(animate)
-      }, 400)
-    },
-  },
-})
+const wave = ref<HTMLSpanElement | null>(null)
+function onClick() {
+  if (!wave.value) return
+
+  const animate = 'button-wave--animate'
+  const { classList } = wave.value
+  if (classList.contains(animate)) return
+
+  classList.add(animate)
+  setTimeout(() => {
+    classList.remove(animate)
+  }, 400)
+}
 </script>
 
 <style lang="scss" scoped>

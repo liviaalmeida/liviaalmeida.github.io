@@ -1,7 +1,9 @@
 <template>
   <a
     :href="href"
+    target="_blank"
     class="social"
+    rel="noopener noreferrer"
     @click="onClick(href)"
   >
     <Icon :name="image" />
@@ -10,36 +12,21 @@
 </template>
 
 <script setup lang="ts">
-import Icon from '@/ui/Icon.vue'
-</script>
-
-<script lang="ts">
-import { defineComponent } from 'vue'
 import mixpanel from 'mixpanel-browser'
 
-export default defineComponent({
-  props: {
-    href: {
-      type: String,
-      required: true,
-    },
-    image: {
-      type: String,
-      required: true,
-    },
-    text: {
-      type: String,
-      required: true,
-    },
-  },
-  methods: {
-    onClick(href: string) {
-      mixpanel.track('Icon-click', {
-        to: href,
-      })
-    },
-  },
-})
+import Icon from '@/ui/Icon.vue'
+
+defineProps<{
+  href: string
+  image: string
+  text: string
+}>()
+
+function onClick(href: string) {
+  mixpanel.track('Icon-click', {
+    to: href,
+  })
+}
 </script>
 
 <style lang="scss" scoped>

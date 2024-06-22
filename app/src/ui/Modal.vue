@@ -3,7 +3,7 @@
     <div
       v-if="modelValue"
       class="modal-wrapper"
-      @click="close"
+      @click="onClose"
     >
       <div
         class="modal"
@@ -18,14 +18,14 @@
           <p class="modal-title">
             {{ title }}
           </p>
-          <p>
+          <p class="modal-message">
             {{ message }}
           </p>
         </div>
         <button
           class="modal-close"
           type="button"
-          @click="close"
+          @click="onClose"
         >
           {{ $t('common.close') }}
         </button>
@@ -35,51 +35,27 @@
 </template>
 
 <script setup lang="ts">
+import { computed } from 'vue'
 import Icon from '@/ui/Icon.vue'
-</script>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
+const props = defineProps<{
+  message: string
+  modelValue: boolean
+  title: string
+  reason: ModalReason
+}>()
+const emit = defineEmits(['update:modelValue'])
 
-const ERRORCOLOR: Indexable<COLOR> = {
+const ERRORCOLOR: Record<string, COLOR> = {
   'error': 'red',
   'info': 'yellow',
   'success': 'green',
 }
+const color = computed(() => ERRORCOLOR[props.reason])
 
-export default defineComponent({
-  props: {
-    message: {
-      required: true,
-      type: String,
-    },
-    modelValue: {
-      required: true,
-      type: Boolean,
-    },
-    title: {
-      required: true,
-      type: String,
-    },
-    reason: {
-      required: true,
-      type: String as () => ModalReason,
-    },
-  },
-  emits: [
-    'update:modelValue',
-  ],
-  computed: {
-    color(): COLOR {
-      return ERRORCOLOR[this.reason]
-    },
-  },
-  methods: {
-    close() {
-      this.$emit('update:modelValue', false)
-    },
-  },
-})
+function onClose() {
+  emit('update:modelValue', false)
+}
 </script>
 
 <style lang="scss" scoped>

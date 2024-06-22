@@ -8,11 +8,14 @@
       :key="group.level"
       class="skills-listing"
     >
-      <div class="skills-level">
-        <h4>
-          {{ group.level  }}
+      <div class="skills-value">
+        <h4 class="skills-level">
+          {{ group.level }}
         </h4>
-        <Rating :stars="group.stars" />
+        <Rating
+          :stars="group.stars"
+          class="skills-rating"
+        />
       </div>
       <ul>
         <li
@@ -28,23 +31,8 @@
 
 <script setup lang="ts">
 import Rating from '@/ui/Rating.vue'
-</script>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
-
-export default defineComponent({
-  props: {
-    skills: {
-      type: Array as () => Array<Skill>,
-      required: true,
-    },
-    title: {
-      type: String,
-      required: true,
-    },
-  },
-})
+defineProps<{ skills: Array<Skill>, title: string }>()
 </script>
 
 <style lang="scss" scoped>
@@ -59,7 +47,7 @@ export default defineComponent({
   margin-bottom: 8px;
 }
 
-.skills-level {
+.skills-value {
   display: flex;
   align-items: center;
   font-family: 'Bebas Neue';

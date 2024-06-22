@@ -7,14 +7,12 @@
     }"
     class="timeline"
   >
-    <div
+    <h3
       v-if="title"
-      class="timeline-header"
+      class="timeline-title"
     >
-      <h3 class="timeline-title">
-        {{ title }}
-      </h3>
-    </div>
+      {{ title }}
+    </h3>
     <ol class="timeline-list">
       <div
         v-if="visible"
@@ -24,14 +22,12 @@
         v-for="(timeEvent, index) in timeEvents"
         :key="index"
         class="timeline-list-item"
-        @mouseover="active = true"
-        @mouseout="active = false"
       >
         <a
           v-if="timeEvent.link"
           :href="timeEvent.link"
           target="_blank"
-          rel="noopener"
+          rel="noopener noreferrer"
           class="timeline-list-link"
           @click="onEventClick(timeEvent.title)"
         >
@@ -65,54 +61,35 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script setup lang="ts">
+import { ref } from 'vue'
 import mixpanel from 'mixpanel-browser'
 
-export default defineComponent({
-  props: {
-    timeEvents: {
-      type: Array as () => TimeEvent[],
-      required: true,
-    },
-    title: {
-      required: true,
-      type: String,
-    },
-  },
-  data() {
-    return {
-      active: false,
-      visible: false,
-    }
-  },
-  methods: {
-    onEventClick(title: string) {
-      mixpanel.track('Event-click', {
-        event: title,
-      })
-    },
-    onVisible(visible: boolean) {
-      this.visible = visible
-    },
-  },
-})
+defineProps<{ timeEvents: TimeEvent[], title?: string }>()
+
+const visible = ref(false)
+function onVisible(isVisible: boolean) {
+  visible.value = isVisible
+}
+
+function onEventClick(title: string) {
+  mixpanel.track('Event-click', {
+    event: title,
+  })
+}
 </script>
 
 <style lang="scss" scoped>
 $border: 2px solid $lv-darker;
 $bullet-size: 8px;
 
-.timeline-header {
+.timeline-title {
   font-family: 'Abel';
   font-size: 20px;
   font-weight: bold;
   margin-bottom: 8px;
-}
-
-.timeline-title {
-  width: 100%;
   margin-left: 5px;
+  width: 100%;
 }
 
 .timeline-list {

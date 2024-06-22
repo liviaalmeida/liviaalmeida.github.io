@@ -3,33 +3,26 @@
     <span
       v-for="star in stars"
       :key="star"
+      class="rating-star"
     >
       ★
     </span>
     <span
-      v-for="star in unfilled"
+      v-for="star in (5 - stars)"
       :key="star"
+      class="rating-empty"
     >
       ☆
     </span>
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
-
-export default defineComponent({
-  props: {
-    stars: {
-      type: Number,
-      required: true,
-      validator: (value: number) => value>=0 && value<=5,
-    },
-  },
-  computed: {
-    unfilled(): number {
-      return 5 - this.stars
-    },
+<script setup lang="ts">
+defineProps({
+  stars: {
+    type: Number,
+    required: true,
+    validator: (value: number) => value >= 0 && value <= 5,
   },
 })
 </script>
