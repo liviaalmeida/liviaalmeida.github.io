@@ -26,8 +26,9 @@ type Email = {
   subject: string;
 }
 
-type Indexable<T> = {
-  [key: string]: T
+type Experience = {
+  events: TimeEvent[];
+  title: string;
 }
 
 type Link = {
@@ -49,4 +50,11 @@ type TimeEvent = {
   intro?: string;
   link?: string;
   title: string;
+}
+
+interface Storehouse {
+  getAbuse: () => boolean;
+  setAbuse: () => void;
+  getLocale: () => string | null;
+  setLocale: (locale: string) => void;
 }
