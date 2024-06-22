@@ -6,49 +6,51 @@
   >
     <Input
       v-model="email.name"
-      :label="required($t('contact.name.label'))"
+      :label="$t('contact.name.label')"
       :placeholder="$t('contact.name.placeholder')"
-      :disabled="disabled"
+      :disabled="disabled || sending"
       class="message-name"
       minlength="3"
-      required
     />
     <div class="message-row">
       <Input
         v-model="email.subject"
-        :label="required($t('contact.subject.label'))"
+        :label="$t('contact.subject.label')"
         :placeholder="$t('contact.subject.placeholder')"
-        :disabled="disabled"
-        required
+        :disabled="disabled || sending"
+        class="message-subject"
       />
       <Input
         v-model="email.email"
         :label="$t('contact.email.label')"
         :placeholder="$t('contact.email.placeholder')"
-        :disabled="disabled"
+        :disabled="disabled || sending"
+        class="message-email"
         type="email"
       />
     </div>
     <Input
       v-model="email.message"
-      :label="required($t('contact.message.label'))"
+      :label="$t('contact.message.label')"
       :placeholder="$t('contact.message.placeholder')"
-      :disabled="disabled"
+      :disabled="disabled || sending"
       type="textarea"
       class="message-text"
       required
     />
     <Captcha
       v-model="captcha"
+      :disabled="disabled || sending"
       :validate="sending"
       class="message-captcha"
-      @abuse="onError(true)"
-      @error="onError(false)"
+      @abuse="onAbuse"
+      @error="onIncorrect"
       @success="sendMessage"
     />
     <Button
       :disabled="!valid || disabled"
       :loading="sending"
+      class="message-submit"
     >
       {{ $t('contact.button') }}
     </Button>
@@ -63,102 +65,97 @@
 </template>
 
 <script setup lang="ts">
+import { inject, ref } from 'vue'
+import { useI18n } from 'vue-i18n'
+import mixpanel from 'mixpanel-browser'
+import { sendMail } from '@/assets/js'
+
 import Button from '@/ui/Button.vue'
 import Captcha from '@/ui/Captcha.vue'
 import Input from '@/ui/Input.vue'
 import Modal from '@/ui/Modal.vue'
-</script>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
-import { sendMail } from '@/assets/helpers'
-import mixpanel from 'mixpanel-browser'
+const { t } = useI18n({ useScope: 'global' })
 
-export default defineComponent({
-  data() {
-    return {
-      captcha: '',
-      disabled: !!this.$cookies.get('CTMT'),
-      email: {
-        email: '',
-        message: '',
-        name: '',
-        subject: '',
-      } as Email,
-      feedback: {
-        message: '',
-        reason: 'info' as ModalReason,
-        title: '',
-      },
-      modal: false,
-      sending: false,
-      valid: false,
-    }
-  },
-  computed: {
-    errors(): { abused: string; incorrect: string } {
-      return {
-        abused: this.$t('contact.captcha.errors.abused').toString(),
-        incorrect: this.$t('contact.captcha.errors.incorrect').toString(),
-      }
-    },
-  },
-  methods: {
-    onError(abuse: Boolean) {
-      const message = abuse ? this.errors.abused : this.errors.incorrect
-      this.feedback = {
-        message,
-        reason: 'error',
-        title: 'Ops!',
-      }
-      this.reset()
-    },
-    onInput(form: HTMLFormElement) {
-      this.valid = form.checkValidity() && !!this.captcha.length
-    },
-    onSubmit() {
-      mixpanel.track('Message-send')
-      this.sending = true
-    },
-    required(label: string) {
-      return `${label} *`
-    },
-    reset() {
-      this.sending = false
-      this.captcha = ''
-      this.valid = false
-      this.modal = true
-    },
-    sendMessage() {
-      sendMail(this.email)
-        .then(() => {
-          this.feedback = {
-            message: this.$t('contact.sent').toString(),
-            reason: 'success',
-            title: 'Ok!',
-          }
-          this.email = {
-            email: '',
-            message: '',
-            name: '',
-            subject: '',
-          }
-          mixpanel.track('Message-sent')
-        }).catch((error) => {
-          this.feedback = {
-            message: error.message,
-            reason: 'error',
-            title: 'Ops!',
-          }
-          mixpanel.track('Message-error-send', {
-            error: error.message,
-          })
-        }).finally(() => {
-          this.reset()
-        })
-    },
-  },
+const $storage: Storehouse | undefined = inject('$storage')
+
+const disabled = ref($storage?.getAbuse() ?? false)
+const feedback = ref({
+  message: '',
+  reason: 'info' as ModalReason,
+  title: '',
 })
+
+const captcha = ref('')
+const modal = ref(false)
+const sending = ref(false)
+const valid = ref(false)
+function onInput(form: HTMLFormElement) {
+  valid.value = form.checkValidity() && !!captcha.value.length
+}
+function resetForm() {
+  captcha.value = ''
+  modal.value = true
+  sending.value = false
+  valid.value = false
+}
+
+const email = ref<Email>({
+  email: '',
+  message: '',
+  name: '',
+  subject: '',
+})
+function resetEmail() {
+  email.value = {
+    email: '',
+    message: '',
+    name: '',
+    subject: '',
+  }
+}
+
+function setError(message: string) {
+  feedback.value = {
+    message,
+    reason: 'error',
+    title: 'Ops!',
+  }
+  mixpanel.track('Message-error-send', {
+    error: message,
+  })
+  resetForm()
+}
+function onAbuse() {
+  $storage?.setAbuse()
+  disabled.value = true
+  const message = t('contact.captcha.errors.abused')
+  setError(message)
+}
+function onIncorrect() {
+  const message = t('contact.captcha.errors.incorrect')
+  setError(message)
+}
+
+function onSubmit() {
+  mixpanel.track('Message-send')
+  sending.value = true
+}
+function sendMessage() {
+  sendMail(email.value)
+    .then(() => {
+      feedback.value = {
+        message: t('contact.sent'),
+        reason: 'success',
+        title: 'Ok!',
+      }
+      mixpanel.track('Message-sent')
+      resetEmail()
+      resetForm()
+    }).catch((error) => {
+      setError(error.message)
+    })
+}
 </script>
 
 <style lang="scss" scoped>

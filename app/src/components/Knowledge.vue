@@ -4,13 +4,13 @@
     class="knowledge"
   >
     <Timeline
-      :time-events="convertTimeEvent($tm(education.items))"
-      :title="$t(education.title)"
+      :time-events="education"
+      :title="$t('title.education')"
       class="knowledge-item"
     />
     <Timeline
-      :time-events="convertTimeEvent($tm(languages.items))"
-      :title="$t(languages.title)"
+      :time-events="languages"
+      :title="$t('title.languages')"
       class="knowledge-item"
     />
     <Skills
@@ -22,62 +22,36 @@
 </template>
 
 <script setup lang="ts">
+import { computed } from 'vue'
+import { useI18n } from 'vue-i18n'
+
 import Section from '@/ui/Section.vue'
 import Skills from '@/ui/Skills.vue'
 import Timeline from '@/ui/Timeline.vue'
 
-import { convertTimeEvent } from '@/assets/helpers'
-</script>
+const { t, tm } = useI18n({ useScope: 'global' })
 
-<script lang="ts">
-import { defineComponent } from 'vue'
+const education = computed<TimeEvent[]>(() => tm('education'))
 
-export default defineComponent({
-  computed: {
-    education(): Indexable<string> {
-      return {
-        items: 'education',
-        title: 'title.education',
-      }
-    },
-    languages(): Indexable<string> {
-      return {
-        items: 'languages',
-        title: 'title.languages',
-      }
-    },
-    programming() {
-      return [
-        {
-          level: this.$t('skills.proficient'),
-          listing: [
-            'CSS',
-            'HTML',
-            'JavaScript',
-            'TypeScript',
-          ],
-          stars: 5,
-        },
-        {
-          level: this.$t('skills.good'),
-          listing: [
-            'C/C++',
-            'Python',
-          ],
-          stars: 4,
-        },
-        {
-          level: this.$t('skills.sufficient'),
-          listing: [
-            'C#',
-            'SQL',
-          ],
-          stars: 3,
-        },
-      ]
-    },
+const languages = computed<TimeEvent[]>(() => tm('languages'))
+
+const programming = computed<Skill[]>(() => [
+  {
+    level: t('skills.proficient'),
+    listing: ['CSS', 'HTML', 'JavaScript', 'TypeScript'],
+    stars: 5,
   },
-})
+  {
+    level: t('skills.good'),
+    listing: ['C/C++', 'Python'],
+    stars: 4,
+  },
+  {
+    level: t('skills.sufficient'),
+    listing: ['C#', 'SQL'],
+    stars: 3,
+  },
+])
 </script>
 
 <style lang="scss" scoped>

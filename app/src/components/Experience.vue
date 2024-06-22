@@ -6,43 +6,36 @@
     <Timeline
       v-for="experience in experiences"
       :key="experience.title"
-      :time-events="convertTimeEvent($tm(experience.items))"
-      :title="$t(experience.title)"
+      :time-events="experience.events"
+      :title="experience.title"
       class="experience-info"
     />
   </Section>
 </template>
 
 <script setup lang="ts">
+import { computed } from 'vue'
+import { useI18n } from 'vue-i18n'
+
 import Section from '@/ui/Section.vue'
 import Timeline from '@/ui/Timeline.vue'
 
-import { convertTimeEvent } from '@/assets/helpers'
-</script>
+const { t, tm } = useI18n({ useScope: 'global' })
 
-<script lang="ts">
-import { defineComponent } from 'vue'
-
-export default defineComponent({
-  computed: {
-    experiences() {
-      return [
-        {
-          title: 'title.experience',
-          items: 'experience',
-        },
-        {
-          title: 'title.presentations',
-          items: 'presentations',
-        },
-        {
-          title: 'title.projects',
-          items: 'projects',
-        },
-      ]
-    },
+const experiences = computed<Experience[]>(() => [
+  {
+    title: t('title.experience'),
+    events: tm('experience'),
   },
-})
+  {
+    title: t('title.presentations'),
+    events: tm('presentations'),
+  },
+  {
+    title: t('title.projects'),
+    events: tm('projects'),
+  },
+])
 </script>
 
 <style lang="scss" scoped>

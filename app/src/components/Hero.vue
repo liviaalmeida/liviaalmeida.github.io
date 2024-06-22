@@ -16,7 +16,10 @@
         >
       </figure>
       <div class="hero-text">
-        <p v-for="paragraph in about" class="hero-about">
+        <p
+          v-for="paragraph in about"
+          class="hero-about"
+        >
           {{ paragraph }}
         </p>
       </div>
@@ -25,29 +28,24 @@
       v-for="area in areas"
       :key="area.title"
     >
-      <h3 class="hero-subtitle">{{ area.title }}</h3>
+      <h3 class="hero-subtitle">
+        {{ area.title }}
+      </h3>
       <p v-html="area.text" />
     </div>
   </Section>
 </template>
 
 <script setup lang="ts">
+import { computed } from 'vue'
+import { useI18n } from 'vue-i18n'
+
 import Section from '@/ui/Section.vue'
-</script>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
+const { tm } = useI18n({ useScope: 'global' })
 
-export default defineComponent({
-  computed: {
-    about(): string[] {
-      return this.$tm('profile.about') as string[]
-    },
-    areas(): Area[] {
-      return this.$tm('profile.areas') as Area[]
-    },
-  },
-})
+const about = computed<string[]>(() => tm('profile.about'))
+const areas = computed<Area[]>(() => tm('profile.areas'))
 </script>
 
 <style lang="scss" scoped>

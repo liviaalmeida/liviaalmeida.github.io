@@ -1,5 +1,8 @@
 <template>
-  <div :class="['menu', {'menu--background': background}]">
+  <div
+    class="menu"
+    :class="{'menu--background': background}"
+  >
     <Locale class="menu-locale" />
     <nav class="menu-nav">
       <button
@@ -18,9 +21,8 @@
     <transition name="dropdown">
       <nav
         v-if="open"
-        :class="['menu-drop', {
-          'menu-drop--background': background,
-        }]"
+        class="menu-drop"
+        :class="{'menu-drop--background': background}"
       >
         <button
           v-for="link in links"
@@ -36,66 +38,58 @@
 </template>
 
 <script setup lang="ts">
-import Hamburger from '@/ui/Hamburger.vue'
-import Locale from '@/components/Locale.vue'
-</script>
-
-<script lang="ts">
-import { defineComponent } from 'vue'
-import { navigateTo } from '@/assets/helpers'
+import { ref, onBeforeUnmount, onMounted } from 'vue'
 import mixpanel from 'mixpanel-browser'
 
-export default defineComponent({
-  data() {
-    return {
-      background: false,
-      open: false,
-    }
-  },
-  computed: {
-    heigth(): number {
-      return 60
-    },
-    links(): Array<Link> {
-      return [
-        {
-          text: 'menu.about',
-          class: 'hero',
-        },
-        {
-          text: 'menu.knowledge',
-          class: 'knowledge',
-        },
-        {
-          text: 'menu.experience',
-          class: 'experience',
-        },
-        {
-          text: 'title.contact',
-          class: 'contact',
-        },
-      ]
-    },
-  },
-  mounted() {
-    window.addEventListener('scroll', this.onScroll)
-  },
-  beforeDestroy() {
-    window.removeEventListener('scroll', this.onScroll)
-  },
-  methods: {
-    onNav(toClass: string) {
-      navigateTo(toClass, -60)
-      this.open = false
+import Hamburger from '@/ui/Hamburger.vue'
+import Locale from '@/components/Locale.vue'
 
-      mixpanel.track('Menu-click', {
-        to: toClass,
-      })
-    },
-    onScroll() {
-      this.background = window.scrollY > this.heigth + 1
-    },
+const links: Link[] = [
+  {
+    text: 'menu.about',
+    class: 'hero',
   },
+  {
+    text: 'menu.knowledge',
+    class: 'knowledge',
+  },
+  {
+    text: 'menu.experience',
+    class: 'experience',
+  },
+  {
+    text: 'title.contact',
+    class: 'contact',
+  },
+]
+
+const open = ref(false)
+function navigateTo(targetClass: string, offset = 0): void {
+  const el = document.querySelector(`.${targetClass}`) as HTMLElement
+  const { top } = el.getBoundingClientRect()
+
+  window.scrollTo({
+    top: window.scrollY + top + offset,
+  })
+}
+function onNav(toClass: string) {
+  navigateTo(toClass, -60)
+  open.value = false
+
+  mixpanel.track('Menu-click', {
+    to: toClass,
+  })
+}
+
+const background = ref(false)
+function onScroll() {
+  background.value = window.scrollY > 61
+}
+onMounted(() => {
+  window.addEventListener('scroll', onScroll)
+})
+onBeforeUnmount(() => {
+  window.removeEventListener('scroll', onScroll)
 })
 </script>
 
@@ -153,7 +147,7 @@ $transition: background-color 1s;
 
 .menu-drop {
   @include background;
-  @include flex-column;
+  display: none;
   align-items: center;
   background-color: $lv-dark;
   overflow: hidden;
@@ -163,6 +157,10 @@ $transition: background-color 1s;
   top: $height;
   height: 4 * $link;
   width: 100%;
+
+  @include tablet {
+    @include flex-column;
+  }
 }
 
 .dropdown {

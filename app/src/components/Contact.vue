@@ -31,34 +31,19 @@ import Section from '@/ui/Section.vue'
 import Social from '@/ui/Social.vue'
 
 import Message from '@/components/Message.vue'
-</script>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
-
-export default defineComponent({
-  computed: {
-    contacts(): Contact[] {
-      return [
-        // {
-        //   image: 'linkedin',
-        //   text: 'Lívia Almeida',
-        //   href: 'https://linkedin.com/in/livia001',
-        // },
-        {
-          image: 'github',
-          text: '@liviaalmeida',
-          href: 'https://github.com/liviaalmeida',
-        },
-        {
-          image: 'mail',
-          text: 'leave.ah@gmail.com',
-          href: 'mailto:leave.ah@gmail.com',
-        },
-      ] as Contact[]
-    },
+const contacts: Contact[] = [
+  {
+    image: 'github',
+    text: '@liviaalmeida',
+    href: 'https://github.com/liviaalmeida',
   },
-})
+  {
+    image: 'mail',
+    text: 'leave.ah@gmail.com',
+    href: 'mailto:leave.ah@gmail.com',
+  },
+]
 </script>
 
 <style lang="scss" scoped>
