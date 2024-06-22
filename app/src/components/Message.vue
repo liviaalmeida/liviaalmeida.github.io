@@ -77,9 +77,9 @@ import Modal from '@/ui/Modal.vue'
 
 const { t } = useI18n({ useScope: 'global' })
 
-const $storage: Storehouse | undefined = inject('$storage')
+const $storage = inject('$storage') as Storehouse
 
-const disabled = ref($storage?.getAbuse() ?? false)
+const disabled = ref($storage.getAbuse())
 const feedback = ref({
   message: '',
   reason: 'info' as ModalReason,
@@ -127,7 +127,7 @@ function setError(message: string) {
   resetForm()
 }
 function onAbuse() {
-  $storage?.setAbuse()
+  $storage.setAbuse()
   disabled.value = true
   const message = t('contact.captcha.errors.abused')
   setError(message)
