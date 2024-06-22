@@ -24,8 +24,8 @@ describe('Message', () => {
     JSCookie.remove(Keys.abuse)
   })
 
-  afterEach(() => {
-    flushPromises()
+  afterEach(async () => {
+    await flushPromises()
   })
 
   it('renders message', () => {

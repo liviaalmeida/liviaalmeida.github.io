@@ -22,8 +22,8 @@ type Contact = {
 type Email = {
   email?: string;
   message: string;
-  name: string;
-  subject: string;
+  name?: string;
+  subject?: string;
 }
 
 type Experience = {

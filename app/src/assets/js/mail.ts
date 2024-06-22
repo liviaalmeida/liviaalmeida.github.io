@@ -7,14 +7,8 @@ export default function sendMail(email: Email): Promise<void> {
         SecureToken: import.meta.env.VITE_MJ_SECURE_TOKEN,
         From: import.meta.env.VITE_MJ_FROM,
         To: 'leave.ah@gmail.com',
-        Subject: email.subject,
-        Body: `
-          FROM: ${email.name}
-          |
-          CONTACT: ${email.email || 'NO MAIL'}
-          |
-          MESSAGE: ${email.message}
-        `,
+        Subject: email.subject || 'NO SUBJECT',
+        Body: `FROM: ${email.name || 'NO NAME'}\n|\nCONTACT: ${email.email || 'NO MAIL'}\n|\nMESSAGE: ${email.message}`,
       }).then(
         (message: string) => {
           if (!/^OK$/.test(message)) reject(message)
