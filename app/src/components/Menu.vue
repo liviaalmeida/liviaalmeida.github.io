@@ -8,6 +8,7 @@
       <button
         v-for="link in links"
         :key="link.text"
+        :data-class="link.class"
         class="menu-link"
         @click="onNav(link.class)"
       >

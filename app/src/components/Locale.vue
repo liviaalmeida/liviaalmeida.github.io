@@ -1,16 +1,17 @@
 <template>
   <div class="locale">
     <label
-      v-for="lang in langs"
+      v-for="lang in locales"
       :key="lang"
       class="locale-label"
     >
       <input
+        v-model="locale"
         type="radio"
         name="lang"
         :value="lang"
         class="locale-input"
-        @click="updateLocale"
+        @click="onClick(locale, lang)"
       >
       <span class="locale-lang">
         {{ lang }}
@@ -19,35 +20,28 @@
   </div>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
+import { inject, onBeforeMount } from 'vue'
+import { useI18n } from 'vue-i18n'
 import mixpanel from 'mixpanel-browser'
-import { defineComponent } from 'vue'
 
-export default defineComponent({
-  computed: {
-    langs(): string[] {
-      return ['en', 'fr', 'pt']
-    },
-  },
-  mounted() {
-    const inputs = this.$el.querySelectorAll('input')
-    inputs.forEach((input: HTMLInputElement) => {
-      if (input.value === this.$i18n.locale) input.checked = true
-    })
-  },
-  methods: {
-    updateLocale({ target }: MouseEvent) {
-      const value = (target as HTMLInputElement).value
-      if (value && value !== this.$i18n.locale) {
-        mixpanel.track('Locale-change', {
-          from: this.$i18n.locale,
-          to: value,
-        })
-        this.$i18n.locale = value
-      }
-    },
-  },
+const { availableLocales: locales, locale } = useI18n({ useScope: 'global' })
+
+const $storage = inject('$storage') as Storehouse
+onBeforeMount(() => {
+  const savedLocale = $storage.getLocale()
+  if (savedLocale && locales.includes(savedLocale)) {
+    locale.value = savedLocale
+  }
 })
+
+function onClick(from: string, to: string) {
+  $storage.setLocale(to)
+  mixpanel.track('Locale-change', {
+    from,
+    to,
+  })
+}
 </script>
 
 <style lang="scss" scoped>
