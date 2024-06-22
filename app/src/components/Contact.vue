@@ -16,6 +16,7 @@
         :image="contact.image"
         :text="contact.text"
         :href="contact.href"
+        class="contact-link"
       />
     </div>
     <Coffee class="contact-coffee" />
@@ -34,14 +35,19 @@ import Message from '@/components/Message.vue'
 
 const contacts: Contact[] = [
   {
-    image: 'github',
-    text: '@liviaalmeida',
-    href: 'https://github.com/liviaalmeida',
+    image: 'linkedin',
+    text: 'Lívia A.',
+    href: 'https://www.linkedin.com/in/livia001/',
   },
   {
     image: 'mail',
     text: 'leave.ah@gmail.com',
     href: 'mailto:leave.ah@gmail.com',
+  },
+  {
+    image: 'github',
+    text: '@liviaalmeida',
+    href: 'https://github.com/liviaalmeida',
   },
 ]
 </script>

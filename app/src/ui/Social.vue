@@ -36,7 +36,8 @@ function onClick(href: string) {
   font-family: 'Abel';
   font-size: 16px;
   font-weight: 600;
-  gap: 5px;
+  gap: 10px;
+  width: fit-content;
 
   &, &:visited {
     color: $lv-darker;
