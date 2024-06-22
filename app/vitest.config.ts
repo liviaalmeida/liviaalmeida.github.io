@@ -19,6 +19,7 @@ export default defineConfig({
       exclude: [
         'src/i18n.ts',
         'src/main.ts',
+        'src/assets/js/smtp.js',
       ],
       provider: 'v8',
       thresholds: {
