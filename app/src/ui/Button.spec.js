@@ -39,6 +39,15 @@ describe('Button', () => {
     expect(wave.classes()).to.contain('button-wave--animate')
   })
 
+  it('does not re-animate button on click', async () => {
+    const wrapper = mount(Button)
+    await wrapper.trigger('click')
+    await wrapper.trigger('click')
+    const wave = wrapper.find('.button-wave')
+    expect(wave.classes()).to.contain('button-wave--animate')
+    expect(wave.classes()).to.have.length(2)
+  })
+
   it('removes animate class after the timer', async () => {
     const wrapper = mount(Button)
     await wrapper.trigger('click')
