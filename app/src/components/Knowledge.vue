@@ -3,13 +3,13 @@
     :title="$t('menu.knowledge')"
     class="knowledge"
   >
-    <Timeline
-      :time-events="education"
+    <Skills
+      :skills="education"
       :title="$t('title.education')"
       class="knowledge-item"
     />
-    <Timeline
-      :time-events="languages"
+    <Skills
+      :skills="languages"
       :title="$t('title.languages')"
       class="knowledge-item"
     />
@@ -27,27 +27,26 @@ import { useI18n } from 'vue-i18n'
 
 import Section from '@/ui/Section.vue'
 import Skills from '@/ui/Skills.vue'
-import Timeline from '@/ui/Timeline.vue'
 
 const { t, tm } = useI18n({ useScope: 'global' })
 
-const education = computed<TimeEvent[]>(() => tm('education'))
+const education = computed<Skill[]>(() => tm('education'))
 
-const languages = computed<TimeEvent[]>(() => tm('languages'))
+const languages = computed<Skill[]>(() => tm('languages'))
 
 const programming = computed<Skill[]>(() => [
   {
-    level: t('skills.proficient'),
+    name: t('skills.proficient'),
     listing: ['CSS', 'HTML', 'JavaScript', 'TypeScript'],
     stars: 5,
   },
   {
-    level: t('skills.good'),
+    name: t('skills.good'),
     listing: ['C/C++', 'Python'],
     stars: 4,
   },
   {
-    level: t('skills.sufficient'),
+    name: t('skills.sufficient'),
     listing: ['C#', 'SQL'],
     stars: 3,
   },

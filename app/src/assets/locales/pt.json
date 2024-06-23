@@ -22,10 +22,10 @@
   },
   "education": [
     {
-      "title": "Universidade Federal de Minas Gerais (UFMG)",
-      "duration": "2022",
+      "name": "Universidade Federal de Minas Gerais (UFMG)",
+      "level": "2021",
       "intro": "Bacharelado",
-      "description": "Ciência da Computação"
+      "listing": ["Ciência da Computação"]
     }
   ],
   "experience": [
@@ -67,22 +67,18 @@
   ],
   "languages": [
     {
-      "title": "Inglês",
-      "duration": "IELTS 7.5 - 06/03/2021",
-      "intro": "Fluência:",
-      "description": "leitura fluente, escrita fluente, fala fluente"
+      "name": "Inglês",
+      "level": "IELTS 7.5 - 06/03/2021",
+      "listing": ["leitura fluente", "escrita fluente", "fala fluente"]
     },
     {
-      "title": "Francês",
-      "duration": "Nível A2",
-      "intro": "Fluência:",
-      "description": "leitura média, escrita média, fala básica"
+      "name": "Francês",
+      "level": "Nível A2",
+      "listing": ["leitura média", "escrita média", "fala básica"]
     },
     {
-      "title": "Português",
-      "duration": "",
-      "intro": "Fluência:",
-      "description": "nativa"
+      "name": "Português",
+      "listing": ["nativa"]
     }
   ],
   "presentations": [

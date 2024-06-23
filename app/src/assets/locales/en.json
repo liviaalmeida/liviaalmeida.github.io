@@ -22,10 +22,10 @@
   },
   "education": [
     {
-      "title": "Universidade Federal de Minas Gerais (UFMG)",
-      "duration": "2022",
+      "name": "Universidade Federal de Minas Gerais (UFMG)",
+      "level": "2021",
       "intro": "Bachelor's Degree",
-      "description": "Computer Science"
+      "listing": ["Computer Science"]
     }
   ],
   "experience": [
@@ -67,22 +67,18 @@
   ],
   "languages": [
     {
-      "title": "English",
-      "duration": "IELTS 7.5 - 03/06/2021",
-      "intro": "Proficiency:",
-      "description": "fluent reading, fluent writing, fluent speech"
+      "name": "English",
+      "level": "IELTS 7.5 - 03/06/2021",
+      "listing": ["fluent reading", "fluent writing", "fluent speech"]
     },
     {
-      "title": "French",
-      "duration": "Level A2",
-      "intro": "Proficiency:",
-      "description": "intermediate reading, intermediate writing, basic speech"
+      "name": "French",
+      "level": "Level A2",
+      "listing": ["intermediate reading", "intermediate writing", "basic speech"]
     },
     {
-      "title": "Portuguese",
-      "duration": "",
-      "intro": "Proficiency:",
-      "description": "native"
+      "name": "Portuguese",
+      "listing": ["native"]
     }
   ],
   "presentations": [

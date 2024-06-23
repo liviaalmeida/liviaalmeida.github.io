@@ -39,9 +39,11 @@ type Link = {
 type ModalReason = 'error' | 'success' | 'info';
 
 type Skill = {
-  level: string;
+  intro?: string;
+  level?: string;
   listing: string[];
-  stars: number;
+  name: string;
+  stars?: number;
 }
 
 type TimeEvent = {

@@ -22,10 +22,10 @@
   },
   "education": [
     {
-      "title": "Université Fédérale de Minas Gerais (UFMG)",
-      "duration": "2022",
+      "name": "Université Fédérale de Minas Gerais (UFMG)",
+      "level": "2021",
       "intro": "BA",
-      "description": "Informatique"
+      "listing": ["Informatique"]
     }
   ],
   "experience": [
@@ -67,22 +67,18 @@
   ],
   "languages": [
     {
-      "title": "Anglais",
-      "duration": "IELTS 7.5 - 06/03/2021",
-      "intro": "Compétence:",
-      "description": "compétente en lecture, compétente en écriture, compétente à l'oral"
+      "name": "Anglais",
+      "level": "IELTS 7.5 - 06/03/2021",
+      "listing": ["compétente en lecture", "compétente en écriture", "compétente à l'oral"]
     },
     {
-      "title": "Français",
-      "duration": "Niveau A2",
-      "intro": "Compétence:",
-      "description": "intermediáire en lecture, intermediáire en écriture, débutant à l'oral"
+      "name": "Français",
+      "level": "Niveau A2",
+      "listing": ["intermediáire en lecture", "intermediáire en écriture", "débutant à l'oral"]
     },
     {
-      "title": "Portugais",
-      "duration": "",
-      "intro": "Compétence:",
-      "description": "langue maternelle"
+      "name": "Portugais",
+      "listing": ["langue maternelle"]
     }
   ],
   "presentations": [

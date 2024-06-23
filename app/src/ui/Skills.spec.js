@@ -3,7 +3,7 @@ import Skills from './Skills.vue'
 
 const skills = [
   {
-    level: 'Super',
+    name: 'Super',
     listing: [
       'Chopping',
       'Slicing',
@@ -13,7 +13,8 @@ const skills = [
     stars: 5,
   },
   {
-    level: 'Good',
+    intro: 'Qualifications',
+    name: 'Good',
     listing: [
       'Hammering',
       'Drilling',
@@ -44,16 +45,16 @@ describe('Skills', () => {
     expect(listing).to.have.length(skills.length)
   })
 
-  it('renders the skills with the level and the number of stars', () => {
+  it('renders the skills with the name and the number of stars', () => {
     const wrapper = mount(Skills, options)
     const listing = wrapper.findAll('.skills-listing')
     listing.forEach((element, index) => {
-      const level = element.find('.skills-level')
+      const name = element.find('.skills-name')
       const rating = element.find('.skills-rating')
       const stars = rating.findAll('.rating-star')
       const skill = skills[index]
 
-      expect(level.text()).to.equal(skill.level)
+      expect(name.text()).to.equal(skill.name)
       expect(stars).to.have.length(skill.stars)
     })
   })

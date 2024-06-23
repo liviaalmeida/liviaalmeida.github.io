@@ -5,19 +5,32 @@
     </h3>
     <div
       v-for="group in skills"
-      :key="group.level"
+      :key="group.name"
       class="skills-listing"
     >
       <div class="skills-value">
-        <h4 class="skills-level">
-          {{ group.level }}
+        <h4 class="skills-name">
+          {{ group.name }}
         </h4>
         <Rating
+          v-if="group.stars"
           :stars="group.stars"
           class="skills-rating"
         />
+        <div
+          v-if="group.level"
+          class="skills-level"
+        >
+          {{ group.level }}
+        </div>
       </div>
-      <ul>
+      <ul class="skills-list">
+        <li
+          v-if="group.intro"
+          class="skills-intro"
+        >
+          {{ group.intro }}
+        </li>
         <li
           v-for="skill in group.listing"
           class="skills-item"
@@ -50,17 +63,37 @@ defineProps<{ skills: Array<Skill>, title: string }>()
 .skills-value {
   display: flex;
   align-items: center;
+  gap: 10px;
+}
+
+.skills-name {
   font-family: 'Bebas Neue';
   font-size: 20px;
   font-weight: bold;
-  gap: 8px;
 }
 
+.skills-name::before {
+  content: '·';
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.skills-level {
+  font-size: 10px;
+  margin-top: 5px;
+}
+
+.skills-intro,
 .skills-item {
   display: inline;
+}
 
-  &:not(:last-child)::after {
-    content: ', '
-  }
+.skills-intro {
+  font-weight: bold;
+  margin-right: 8px;
+}
+
+.skills-item:not(:last-child)::after {
+  content: ', '
 }
 </style>
