@@ -81,7 +81,7 @@ $picture-size: 170px;
 
 .hero-section {
   display: flex;
-  flex-wrap: wrap-reverse;
+  flex-wrap: wrap;
   gap: 30px 50px;
   align-items: center;
   justify-content: space-around;

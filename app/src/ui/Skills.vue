@@ -60,13 +60,8 @@ defineProps<{ skills: Array<Skill>, title: string }>()
   margin-bottom: 8px;
 }
 
-.skills-value {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
 .skills-name {
+  display: inline;
   font-family: 'Bebas Neue';
   font-size: 20px;
   font-weight: bold;
@@ -76,6 +71,12 @@ defineProps<{ skills: Array<Skill>, title: string }>()
   content: '·';
   display: inline-block;
   margin-right: 5px;
+}
+
+.skills-rating,
+.skills-level {
+  display: inline-block;
+  margin-left: 4px;
 }
 
 .skills-level {

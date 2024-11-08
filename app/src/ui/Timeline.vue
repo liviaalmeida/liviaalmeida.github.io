@@ -168,6 +168,7 @@ $bullet-size: 8px;
 .timeline-list-duration {
   font-size: 10px;
   margin-left: 5px;
+  white-space: nowrap;
 }
 
 .timeline-list-text {
