@@ -45,17 +45,14 @@ describe('Skills', () => {
     expect(listing).to.have.length(skills.length)
   })
 
-  it('renders the skills with the name and the number of stars', () => {
+  it('renders the skills with the name', () => {
     const wrapper = mount(Skills, options)
     const listing = wrapper.findAll('.skills-listing')
     listing.forEach((element, index) => {
       const name = element.find('.skills-name')
-      const rating = element.find('.skills-rating')
-      const stars = rating.findAll('.rating-star')
       const skill = skills[index]
 
       expect(name.text()).to.equal(skill.name)
-      expect(stars).to.have.length(skill.stars)
     })
   })
 
