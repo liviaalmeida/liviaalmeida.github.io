@@ -36,18 +36,33 @@ const languages = computed<Skill[]>(() => tm('languages'))
 
 const programming = computed<Skill[]>(() => [
   {
-    name: t('skills.proficient'),
-    listing: ['CSS', 'HTML', 'JavaScript', 'TypeScript'],
+    name: t('skills.languages'),
+    listing: ['JavaScript', 'Python', 'C++'],
     stars: 5,
   },
   {
-    name: t('skills.good'),
-    listing: ['C/C++', 'Python'],
+    name: t('skills.web'),
+    listing: ['HTML', 'CSS', 'performance', t('skills.skill.accessibility')],
     stars: 4,
   },
   {
-    name: t('skills.sufficient'),
-    listing: ['C#', 'SQL'],
+    name: t('skills.frameworks'),
+    listing: ['Vue', 'Angular'],
+    stars: 3,
+  },
+  {
+    name: t('skills.tools'),
+    listing: ['Vite', 'Webpack'],
+    stars: 3,
+  },
+  {
+    name: t('skills.tests'),
+    listing: ['Vitest', 'Jest', 'Nightwatch', 'Cypress'],
+    stars: 3,
+  },
+  {
+    name: t('skills.databases'),
+    listing: ['SQL'],
     stars: 3,
   },
 ])

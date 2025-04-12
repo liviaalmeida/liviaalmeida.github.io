@@ -12,11 +12,6 @@
         <h4 class="skills-name">
           {{ group.name }}
         </h4>
-        <Rating
-          v-if="group.stars"
-          :stars="group.stars"
-          class="skills-rating"
-        />
         <div
           v-if="group.level"
           class="skills-level"
@@ -43,8 +38,6 @@
 </template>
 
 <script setup lang="ts">
-import Rating from '@/ui/Rating.vue'
-
 defineProps<{ skills: Array<Skill>, title: string }>()
 </script>
 

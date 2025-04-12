@@ -1,12 +1,12 @@
 {
   "title": {
     "contact": "Contact",
-    "education": "Education",
+    "education": "Éducation",
     "experience": "Expérience Professionnelle",
     "languages": "Langues",
-    "position": "Développeuse Front-end",
+    "position": "Ingénieure Front-end",
     "presentations": "Conférence",
-    "programming": "Compétences de Programmation",
+    "programming": "Compétences",
     "projects": "Projets",
     "socials": "Réseaux sociaux"
   },
@@ -16,13 +16,19 @@
     "experience": "Expérience"
   },
   "skills": {
-    "proficient": "Compétent",
-    "good": "Bonne",
-    "sufficient": "Suffisant"
+    "languages": "Langues",
+    "web": "Pages web",
+    "frameworks": "Frameworks",
+    "tools": "Outils",
+    "tests": "Tests",
+    "databases": "Bases de données",
+    "skill": {
+      "accessibility": "accessibilité"
+    }
   },
   "education": [
     {
-      "name": "Université Fédérale de Minas Gerais (UFMG)",
+      "name": "Universidade Federal de Minas Gerais (UFMG)",
       "level": "2021",
       "intro": "Licence",
       "listing": ["Informatique"]
@@ -34,46 +40,46 @@
       "link": "https://ecosia.org",
       "duration": "avr 2021 - aujourd'hui",
       "intro": "Ingénieure Front-end:",
-      "description": "travaillant comme ingénieure front-end pour le moteur de recherche qui plantent des arbres. Utilisant JavaScript pour Vue, Nuxt et Vite, ainsi que HTML et SCSS."
+      "description": "je travaille comme ingénieure front-end pour le moteur de recherche qui plantent des arbres. J'utilise JavaScript avec Vue, Nuxt et Vite, ainsi que HTML et SCSS pour la création de pages web, tant statiques que côté serveur. J'évalue la performance et l'accessibilité de ces pages, garantissant leur intégrité par des tests, et je m'assure que nous offrons des expériences agréables à nos utilisateurs."
     },
     {
       "title": "Symbaros",
       "link": "https://symbaros.com.br",
       "duration": "août 2021 - mars 2022",
       "intro": "Associée / Consultante:",
-      "description": "j'ai travaillé comme consultante architecte front-end pour une plateforme spécialisée dans la location d'espaces commerciaux à l'aide de l'IA. J'ai configuré l'architecture et j'ai créé un site web utilisant Vue.JS."
+      "description": "j'ai travaillé en tant que consultante architecte front-end pour une plateforme spécialisée dans la location d'espaces commerciaux à l'aide d'une intelligence artificielle. J'ai choisi la technologie et l'architecture de l'ensemble des pages web, en utilisant VueJS comme base, et j'ai créé des intégrations avec des APIs pour récupérer des informations relatives aux recherches de biens immobiliers et à leurs attributs."
     },
     {
       "title": "Questrade",
       "link": "https://www.questrade.com/home",
       "duration": "juin 2020 - dec 2020",
       "intro": "Ingénieure Front-end:",
-      "description": "j'ai travaillé comme ingénieure front-end pour une plateforme financière spécialisée dans le trading utilisant Angular8+, TypeScript, et SCSS."
+      "description": "j'ai travaillé en tant qu'ingénieure front-end pour une plateforme financière canadienne spécialisée dans le trading, en utilisant TypeScript, Angular8+, et SCSS pour offrir des expériences performantes et sécurisées à ses utilisateurs."
     },
     {
-      "title": "Blip.ai",
+      "title": "BLiP.ai",
       "link": "https://blip.ai",
       "duration": "juin 2019 - avr 2020",
       "intro": "Développeuse Full Stack:",
-      "description": "j'ai travaillé comme développeuse full stack utilisant AngularJS et VueJS pour front-end, .NET core pour back-end, et occasionnellement Python pour analyses de modèles NLP."
+      "description": "j'ai travaillé en tant que développeuse full stack dans la plateforme de construction de chatbots BLiP.ai, utilisant AngularJS et VueJS pour le front-end, .NET Core pour le back-end, et Python pour l'analyse de modèles de traitement du langage naturel, ainsi que pour la création d'une API en Django afin de permettre des requêtes vers des modèles entraînés."
     },
     {
-      "title": "Blip.ai",
+      "title": "BLiP.ai",
       "link": "https://blip.ai",
       "duration": "jan 2018 - mai 2019",
       "intro": "Stagiaire en Informatique:",
-      "description": "j'ai travaillé comme interne front-end dans la plateforme de construction de chatbot BLiP.ai utilisant des frameworks AngularJS et VueJS, j'ai fourni des solutions sur l'intelligence artificielle en utilisant Python, et j'ai analysé des modelès NLP basés sur des intentions et entités."
+      "description": "j'ai travaillé en tant interne en informatique dans la plateforme de construction de chatbots BLiP.ai utilisant des frameworks AngularJS et VueJS, j'ai fourni des solutions sur l'intelligence artificielle en utilisant Python, et j'ai analysé des modèles de traitement du langage naturel basés sur des intentions et entités."
     }
   ],
   "languages": [
     {
       "name": "Anglais",
-      "level": "IELTS 7.5 - 06/03/2021",
+      "level": "Niveau C1 (IELTS 7.5)",
       "listing": ["compétente en lecture", "compétente en écriture", "compétente à l'oral"]
     },
     {
       "name": "Français",
-      "level": "Niveau B1",
+      "level": "Niveau B2",
       "listing": ["intermediáire en lecture", "intermediáire en écriture", "intermediáire à l'oral"]
     },
     {
@@ -87,22 +93,21 @@
       "link": "https://thedevconf.com/tdc/2019/belohorizonte/trilha-inteligencia-artificial",
       "duration": "14 Juin 2019",
       "intro": "Word Embedding et Application",
-      "description": "Comment développer une application pour résoudre un problème récurrent NLP utilisant l'algorythme Word Embedding? Nous explorons la correction orthographique."
+      "description": "Comment développer une application pour résoudre un problème récurrent de traitement du langage naturel utilisant l'algorithme Word Embedding? Nous explorons la correction orthographique."
     },
     {
       "title": "Developer Circle",
       "link": "https://devcbhmeetupfev2019.splashthat.com/",
       "duration": "19 Fev 2019",
       "intro": "Comment Apprendre en Utilisant un Texte?",
-      "description": "Pour utiliser les mots en modèle mathématique, nous comptons sur leur transformation en une forme de représentation numérique. Un des nombreux algorythmes qui réalise cette tâche est le Word Embedding."
+      "description": "Pour utiliser les mots en modèle mathématique, nous comptons sur leur transformation en une forme de représentation numérique. Un des nombreux algorithmes qui réalise cette tâche est le Word Embedding."
     }
   ],
   "profile": {
-    "about": [
-      "J'aime utiliser mes compétences pour aider les communautés, améliorer la vie des gens et, d'une manière générale, créer un monde meilleur. J'ai déjà la chance de travailler pour une entreprise qui met l'accent sur l'environnement et qui plante des arbres dans plusieurs pays.",
-      "J'ai plus de 6 ans d'expérience en front-end, principalement avec Vue et Angular, et j'apprends React pour acquérir plus de connaissances. J'ai également des connaissances et de l'expérience avec le machine learning, mais ce n'est pas mon domaine de prédilection",
-      "Mes principaux intérêts sont l'architecture et la qualité du code, ainsi que les animations CSS. Je maîtrise le JavaScript et le TypeScript, et j'ai une bonne connaissance de Python et MySQL."
-    ],
+    "about": {
+      "intro": "J'aime mettre mes compétences au service des communautés, contribuer à améliorer la vie des gens et participer à la construction d'un monde meilleur. J'ai la chance de travailler pour une entreprise engagée en faveur de l'environnement, qui plante des arbres dans plusieurs pays.",
+      "experience": "Je possède plus de {years} ans d'expérience en développement front-end. Je m'intéresse particulièrement à l'architecture, à la qualité et à la performance du code. Je maîtrise JavaScript et TypeScript, ainsi que les technologies liées à la création de pages web, et j'ai un faible pour les animations CSS."
+    },
     "areas": [
       {
         "title": "Volontariat",
@@ -120,25 +125,25 @@
       "link": "https://sqlearn.net",
       "duration": "www.sqlearn.net",
       "intro": "Apprentissage des requêtes de base de données",
-      "description": "Le but de sq-learn est de aider à l'apprentissage des requêtes SQL via une interface intuitive pour visualiser la base de données."
+      "description": "Le but de sq-learn est d'aider à l'apprentissage des requêtes SQL via une interface intuitive permettant de visualiser la base de données. J'ai utilisé VueJS pour la page, ainsi que JISON pour la création d'un analyseur SQL en JavaScript."
     }
   ],
   "contact": {
     "name": {
       "label": "Nom",
-      "placeholder": "Saisissez votre nom"
+      "placeholder": "Votre nom"
     },
     "subject": {
       "label": "Objet",
-      "placeholder": "Saisissez l'objet de votre message"
+      "placeholder": "L'objet de votre message"
     },
     "email": {
       "label": "E-mail",
-      "placeholder": "Saisissez votre adresse e-mail"
+      "placeholder": "Votre adresse e-mail"
     },
     "message": {
       "label": "Message",
-      "placeholder": "Saisissez votre message"
+      "placeholder": "Votre message"
     },
     "captcha": {
       "label": "Je suis pas un robot",

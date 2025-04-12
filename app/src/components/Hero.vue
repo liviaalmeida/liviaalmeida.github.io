@@ -13,6 +13,7 @@
           src="/img/profile.jpeg"
           alt=""
           class="hero-image"
+          aria-hidden="true"
         >
       </figure>
       <div class="hero-text">
@@ -42,9 +43,14 @@ import { useI18n } from 'vue-i18n'
 
 import Section from '@/ui/Section.vue'
 
-const { tm } = useI18n({ useScope: 'global' })
+const { t, tm } = useI18n({ useScope: 'global' })
 
-const about = computed<string[]>(() => tm('profile.about'))
+const years = new Date().getFullYear() - 2018
+
+const about = computed<string[]>(() => [
+  t('profile.about.intro'),
+  t('profile.about.experience', { years }),  
+])
 const areas = computed<Area[]>(() => tm('profile.areas'))
 </script>
 
