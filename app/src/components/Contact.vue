@@ -40,11 +40,6 @@ const contacts: Contact[] = [
     href: 'https://www.linkedin.com/in/livia001/',
   },
   {
-    image: 'mail',
-    text: 'leave.ah@gmail.com',
-    href: 'mailto:leave.ah@gmail.com',
-  },
-  {
     image: 'github',
     text: '@liviaalmeida',
     href: 'https://github.com/liviaalmeida',
@@ -71,7 +66,7 @@ const contacts: Contact[] = [
   flex-direction: column;
   gap: 20px;
   margin: 20px auto;
-  width: 170px;
+  width: fit-content;
 }
 
 .contact-coffee {
