@@ -45,8 +45,8 @@
     {
       "title": "Symbaros",
       "link": "https://symbaros.com.br",
-      "duration": "aug 2021 - mar 2022",
-      "intro": "Partner / Consultant:",
+      "duration": "aug 2020 - mar 2022",
+      "intro": "Consultant:",
       "description": "worked as a consultant front-end architect for a platform specialized in the rental of commercial space using artificial intelligence. I chose the technology and architecture for all the web pages, using VueJS as a base, and created integrations with APIs to retrieve information relating to property searches and their attributes."
     },
     {
@@ -61,7 +61,7 @@
       "link": "https://blip.ai",
       "duration": "june 2019 - may 2020",
       "intro": "Full Stack Developer:",
-      "description": "worked as a full-stack developer on the chatbot-building platform BLiP.ai, using AngularJS and VueJS for the front-end, .NET Core for the back-end, and Python for parsing Natural Language Processing models, as well as creating an API in Django to enable queries to trained models."
+      "description": "worked as a full stack developer on the chatbot-building platform BLiP.ai, using AngularJS and VueJS for the front-end, .NET Core for the back-end, and Python for parsing Natural Language Processing models, as well as creating an API in Django to enable queries to trained models."
     },
     {
       "title": "Blip.ai",
